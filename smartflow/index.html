@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartFlow AI - Giải Pháp Data Hub và Workflow Tự Động</title>
+    <title>SmartFlow AI - Data Hub & Automated Workflow Solution</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -38,166 +38,178 @@
             border-left: 4px solid #3498db;
             margin: 20px 0;
         }
+        .currency-rate {
+            font-size: 0.9em;
+            color: #666;
+            text-align: right;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>SmartFlow AI - Giải Pháp Data Hub và Workflow Tự Động</h1>
+        <h1>SmartFlow AI - Data Hub & Automated Workflow Solution</h1>
     </header>
 
     <main>
-        <!-- Tổng quan về dịch vụ -->
+        <!-- Service Overview -->
         <section>
-            <h2>1. Tổng quan về dịch vụ</h2>
-            <p>SmartFlow AI là giải pháp công nghệ toàn diện giúp doanh nghiệp số hóa toàn bộ quy trình xử lý tài liệu từ khâu <strong>tập trung dữ liệu</strong> đến <strong>tự động hóa nghiệp vụ</strong>, triển khai 100% trên hệ thống nội bộ (on-premises).</p>
+            <h2>1. Service Overview</h2>
+            <p>SmartFlow AI is a comprehensive technology solution that helps businesses digitize the entire document processing workflow from <strong>data centralization</strong> to <strong>process automation</strong>, deployed 100% on-premises.</p>
             
             <div class="highlight">
-                <p><strong>Hai thành phần chính:</strong></p>
+                <p><strong>Two Core Components:</strong></p>
                 <ul>
-                    <li><strong>Data Hub</strong>: Trung tâm thu thập & chuẩn hóa dữ liệu từ mọi nguồn (file, API, email, scan...)</li>
-                    <li><strong>Workflow AI</strong>: Xử lý tự động bằng AI (OCR, NLP) dựa trên dữ liệu từ Data Hub</li>
+                    <li><strong>Data Hub</strong>: Centralized data collection and standardization from all sources (files, APIs, emails, scans...)</li>
+                    <li><strong>Workflow AI</strong>: AI-powered automated processing (OCR, NLP) using data from Data Hub</li>
                 </ul>
             </div>
 
-            <p><strong>Cam kết khác biệt:</strong></p>
+            <p><strong>Key Differentiators:</strong></p>
             <ul>
-                <li>🔒 <strong>Bảo mật tuyệt đối</strong>: Không dùng đám mây, không rò rỉ dữ liệu</li>
-                <li>⚡ <strong>Tốc độ xử lý</strong>: Giảm 90% thời gian nhập liệu thủ công</li>
-                <li>🧩 <strong>Mở rộng linh hoạt</strong>: Thêm workflow mới chỉ bằng kết nối API</li>
+                <li>🔒 <strong>Absolute Security</strong>: No cloud dependency, zero data leakage</li>
+                <li>⚡ <strong>Processing Speed</strong>: 90% faster than manual entry</li>
+                <li>🧩 <strong>Flexible Expansion</strong>: Add new workflows via simple API connections</li>
             </ul>
         </section>
 
-        <!-- Kiến trúc hệ thống -->
+        <!-- System Architecture -->
         <section>
-            <h2>2. Kiến trúc hệ thống</h2>
+            <h2>2. System Architecture</h2>
 
             <h3>2.1. Data Hub</h3>
-            <p><strong>Chức năng chính:</strong></p>
+            <p><strong>Core Functions:</strong></p>
             <ul>
-                <li>Thu thập dữ liệu từ đa nguồn: email, file scan, hệ thống ERP, IoT</li>
-                <li>Chuẩn hóa định dạng (JSON/CSV) và phân loại tự động</li>
-                <li>Cung cấp API để các hệ thống khác truy xuất dữ liệu</li>
+                <li>Collect data from multiple sources: emails, scanned files, ERP systems, IoT</li>
+                <li>Standardize formats (JSON/CSV) with automatic classification</li>
+                <li>Provide APIs for data access by other systems</li>
             </ul>
 
-            <p><strong>Công nghệ nền tảng:</strong></p>
+            <p><strong>Core Technology:</strong></p>
             <ul>
-                <li>Hệ thống ETL (Extract-Transform-Load) on-premise</li>
-                <li>Mã hóa dữ liệu nhạy cảm bằng chuẩn AES-256</li>
-                <li>Hỗ trợ xử lý hàng loạt (batch processing)</li>
+                <li>On-premise ETL (Extract-Transform-Load) system</li>
+                <li>AES-256 encryption for sensitive data</li>
+                <li>Batch processing support</li>
             </ul>
 
             <h3>2.2. Workflow AI</h3>
-            <p><strong>Lõi công nghệ:</strong></p>
+            <p><strong>Technology Stack:</strong></p>
             <ul>
-                <li><strong>OCR (Tesseract)</strong>: Trích xuất văn bản từ hình ảnh chất lượng thấp</li>
-                <li><strong>NLP (layoutlmv3)</strong>: Nhận diện thông tin quan trọng (số hóa đơn, ngày tháng)</li>
-                <li><strong>Computer Vision</strong>: Phân tích bố cục tài liệu phức tạp</li>
+                <li><strong>OCR (Tesseract)</strong>: Text extraction from low-quality images</li>
+                <li><strong>NLP (layoutlmv3)</strong>: Key information recognition (invoice numbers, dates)</li>
+                <li><strong>Computer Vision</strong>: Complex document layout analysis</li>
             </ul>
 
-            <p><strong>Khả năng tích hợp:</strong></p>
+            <p><strong>Integration Capabilities:</strong></p>
             <ul>
-                <li>Nhận dữ liệu đầu vào từ Data Hub</li>
-                <li>Xuất kết quả dạng JSON cho các hệ thống nội bộ</li>
+                <li>Receive input data from Data Hub</li>
+                <li>Output results in JSON format for internal systems</li>
             </ul>
         </section>
 
-        <!-- Tính năng nổi bật -->
+        <!-- Key Features -->
         <section>
-            <h2>3. Tính năng nổi bật</h2>
+            <h2>3. Key Features</h2>
 
             <h3>3.1. Data Hub</h3>
             <ul>
-                <li>📁 <strong>Thu thập đa nguồn</strong>: Xử lý đồng thời file ảnh, PDF, email</li>
-                <li>🏷️ <strong>Tự động phân loại</strong>: AI gắn nhãn loại tài liệu (hóa đơn/hợp đồng)</li>
-                <li>🔄 <strong>Đồng bộ thời gian thực</strong>: Cập nhật dữ liệu ngay khi có thay đổi</li>
+                <li>📁 <strong>Multi-source Collection</strong>: Simultaneous processing of images, PDFs, emails</li>
+                <li>🏷️ <strong>Auto-Classification</strong>: AI-powered document labeling (invoices/contracts)</li>
+                <li>🔄 <strong>Real-time Sync</strong>: Immediate data updates upon changes</li>
             </ul>
 
             <h3>3.2. Workflow AI</h3>
             <ul>
-                <li>⏱️ <strong>Xử lý siêu tốc</strong>: 5-10 giây/tài liệu</li>
-                <li>🎯 <strong>Độ chính xác 95%</strong>: Giảm 90% sai sót so với nhập liệu thủ công</li>
-                <li>🛡️ <strong>Bảo mật end-to-end</strong>: Không lưu trữ trên cloud</li>
+                <li>⏱️ <strong>Ultra-Fast Processing</strong>: 5-10 seconds per document</li>
+                <li>🎯 <strong>95% Accuracy</strong>: 90% fewer errors than manual entry</li>
+                <li>🛡️ <strong>End-to-End Security</strong>: No cloud storage</li>
             </ul>
         </section>
 
-        <!-- Lợi ích kinh doanh -->
+        <!-- Business Benefits -->
         <section>
-            <h2>4. Lợi ích kinh doanh</h2>
+            <h2>4. Business Benefits</h2>
             <ul>
-                <li><strong>Tiết kiệm 80% chi phí</strong> vận hành xử lý tài liệu</li>
-                <li><strong>Mở rộng không giới hạn</strong>: Thêm workflow mới chỉ bằng API</li>
-                <li><strong>Kiểm soát toàn bộ dữ liệu</strong> trên hệ thống riêng</li>
+                <li><strong>80% Cost Reduction</strong> in document processing operations</li>
+                <li><strong>Unlimited Scalability</strong>: Add new workflows via API</li>
+                <li><strong>Complete Data Control</strong> on your own infrastructure</li>
             </ul>
         </section>
 
-        <!-- Chi phí triển khai -->
+        <!-- Implementation Costs -->
         <section>
-            <h2>5. Chi phí triển khai</h2>
+            <h2>5. Implementation Costs</h2>
+            <p class="currency-rate">(Exchange rate: 1 USD ≈ 25,000 VND)</p>
             <table>
                 <thead>
                     <tr>
-                        <th>HẠNG MỤC</th>
-                        <th>MÔ TẢ CHI TIẾT</th>
-                        <th>THÀNH TIỀN (VNĐ)</th>
+                        <th>COMPONENT</th>
+                        <th>DETAILED DESCRIPTION</th>
+                        <th>VND</th>
+                        <th>USD*</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Data Hub</strong></td>
                         <td>
-                            - Triển khai hệ thống thu thập & chuẩn hóa dữ liệu đa nguồn<br>
-                            - API kết nối nội bộ<br>
-                            - Hệ thống bảo mật AES-256
+                            - Multi-source data collection & standardization system<br>
+                            - Internal connection APIs<br>
+                            - AES-256 security system
                         </td>
-                        <td>5.000.000</td>
+                        <td>5,000,000</td>
+                        <td>~200</td>
                     </tr>
                     <tr>
                         <td><strong>Workflow AI</strong></td>
                         <td>
-                            - Phát triển module AI (OCR + NLP)<br>
-                            - Tích hợp với Data Hub<br>
-                            - Giao diện quản lý workflow
+                            - AI module development (OCR + NLP)<br>
+                            - Data Hub integration<br>
+                            - Workflow management interface
                         </td>
-                        <td>5.000.000</td>
+                        <td>5,000,000</td>
+                        <td>~200</td>
                     </tr>
                     <tr>
-                        <td colspan="2"><strong>Tổng chi phí</strong></td>
-                        <td><strong>10.000.000</strong></td>
+                        <td colspan="2"><strong>Total Cost</strong></td>
+                        <td><strong>10,000,000</strong></td>
+                        <td><strong>~400</strong></td>
                     </tr>
                 </tbody>
             </table>
 
-            <h3>Diễn giải chi tiết:</h3>
-            <p><strong>Data Hub (5.000.000 VNĐ):</strong></p>
+            <h3>Detailed Breakdown:</h3>
+            <p><strong>Data Hub (5,000,000 VND / ~200 USD):</strong></p>
             <ul>
-                <li>Xây dựng hệ thống thu thập dữ liệu từ email, file scan, phần mềm kế toán</li>
-                <li>Phát triển cơ chế chuẩn hóa định dạng (JSON/CSV)</li>
-                <li>Triển khai hệ thống phân quyền truy cập và mã hóa dữ liệu</li>
+                <li>Build data collection system from emails, scanned files, accounting software</li>
+                <li>Develop format standardization (JSON/CSV)</li>
+                <li>Implement access control and data encryption</li>
             </ul>
 
-            <p><strong>Workflow AI (5.000.000 VNĐ):</strong></p>
+            <p><strong>Workflow AI (5,000,000 VND / ~200 USD):</strong></p>
             <ul>
-                <li>Tích hợp Tesseract OCR và layoutlmv3 NLP</li>
-                <li>Phát triển giao diện quản lý workflow kéo thả</li>
-                <li>Xây dựng API kết nối với Data Hub và hệ thống ERP</li>
+                <li>Integrate Tesseract OCR and layoutlmv3 NLP</li>
+                <li>Develop drag-and-drop workflow management interface</li>
+                <li>Build APIs for Data Hub and ERP system connections</li>
             </ul>
         </section>
 
-        <!-- Hỗ trợ sau triển khai -->
+        <!-- Post-Deployment Support -->
         <section>
-            <h2>6. Hỗ trợ sau triển khai</h2>
+            <h2>6. Post-Deployment Support</h2>
             <ul>
-                <li>Bảo trì hệ thống 24/7</li>
-                <li>Cập nhật model AI miễn phí 6 tháng</li>
-                <li>Đào tạo nhân sự vận hành</li>
+                <li>24/7 system maintenance</li>
+                <li>Free AI model updates for 6 months</li>
+                <li>Operator training</li>
             </ul>
-            <p><em>(Toàn bộ hệ thống triển khai trực tiếp trên server doanh nghiệp, không yêu cầu kết nối Internet)</em></p>
+            <p><em>(Entire system deployed on your enterprise servers, no internet connection required)</em></p>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 SmartFlow AI - Giải pháp Data Hub và Workflow tự động</p>
+        <p>© 2025 SmartFlow AI - Data Hub & Automated Workflow Solution</p>
     </footer>
 </body>
 </html>
