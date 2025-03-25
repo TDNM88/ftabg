@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Hệ Thống Chatbot Nội Bộ Doanh Nghiệp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="title">
+                <span class="lang-vi">Chi Tiết Hệ Thống Chatbot Nội Bộ Doanh Nghiệp</span>
+                <span class="lang-en">Details of Enterprise Internal Chatbot System</span>
+            </h1>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+                <button onclick="switchLanguage('en')">English</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Tổng quan giải pháp -->
+        <section>
+            <h2>
+                <span class="lang-vi">1. Tổng quan giải pháp</span>
+                <span class="lang-en">1. Solution Overview</span>
+            </h2>
+            <p>
+                <span class="lang-vi">Hệ thống chatbot nội bộ không chỉ là một công cụ giao tiếp đơn thuần mà là một trung tâm hỗ trợ ảo thông minh, được thiết kế để tối ưu hóa sự kết nối giữa nhân viên và các hệ thống quản trị nội bộ của doanh nghiệp. Điểm nổi bật của giải pháp này nằm ở khả năng cá nhân hóa sâu, cho phép chatbot thích nghi hoàn toàn với đặc thù của từng doanh nghiệp, từ quy trình vận hành, văn hóa nội bộ đến ngôn ngữ chuyên ngành. Thay vì chỉ cung cấp các câu trả lời cơ bản, chatbot đóng vai trò như một trợ thủ đắc lực, hỗ trợ nhân viên giải quyết công việc nhanh chóng, chính xác và hiệu quả, đồng thời giảm tải áp lực cho các bộ phận quản lý.</span>
+                <span class="lang-en">The internal chatbot system is not just a simple communication tool but an intelligent virtual support center, designed to optimize the connection between employees and the enterprise's internal management systems. The standout feature of this solution lies in its deep personalization capability, allowing the chatbot to fully adapt to the specific characteristics of each enterprise, from operational processes and internal culture to industry-specific terminology. Instead of merely providing basic responses, the chatbot acts as a powerful assistant, helping employees resolve tasks quickly, accurately, and efficiently while reducing the burden on management departments.</span>
+            </p>
+        </section>
+
+        <!-- Kiến trúc hệ thống -->
+        <section>
+            <h2>
+                <span class="lang-vi">2. Kiến trúc hệ thống</span>
+                <span class="lang-en">2. System Architecture</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">2.1. Lớp ứng dụng</span>
+                <span class="lang-en">2.1. Application Layer</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Lớp ứng dụng được thiết kế để đảm bảo nhân viên có thể truy cập chatbot một cách thuận tiện trên các nền tảng tích hợp:</span>
+                <span class="lang-en">The application layer is designed to ensure employees can conveniently access the chatbot across integrated platforms:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Giao diện web responsive tích hợp portal nội bộ</strong>: Chatbot được tích hợp trực tiếp vào cổng thông tin nội bộ của doanh nghiệp, với giao diện thân thiện, tự động điều chỉnh phù hợp với mọi kích thước màn hình (máy tính, tablet, điện thoại). Điều này giúp nhân viên truy cập nhanh chóng mà không cần chuyển đổi giữa các ứng dụng.</span>
+                    <span class="lang-en"><strong>Responsive web interface integrated with the internal portal</strong>: The chatbot is directly integrated into the enterprise's internal portal, featuring a user-friendly interface that automatically adjusts to all screen sizes (computers, tablets, phones). This allows employees to access it quickly without switching between applications.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Widget chat nhúng trực tiếp vào các hệ thống hiện có</strong>: Chatbot có thể được tích hợp dưới dạng một cửa sổ trò chuyện nhỏ gọn trên các phần mềm hoặc hệ thống mà doanh nghiệp đang sử dụng (như CRM, ERP), giúp nhân viên sử dụng mà không cần rời khỏi môi trường làm việc quen thuộc.</span>
+                    <span class="lang-en"><strong>Chat widget embedded directly into existing systems</strong>: The chatbot can be integrated as a compact chat window within the software or systems the enterprise is already using (such as CRM, ERP), enabling employees to use it without leaving their familiar working environment.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">2.2. Lõi AI</span>
+                <span class="lang-en">2.2. AI Core</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Trái tim của hệ thống là lõi trí tuệ nhân tạo (AI) được xây dựng để xử lý ngôn ngữ và tương tác thông minh:</span>
+                <span class="lang-en">The heart of the system is the artificial intelligence (AI) core, built to handle language processing and intelligent interactions:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Engine xử lý ngôn ngữ tiếng Việt đa tầng</strong>: </span>
+                    <span class="lang-en"><strong>Multi-layer Vietnamese language processing engine</strong>: </span>
+                    <ul>
+                        <li>
+                            <span class="lang-vi"><strong>Xử lý từ vựng nghiệp vụ chuyên ngành</strong>: Hệ thống nhận diện và hiểu các thuật ngữ đặc thù của doanh nghiệp, từ đó đưa ra phản hồi phù hợp với lĩnh vực hoạt động (ví dụ: tài chính, y tế, sản xuất).</span>
+                            <span class="lang-en"><strong>Processing industry-specific terminology</strong>: The system recognizes and understands enterprise-specific terms, providing responses tailored to the industry (e.g., finance, healthcare, manufacturing).</span>
+                        </li>
+                        <li>
+                            <span class="lang-vi"><strong>Hiểu ngữ cảnh hội thoại phức tạp</strong>: Chatbot không chỉ trả lời từng câu hỏi đơn lẻ mà có thể duy trì và phân tích ngữ cảnh qua nhiều lượt trò chuyện, đảm bảo tính liên tục và logic.</span>
+                            <span class="lang-en"><strong>Understanding complex conversation contexts</strong>: The chatbot not only responds to individual questions but can maintain and analyze context across multiple conversation turns, ensuring continuity and logic.</span>
+                        </li>
+                        <li>
+                            <span class="lang-vi"><strong>Nhận diện giọng nói (tuỳ chọn)</strong>: Tính năng bổ sung cho phép nhân viên giao tiếp bằng giọng nói, hữu ích trong các tình huống cần thao tác rảnh tay hoặc hỗ trợ người dùng không quen nhập liệu.</span>
+                            <span class="lang-en"><strong>Voice recognition (optional)</strong>: An additional feature that allows employees to interact via voice, useful in hands-free scenarios or for users unfamiliar with typing.</span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Hệ thống học máy liên tục cải thiện từ tương tác thực tế</strong>: Chatbot tự học hỏi từ mỗi cuộc hội thoại, cải thiện độ chính xác và khả năng phản hồi theo thời gian dựa trên dữ liệu thực tế từ doanh nghiệp.</span>
+                    <span class="lang-en"><strong>Continuous machine learning system improving from real interactions</strong>: The chatbot learns from each conversation, enhancing its accuracy and responsiveness over time based on real enterprise data.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">2.3. Hệ thống tri thức</span>
+                <span class="lang-en">2.3. Knowledge System</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Hệ thống tri thức là nền tảng dữ liệu thông minh, cung cấp nguồn thông tin đáng tin cậy cho chatbot:</span>
+                <span class="lang-en">The knowledge system is an intelligent data foundation, providing reliable information sources for the chatbot:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Knowledge Graph chuyên sâu</strong>: Một sơ đồ tri thức được xây dựng để liên kết các thông tin trong doanh nghiệp theo mối quan hệ logic, giúp chatbot trả lời các câu hỏi phức tạp đòi hỏi sự kết nối dữ liệu.</span>
+                    <span class="lang-en"><strong>In-depth Knowledge Graph</strong>: A knowledge graph built to logically connect information within the enterprise, enabling the chatbot to answer complex questions requiring data linkage.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Cơ sở dữ liệu nghiệp vụ có cấu trúc</strong>: Lưu trữ thông tin về quy trình, chính sách và dữ liệu vận hành theo cách có tổ chức, dễ dàng truy xuất và cập nhật.</span>
+                    <span class="lang-en"><strong>Structured business database</strong>: Stores information on processes, policies, and operational data in an organized manner, making it easy to retrieve and update.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Kho tài liệu đa phương tiện</strong>: Bao gồm văn bản, hình ảnh, video hướng dẫn, tài liệu PDF, hỗ trợ chatbot cung cấp câu trả lời phong phú và trực quan hơn.</span>
+                    <span class="lang-en"><strong>Multimedia document repository</strong>: Includes text, images, instructional videos, and PDF documents, enabling the chatbot to provide richer and more visual responses.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Tính năng chính -->
+        <section>
+            <h2>
+                <span class="lang-vi">3. Tính năng chính</span>
+                <span class="lang-en">3. Key Features</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">3.1. Hỗ trợ đa kênh</span>
+                <span class="lang-en">3.1. Multi-Channel Support</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Chatbot được thiết kế để đáp ứng nhu cầu hỗ trợ đồng thời trên quy mô lớn:</span>
+                <span class="lang-en">The chatbot is designed to handle simultaneous support requests on a large scale:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Xử lý đồng thời 1000+ yêu cầu</strong>: Hệ thống đủ mạnh để phục vụ hàng nghìn nhân viên cùng lúc mà không bị gián đoạn, đảm bảo hiệu suất cao trong giờ cao điểm.</span>
+                    <span class="lang-en"><strong>Handles 1000+ simultaneous requests</strong>: The system is robust enough to serve thousands of employees at once without interruption, ensuring high performance during peak hours.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Duy trì ngữ cảnh xuyên suốt hội thoại</strong>: Chatbot ghi nhớ nội dung cuộc trò chuyện trước đó, cho phép nhân viên tiếp tục yêu cầu mà không cần lặp lại thông tin.</span>
+                    <span class="lang-en"><strong>Maintains context throughout conversations</strong>: The chatbot remembers previous conversation content, allowing employees to continue their requests without repeating information.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Chuyển tiếp thông minh đến bộ phận chuyên trách</strong>: Khi vấn đề vượt quá khả năng xử lý, chatbot tự động chuyển yêu cầu đến đúng bộ phận liên quan kèm theo thông tin ngữ cảnh, giúp tiết kiệm thời gian.</span>
+                    <span class="lang-en"><strong>Smart escalation to relevant departments</strong>: When an issue exceeds its handling capacity, the chatbot automatically forwards the request to the appropriate department with contextual information, saving time.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">3.2. Quản lý tri thức thế hệ mới</span>
+                <span class="lang-en">3.2. Next-Generation Knowledge Management</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Tính năng này nâng cao khả năng quản lý và khai thác tri thức trong doanh nghiệp:</span>
+                <span class="lang-en">This feature enhances the ability to manage and leverage knowledge within the enterprise:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Tự động cập nhật chính sách mới</strong>: Chatbot nhận diện và tích hợp các chính sách, quy định mới ngay khi được cập nhật, đảm bảo thông tin luôn chính xác và kịp thời.</span>
+                    <span class="lang-en"><strong>Automatic policy updates</strong>: The chatbot identifies and integrates new policies and regulations as soon as they are updated, ensuring information is always accurate and timely.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Phát hiện mâu thuẫn thông tin</strong>: Hệ thống tự động kiểm tra và cảnh báo nếu có sự không thống nhất giữa các nguồn dữ liệu, giúp duy trì tính nhất quán.</span>
+                    <span class="lang-en"><strong>Information conflict detection</strong>: The system automatically checks and alerts if there are inconsistencies between data sources, maintaining consistency.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Gợi ý hoàn thiện tài liệu</strong>: Dựa trên câu hỏi của nhân viên, chatbot có thể đề xuất bổ sung hoặc chỉnh sửa tài liệu nội bộ để cải thiện chất lượng thông tin.</span>
+                    <span class="lang-en"><strong>Document improvement suggestions</strong>: Based on employee queries, the chatbot can suggest additions or revisions to internal documents to enhance information quality.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">3.3. Phân tích chuyên sâu</span>
+                <span class="lang-en">3.3. In-Depth Analytics</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Chatbot không chỉ trả lời mà còn cung cấp thông tin chiến lược:</span>
+                <span class="lang-en">The chatbot not only responds but also provides strategic insights:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Bản đồ tri thức tổ chức</strong>: Cung cấp cái nhìn tổng quan về cách thông tin được sử dụng và liên kết trong doanh nghiệp, hỗ trợ lãnh đạo tối ưu hóa quản lý.</span>
+                    <span class="lang-en"><strong>Organizational knowledge map</strong>: Provides an overview of how information is used and interconnected within the enterprise, aiding leadership in optimizing management.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Phân tích nhu cầu đào tạo</strong>: Dựa trên các câu hỏi phổ biến, chatbot xác định những khoảng trống kiến thức của nhân viên, từ đó đề xuất chương trình đào tạo phù hợp.</span>
+                    <span class="lang-en"><strong>Training needs analysis</strong>: Based on common queries, the chatbot identifies knowledge gaps among employees, suggesting appropriate training programs.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Dự báo xu hướng hỏi đáp</strong>: Phân tích dữ liệu để dự đoán các vấn đề hoặc nhu cầu sắp tới, giúp doanh nghiệp chuẩn bị trước.</span>
+                    <span class="lang-en"><strong>Query trend forecasting</strong>: Analyzes data to predict upcoming issues or needs, helping the enterprise prepare in advance.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Quy trình xử lý thông minh -->
+        <section>
+            <h2>
+                <span class="lang-vi">4. Quy trình xử lý thông minh</span>
+                <span class="lang-en">4. Intelligent Processing Workflow</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">4.1. Nhận diện yêu cầu</span>
+                <span class="lang-en">4.1. Request Identification</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Quy trình bắt đầu bằng việc phân tích kỹ lưỡng yêu cầu của nhân viên:</span>
+                <span class="lang-en">The process begins with a thorough analysis of employee requests:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Phân tích đa chiều câu hỏi</strong>: Chatbot đánh giá câu hỏi từ nhiều góc độ (nội dung, ý định, mức độ khẩn cấp) để hiểu rõ ý định thực sự.</span>
+                    <span class="lang-en"><strong>Multi-dimensional question analysis</strong>: The chatbot evaluates questions from various angles (content, intent, urgency) to fully understand the true intent.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Xác định mức độ phức tạp</strong>: Phân loại câu hỏi từ đơn giản (tra cứu thông tin) đến phức tạp (giải quyết vấn đề đa bước), từ đó chọn cách xử lý phù hợp.</span>
+                    <span class="lang-en"><strong>Complexity assessment</strong>: Classifies questions from simple (information lookup) to complex (multi-step problem-solving), selecting the appropriate handling method.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Đánh giá ngữ cảnh người dùng</strong>: Xem xét vai trò, phòng ban và lịch sử tương tác của nhân viên để đưa ra câu trả lời phù hợp nhất.</span>
+                    <span class="lang-en"><strong>User context evaluation</strong>: Considers the employee’s role, department, and interaction history to provide the most relevant response.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">4.2. Xử lý nâng cao</span>
+                <span class="lang-en">4.2. Advanced Processing</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Chatbot thực hiện các bước xử lý thông minh để đảm bảo chất lượng phản hồi:</span>
+                <span class="lang-en">The chatbot performs intelligent processing steps to ensure response quality:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Truy vấn đa nguồn dữ liệu</strong>: Kết nối và tìm kiếm thông tin từ nhiều hệ thống (ERP, CRM, kho tài liệu) để có câu trả lời toàn diện.</span>
+                    <span class="lang-en"><strong>Multi-source data querying</strong>: Connects and searches information from various systems (ERP, CRM, document repository) for comprehensive responses.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Tổng hợp thông tin từ nhiều hệ thống</strong>: Gộp các dữ liệu rời rạc thành một câu trả lời mạch lạc, dễ hiểu.</span>
+                    <span class="lang-en"><strong>Information synthesis from multiple systems</strong>: Combines disparate data into a coherent, easy-to-understand response.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Kiểm tra tính nhất quán thông tin</strong>: Đảm bảo không có mâu thuẫn hoặc sai lệch trong nội dung cung cấp.</span>
+                    <span class="lang-en"><strong>Information consistency check</strong>: Ensures there are no contradictions or inaccuracies in the provided content.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">4.3. Tối ưu phản hồi</span>
+                <span class="lang-en">4.3. Response Optimization</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Phản hồi được tinh chỉnh để đạt hiệu quả tối đa:</span>
+                <span class="lang-en">Responses are refined to achieve maximum effectiveness:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Điều chỉnh phong cách giao tiếp</strong>: Chatbot thay đổi cách diễn đạt (ngắn gọn, chi tiết, thân thiện) tùy theo đối tượng người dùng.</span>
+                    <span class="lang-en"><strong>Communication style adjustment</strong>: The chatbot adapts its tone (concise, detailed, friendly) based on the user.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Cá nhân hóa nội dung</strong>: Đưa ra câu trả lời phù hợp với nhu cầu và vai trò cụ thể của từng nhân viên.</span>
+                    <span class="lang-en"><strong>Content personalization</strong>: Provides responses tailored to the specific needs and roles of each employee.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Đánh giá hiệu quả phản hồi</strong>: Thu thập phản hồi từ người dùng để cải thiện chất lượng trong tương lai.</span>
+                    <span class="lang-en"><strong>Response effectiveness evaluation</strong>: Collects user feedback to improve future response quality.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Hệ thống bảo mật đa lớp -->
+        <section>
+            <h2>
+                <span class="lang-vi">5. Hệ thống bảo mật đa lớp</span>
+                <span class="lang-en">5. Multi-Layer Security System</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">5.1. Kiểm soát truy cập</span>
+                <span class="lang-en">5.1. Access Control</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Đảm bảo chỉ những người được ủy quyền mới có thể sử dụng hệ thống:</span>
+                <span class="lang-en">Ensures that only authorized individuals can access the system:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Xác thực định danh đa yếu tố</strong>: Yêu cầu nhiều bước xác minh (mật khẩu, mã OTP, sinh trắc học) để tăng cường bảo mật.</span>
+                    <span class="lang-en"><strong>Multi-factor authentication</strong>: Requires multiple verification steps (password, OTP, biometrics) to enhance security.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Phân quyền chi tiết đến từng tính năng</strong>: Mỗi nhân viên chỉ truy cập được các thông tin và chức năng phù hợp với vai trò của họ.</span>
+                    <span class="lang-en"><strong>Detailed access permissions per feature</strong>: Each employee can only access information and features relevant to their role.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Ghi nhật ký hoạt động đầy đủ</strong>: Mọi hành động trong hệ thống đều được ghi lại để theo dõi và kiểm tra khi cần.</span>
+                    <span class="lang-en"><strong>Comprehensive activity logging</strong>: All actions within the system are recorded for monitoring and auditing as needed.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">5.2. Bảo vệ dữ liệu</span>
+                <span class="lang-en">5.2. Data Protection</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Dữ liệu nhạy cảm được bảo vệ ở mức cao nhất:</span>
+                <span class="lang-en">Sensitive data is protected at the highest level:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Mã hóa toàn bộ dữ liệu nhạy cảm</strong>: Thông tin được mã hóa cả khi lưu trữ và truyền tải, ngăn chặn rò rỉ.</span>
+                    <span class="lang-en"><strong>Full encryption of sensitive data</strong>: Information is encrypted both during storage and transmission, preventing leaks.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Cơ chế cách ly dữ liệu theo phòng ban</strong>: Đảm bảo dữ liệu của từng bộ phận không bị lẫn lộn hoặc truy cập trái phép.</span>
+                    <span class="lang-en"><strong>Data isolation mechanism by department</strong>: Ensures that data from each department is not mixed or accessed unauthorizedly.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Xóa dữ liệu tự động theo chính sách</strong>: Dữ liệu hết hạn hoặc không cần thiết sẽ được xóa tự động theo quy định của doanh nghiệp.</span>
+                    <span class="lang-en"><strong>Automatic data deletion per policy</strong>: Expired or unnecessary data is automatically deleted according to enterprise regulations.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Khả năng mở rộng -->
+        <section>
+            <h2>
+                <span class="lang-vi">6. Khả năng mở rộng</span>
+                <span class="lang-en">6. Scalability</span>
+            </h2>
+            <p>
+                <span class="lang-vi">Hệ thống được thiết kế để phát triển cùng doanh nghiệp:</span>
+                <span class="lang-en">The system is designed to grow with the enterprise:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Dễ dàng bổ sung module chuyên biệt</strong>: Có thể thêm các tính năng mới (như phân tích tài chính, hỗ trợ kỹ thuật) mà không cần làm lại toàn bộ hệ thống.</span>
+                    <span class="lang-en"><strong>Easy addition of specialized modules</strong>: New features (such as financial analysis, technical support) can be added without rebuilding the entire system.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Hỗ trợ tích hợp với hệ thống tương lai</strong>: Tương thích với các phần mềm hoặc công nghệ mới mà doanh nghiệp áp dụng sau này.</span>
+                    <span class="lang-en"><strong>Support for integration with future systems</strong>: Compatible with new software or technologies the enterprise adopts in the future.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Khả năng mở rộng không giới hạn người dùng</strong>: Hệ thống có thể phục vụ từ vài trăm đến hàng triệu nhân viên mà vẫn đảm bảo hiệu suất.</span>
+                    <span class="lang-en"><strong>Unlimited user scalability</strong>: The system can serve from a few hundred to millions of employees while maintaining performance.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Lợi ích chiến lược -->
+        <section>
+            <h2>
+                <span class="lang-vi">7. Lợi ích chiến lược</span>
+                <span class="lang-en">7. Strategic Benefits</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">7.1. Hiệu quả vận hành</span>
+                <span class="lang-en">7.1. Operational Efficiency</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Chatbot mang lại giá trị thực tế trong việc tối ưu hóa hoạt động:</span>
+                <span class="lang-en">The chatbot delivers tangible value in optimizing operations:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Giảm 70% thời gian xử lý thủ tục</strong>: Nhân viên không cần chờ đợi hoặc tìm kiếm thông tin thủ công, mọi thứ được giải quyết nhanh chóng qua chatbot.</span>
+                    <span class="lang-en"><strong>Reduces procedure processing time by 70%</strong>: Employees no longer need to wait or manually search for information, as everything is resolved quickly through the chatbot.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Tăng 50% năng suất nhân viên</strong>: Với sự hỗ trợ tức thời, nhân viên tập trung vào công việc chính thay vì các tác vụ lặp lại.</span>
+                    <span class="lang-en"><strong>Increases employee productivity by 50%</strong>: With immediate support, employees can focus on core tasks instead of repetitive ones.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Chuẩn hóa toàn bộ quy trình nội bộ</strong>: Đảm bảo mọi quy trình được thực hiện đồng bộ, giảm thiểu sai sót.</span>
+                    <span class="lang-en"><strong>Standardizes all internal processes</strong>: Ensures all processes are executed consistently, minimizing errors.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">7.2. Quản trị tri thức</span>
+                <span class="lang-en">7.2. Knowledge Management</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Hệ thống biến tri thức thành tài sản chiến lược:</span>
+                <span class="lang-en">The system transforms knowledge into a strategic asset:</span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Số hóa toàn bộ tài sản tri thức</strong>: Chuyển đổi tài liệu, kinh nghiệm và quy trình thành dữ liệu có thể truy cập dễ dàng.</span>
+                    <span class="lang-en"><strong>Digitizes all knowledge assets</strong>: Converts documents, experiences, and processes into easily accessible data.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Giảm thiểu rủi ro mất thông tin</strong>: Ngăn chặn việc thất thoát kiến thức khi nhân viên nghỉ việc hoặc tài liệu bị thất lạc.</span>
+                    <span class="lang-en"><strong>Minimizes the risk of information loss</strong>: Prevents knowledge loss when employees leave or documents are misplaced.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Tạo hệ sinh thái tri thức động</strong>: Xây dựng một môi trường mà tri thức được cập nhật, chia sẻ và phát triển liên tục.</span>
+                    <span class="lang-en"><strong>Creates a dynamic knowledge ecosystem</strong>: Builds an environment where knowledge is continuously updated, shared, and developed.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Chi phí triển khai -->
+        <section>
+            <h2>
+                <span class="lang-vi">8. Chi phí triển khai</span>
+                <span class="lang-en">8. Implementation Costs</span>
+            </h2>
+            <p>
+                <span class="lang-vi">Để triển khai và duy trì hệ thống chatbot nội bộ, doanh nghiệp cần đầu tư vào các hạng mục cụ thể, bao gồm khảo sát, phát triển, tích hợp, triển khai, cũng như hỗ trợ vận hành và nâng cấp hàng năm. Dưới đây là bảng chi tiết chi phí, được tính bằng đơn vị tiền tệ Việt Nam Đồng (VNĐ):</span>
+                <span class="lang-en">To implement and maintain the internal chatbot system, the enterprise needs to invest in specific components, including surveys, development, integration, deployment, as well as annual support and upgrades. Below is a detailed cost breakdown, calculated in Vietnamese Dong (VND):</span>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="lang-vi">HẠNG MỤC</span>
+                            <span class="lang-en">ITEM</span>
+                        </th>
+                        <th>
+                            <span class="lang-vi">MÔ TẢ CHI TIẾT</span>
+                            <span class="lang-en">DETAILED DESCRIPTION</span>
+                        </th>
+                        <th>
+                            <span class="lang-vi">THÀNH TIỀN (VNĐ)</span>
+                            <span class="lang-en">TOTAL COST (VND)</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. <span class="lang-vi">Phân tích hệ thống</span><span class="lang-en">System Analysis</span></td>
+                        <td><span class="lang-vi">Khảo sát nghiệp vụ, thiết kế luồng hội thoại, xây dựng tài liệu đặc tả</span><span class="lang-en">Business survey, conversation flow design, technical specification development</span></td>
+                        <td>5.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>2. <span class="lang-vi">Phát triển AI</span><span class="lang-en">AI Development</span></td>
+                        <td><span class="lang-vi">Engine xử lý ngôn ngữ, training 500+ câu hỏi, chế học máy</span><span class="lang-en">Language processing engine, training with 500+ questions, machine learning mode</span></td>
+                        <td>12.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>3. <span class="lang-vi">Giao diện</span><span class="lang-en">Interface</span></td>
+                        <td><span class="lang-vi">Web portal + widget chat tích hợp</span><span class="lang-en">Web portal + integrated chat widget</span></td>
+                        <td>8.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>4. <span class="lang-vi">Tri thức</span><span class="lang-en">Knowledge</span></td>
+                        <td><span class="lang-vi">Xây dựng Knowledge Graph, quản lý 200+ tài liệu</span><span class="lang-en">Knowledge Graph development, management of 200+ documents</span></td>
+                        <td>6.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>5. <span class="lang-vi">Triển khai</span><span class="lang-en">Deployment</span></td>
+                        <td><span class="lang-vi">Cấu hình hệ thống, tích hợp bảo mật</span><span class="lang-en">System configuration, security integration</span></td>
+                        <td>4.000.000</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="2"><span class="lang-vi">TỔNG CỘNG (CHI PHÍ TRIỂN KHAI BAN ĐẦU)</span><span class="lang-en">TOTAL (INITIAL IMPLEMENTATION COST)</span></td>
+                        <td>35.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>6. <span class="lang-vi">Hỗ trợ vận hành và nâng cấp hàng năm</span><span class="lang-en">Annual Support and Upgrade</span></td>
+                        <td><span class="lang-vi">Bảo trì hệ thống, cập nhật tính năng, hỗ trợ kỹ thuật 24/7 hàng năm</span><span class="lang-en">System maintenance, feature updates, 24/7 technical support annually</span></td>
+                        <td>10.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                <span class="lang-vi">Diễn giải chi tiết chi phí:</span>
+                <span class="lang-en">Detailed Cost Breakdown:</span>
+            </h3>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Phân tích hệ thống (5.000.000 VNĐ)</strong>: Giai đoạn này bao gồm việc khảo sát chi tiết các quy trình và nghiệp vụ của doanh nghiệp, từ đó thiết kế luồng hội thoại phù hợp với nhu cầu thực tế. Đội ngũ chuyên gia sẽ xây dựng tài liệu đặc tả kỹ thuật, làm nền tảng cho các bước phát triển tiếp theo.</span>
+                    <span class="lang-en"><strong>System Analysis (5,000,000 VND)</strong>: This phase involves a detailed survey of the enterprise’s processes and operations, designing conversation flows that meet real-world needs. The expert team will develop technical specifications as a foundation for subsequent development steps.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Phát triển AI (12.000.000 VNĐ)</strong>: Đây là hạng mục quan trọng nhất, tập trung vào việc xây dựng engine xử lý ngôn ngữ tiếng Việt, huấn luyện hệ thống với hơn 500 câu hỏi mẫu và tích hợp chế độ học máy để chatbot tự cải thiện theo thời gian. Chi phí này phản ánh độ phức tạp và mức độ tùy chỉnh cao của lõi AI.</span>
+                    <span class="lang-en"><strong>AI Development (12,000,000 VND)</strong>: This is the most critical component, focusing on building a Vietnamese language processing engine, training the system with over 500 sample questions, and integrating machine learning to allow the chatbot to improve over time. This cost reflects the complexity and high level of customization of the AI core.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Giao diện (8.000.000 VNĐ)</strong>: Bao gồm việc phát triển giao diện web responsive tích hợp vào portal nội bộ và widget chat nhúng vào các hệ thống hiện có. Giao diện được thiết kế để đảm bảo tính thân thiện, dễ sử dụng và tương thích với nhiều thiết bị.</span>
+                    <span class="lang-en"><strong>Interface (8,000,000 VND)</strong>: Includes the development of a responsive web interface integrated into the internal portal and a chat widget embedded in existing systems. The interface is designed to be user-friendly, easy to use, and compatible with various devices.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Tri thức (6.000.000 VNĐ)</strong>: Hạng mục này bao gồm việc xây dựng Knowledge Graph chuyên sâu và quản lý hơn 200 tài liệu nội bộ. Chi phí phản ánh công sức tổ chức, số hóa và liên kết dữ liệu để tạo ra một hệ thống tri thức thông minh, dễ truy cập.</span>
+                    <span class="lang-en"><strong>Knowledge (6,000,000 VND)</strong>: This component involves building an in-depth Knowledge Graph and managing over 200 internal documents. The cost reflects the effort to organize, digitize, and link data to create an intelligent, accessible knowledge system.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Triển khai (4.000.000 VNĐ)</strong>: Giai đoạn cuối cùng của triển khai ban đầu bao gồm việc cấu hình hệ thống, tích hợp các tính năng bảo mật đa lớp và kiểm tra vận hành trước khi đưa vào sử dụng chính thức. Chi phí này đảm bảo hệ thống hoạt động ổn định và an toàn.</span>
+                    <span class="lang-en"><strong>Deployment (4,000,000 VND)</strong>: The final phase of initial deployment includes system configuration, integration of multi-layer security features, and operational testing before official use. This cost ensures the system operates stably and securely.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Hỗ trợ vận hành và nâng cấp hàng năm (10.000.000 VNĐ/năm)</strong>: Sau khi triển khai, hệ thống cần được duy trì và nâng cấp định kỳ để đảm bảo hoạt động ổn định và đáp ứng các yêu cầu mới. Chi phí này bao gồm: bảo trì hệ thống (xử lý lỗi, tối ưu hiệu suất), cập nhật tính năng (thêm module mới, cải tiến AI), và hỗ trợ kỹ thuật 24/7 để giải quyết các vấn đề phát sinh. Đây là khoản chi phí hàng năm, giúp hệ thống luôn hoạt động hiệu quả và bắt kịp với sự thay đổi của doanh nghiệp.</span>
+                    <span class="lang-en"><strong>Annual Support and Upgrade (10,000,000 VND/year)</strong>: After deployment, the system requires regular maintenance and upgrades to ensure stable operation and meet new requirements. This cost includes system maintenance (bug fixing, performance optimization), feature updates (adding new modules, AI improvements), and 24/7 technical support to address any issues. This is an annual fee, ensuring the system remains efficient and keeps up with the enterprise’s evolving needs.</span>
+                </li>
+            </ul>
+            <p>
+                <span class="lang-vi">Tổng chi phí triển khai ban đầu là <strong>35.000.000 VNĐ</strong>. Ngoài ra, doanh nghiệp cần dự trù thêm <strong>10.000.000 VNĐ mỗi năm</strong> cho việc hỗ trợ vận hành và nâng cấp hệ thống, đảm bảo chatbot luôn hoạt động tối ưu và đáp ứng nhu cầu phát triển của tổ chức.</span>
+                <span class="lang-en">The total initial implementation cost is <strong>35,000,000 VND</strong>. Additionally, the enterprise should budget an extra <strong>10,000,000 VND per year</strong> for system support and upgrades, ensuring the chatbot remains optimal and meets the organization’s growing needs.</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <span class="lang-vi">© 2025 Hệ Thống Chatbot Nội Bộ Doanh Nghiệp</span>
+                <span class="lang-en">© 2025 Enterprise Internal Chatbot System</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-vi').forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+            document.documentElement.lang = lang;
+        }
+
+        // Default language: Vietnamese
+        switchLanguage('vi');
+    </script>
+</body>
+</html>
