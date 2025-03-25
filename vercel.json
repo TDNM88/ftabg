@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/smartflow/(.*)",
+      "destination": "/smartflow/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ]
+}
