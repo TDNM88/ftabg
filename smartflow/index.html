@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFlow AI - AI Quy Trình Thông Minh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="title">
+                <span class="lang-vi">SmartFlow AI - AI Quy Trình Thông Minh</span>
+                <span class="lang-en">SmartFlow AI - Intelligent Workflow Solution</span>
+            </h1>
+            <div class="language-switcher">
+                <button onclick="switchLanguage('vi')">Tiếng Việt</button>
+                <button onclick="switchLanguage('en')">English</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Tổng quan về dịch vụ -->
+        <section>
+            <h2>
+                <span class="lang-vi">1. Tổng quan về dịch vụ</span>
+                <span class="lang-en">1. Service Overview</span>
+            </h2>
+            <p>
+                <span class="lang-vi"><strong>SmartFlow AI</strong> là một dịch vụ công nghệ tiên tiến, được thiết kế để tối ưu hóa quy trình làm việc của doanh nghiệp thông qua việc tự động hóa xử lý tài liệu. Dịch vụ này sử dụng trí tuệ nhân tạo (AI) với các công nghệ như OCR (Tesseract), Computer Vision, và mô hình NLP (`layoutlmv3` từ Hugging Face) để trích xuất thông tin quan trọng (như số hóa đơn, ngày tháng, số tiền) từ hình ảnh tài liệu, sau đó chuyển đổi thành dữ liệu có cấu trúc (JSON) để tích hợp vào các hệ thống kế toán hoặc ERP. Điểm nổi bật của SmartFlow AI là khả năng triển khai hoàn toàn local (on-premises), đảm bảo dữ liệu nhạy cảm của doanh nghiệp được bảo mật tuyệt đối và không phụ thuộc vào các dịch vụ đám mây bên ngoài. SmartFlow AI giúp doanh nghiệp tiết kiệm thời gian, giảm sai sót và nâng cao hiệu quả vận hành.</span>
+                <span class="lang-en"><strong>SmartFlow AI</strong> is an advanced technological service designed to optimize enterprise workflows by automating document processing. This service leverages artificial intelligence (AI) with technologies such as OCR (Tesseract), Computer Vision, and an NLP model (`layoutlmv3` from Hugging Face) to extract key information (such as invoice number, date, and amount) from document images, then converts it into structured data (JSON) for integration into accounting or ERP systems. A key highlight of SmartFlow AI is its ability to be deployed entirely on-premises, ensuring that sensitive enterprise data remains fully secure and independent of external cloud services. SmartFlow AI helps enterprises save time, reduce errors, and enhance operational efficiency.</span>
+            </p>
+        </section>
+
+        <!-- Kiến trúc hệ thống -->
+        <section>
+            <h2>
+                <span class="lang-vi">2. Kiến trúc hệ thống</span>
+                <span class="lang-en">2. System Architecture</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">2.1. Giao diện người dùng</span>
+                <span class="lang-en">2.1. User Interface</span>
+            </h3>
+            <p>
+                <span class="lang-vi"></span>
+                <span class="lang-en"></span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Giao diện Gradio thân thiện</strong>: SmartFlow AI cung cấp một giao diện web đơn giản, cho phép người dùng tải lên hình ảnh tài liệu (hóa đơn, chứng từ) và xem kết quả trích xuất ngay lập tức.</span>
+                    <span class="lang-en"><strong>User-Friendly Gradio Interface</strong>: SmartFlow AI provides a simple web interface, allowing users to upload document images (invoices, receipts) and view extracted results instantly.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Hỗ trợ đa thiết bị</strong>: Giao diện được thiết kế responsive, hoạt động tốt trên cả máy tính và thiết bị di động, ngay cả khi triển khai local.</span>
+                    <span class="lang-en"><strong>Multi-Device Support</strong>: The interface is designed to be responsive, working seamlessly on both desktop and mobile devices, even when deployed on-premises.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">2.2. Lõi công nghệ</span>
+                <span class="lang-en">2.2. Core Technology</span>
+            </h3>
+            <p>
+                <span class="lang-vi"></span>
+                <span class="lang-en"></span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>OCR (Tesseract)</strong>: Sử dụng Tesseract OCR để trích xuất văn bản từ hình ảnh tài liệu, đảm bảo độ chính xác cao ngay cả với hình ảnh chất lượng thấp.</span>
+                    <span class="lang-en"><strong>OCR (Tesseract)</strong>: Utilizes Tesseract OCR to extract text from document images, ensuring high accuracy even with low-quality images.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Computer Vision</strong>: Áp dụng các thuật toán thị giác máy tính để phân tích bố cục tài liệu, nhận diện các khu vực chứa thông tin quan trọng (bảng biểu, chữ ký, con dấu).</span>
+                    <span class="lang-en"><strong>Computer Vision</strong>: Employs computer vision algorithms to analyze document layouts, identifying key information areas (tables, signatures, stamps).</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>NLP (`layoutlmv3`)</strong>: Sử dụng mô hình `layoutlmv3` từ Hugging Face để hiểu ngữ nghĩa của dữ liệu trích xuất, nhận diện các thực thể như số hóa đơn, ngày tháng, số tiền.</span>
+                    <span class="lang-en"><strong>NLP (`layoutlmv3`)</strong>: Uses the `layoutlmv3` model from Hugging Face to understand the semantics of extracted data, identifying entities such as invoice number, date, and amount.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Triển khai local</strong>: Toàn bộ lõi công nghệ được triển khai trên máy chủ nội bộ của doanh nghiệp, đảm bảo không có dữ liệu nào được gửi ra bên ngoài.</span>
+                    <span class="lang-en"><strong>On-Premises Deployment</strong>: The entire core technology is deployed on the enterprise’s internal servers, ensuring no data is sent externally.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">2.3. Hệ thống dữ liệu</span>
+                <span class="lang-en">2.3. Data System</span>
+            </h3>
+            <p>
+                <span class="lang-vi"></span>
+                <span class="lang-en"></span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Dữ liệu có cấu trúc (JSON)</strong>: Dữ liệu trích xuất được lưu dưới dạng JSON, dễ dàng tích hợp với các hệ thống khác trong môi trường nội bộ.</span>
+                    <span class="lang-en"><strong>Structured Data (JSON)</strong>: Extracted data is stored in JSON format, making it easy to integrate with other systems within the internal environment.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Lưu trữ hình ảnh gốc</strong>: Hình ảnh tài liệu gốc được lưu trữ trên máy chủ local, đảm bảo an toàn dữ liệu và dễ dàng truy cập để tham chiếu hoặc kiểm tra lại khi cần.</span>
+                    <span class="lang-en"><strong>Original Image Storage</strong>: Original document images are stored on the local server, ensuring data security and easy access for reference or verification as needed.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Tính năng chính -->
+        <section>
+            <h2>
+                <span class="lang-vi">3. Tính năng chính</span>
+                <span class="lang-en">3. Key Features</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">3.1. Trích xuất thông tin tự động</span>
+                <span class="lang-en">3.1. Automatic Information Extraction</span>
+            </h3>
+            <p>
+                <span class="lang-vi"></span>
+                <span class="lang-en"></span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Hỗ trợ hình ảnh tài liệu</strong>: Xử lý hình ảnh hóa đơn, chứng từ hoặc tài liệu scan với độ chính xác cao.</span>
+                    <span class="lang-en"><strong>Document Image Support</strong>: Processes images of invoices, receipts, or scanned documents with high accuracy.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Nhận diện thông tin quan trọng</strong>: Tự động trích xuất các trường thông tin như số hóa đơn, ngày tháng, số tiền, tên công ty, địa chỉ.</span>
+                    <span class="lang-en"><strong>Key Information Identification</strong>: Automatically extracts fields such as invoice number, date, amount, company name, and address.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Chuyển đổi dữ liệu có cấu trúc</strong>: Chuyển đổi thông tin trích xuất thành định dạng JSON để sử dụng trong các hệ thống nội bộ.</span>
+                    <span class="lang-en"><strong>Structured Data Conversion</strong>: Converts extracted information into JSON format for use in internal systems.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">3.2. Tích hợp và mở rộng</span>
+                <span class="lang-en">3.2. Integration and Scalability</span>
+            </h3>
+            <p>
+                <span class="lang-vi"></span>
+                <span class="lang-en"></span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Tích hợp với hệ thống kế toán/ERP nội bộ</strong>: Dữ liệu trích xuất có thể được đẩy trực tiếp vào các phần mềm kế toán hoặc ERP trong môi trường local thông qua API.</span>
+                    <span class="lang-en"><strong>Integration with Internal Accounting/ERP Systems</strong>: Extracted data can be directly pushed into accounting or ERP software within the local environment via API.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Khả năng mở rộng</strong>: SmartFlow AI có thể được huấn luyện thêm để xử lý các loại tài liệu mới (hóa đơn, hợp đồng, chứng từ) mà không cần kết nối internet.</span>
+                    <span class="lang-en"><strong>Scalability</strong>: SmartFlow AI can be further trained to handle new document types (invoices, contracts, receipts) without requiring an internet connection.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Tùy chỉnh quy trình trích xuất</strong>: Doanh nghiệp có thể tùy chỉnh các trường thông tin cần trích xuất theo nhu cầu, tất cả được thực hiện trên hệ thống nội bộ.</span>
+                    <span class="lang-en"><strong>Customizable Extraction Process</strong>: Enterprises can customize the fields to be extracted based on their needs, all within the internal system.</span>
+                </li>
+            </ul>
+
+            <h3>
+                <span class="lang-vi">3.3. Triển khai hoàn toàn local</span>
+                <span class="lang-en">3.3. Fully On-Premises Deployment</span>
+            </h3>
+            <p>
+                <span class="lang-vi"></span>
+                <span class="lang-en"></span>
+            </p>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Bảo mật dữ liệu tuyệt đối</strong>: SmartFlow AI được triển khai hoàn toàn trên máy chủ nội bộ, không yêu cầu kết nối internet, đảm bảo dữ liệu nhạy cảm (hóa đơn, chứng từ) không rời khỏi hệ thống của doanh nghiệp.</span>
+                    <span class="lang-en"><strong>Absolute Data Security</strong>: SmartFlow AI is deployed entirely on-premises, requiring no internet connection, ensuring that sensitive data (invoices, receipts) never leaves the enterprise’s system.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Kiểm soát toàn diện</strong>: Doanh nghiệp có toàn quyền kiểm soát dữ liệu và hệ thống, không phụ thuộc vào các nhà cung cấp dịch vụ đám mây.</span>
+                    <span class="lang-en"><strong>Complete Control</strong>: Enterprises have full control over their data and system, independent of cloud service providers.</span>
+                </li>
+                <li>
+                    <span class="lang-vi"><strong>Hoạt động độc lập</strong>: Dịch vụ hoạt động ổn định trong môi trường không có internet, phù hợp với các doanh nghiệp có yêu cầu bảo mật cao.</span>
+                    <span class="lang-en"><strong>Independent Operation</strong>: The service operates reliably in offline environments, making it ideal for enterprises with high security requirements.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Lợi ích của AI trong cải thiện hiệu suất -->
+        <section>
+            <h2>
+                <span class="lang-vi">4. Lợi ích của AI trong cải thiện hiệu suất</span>
+                <span class="lang-en">4. Benefits of AI in Improving Efficiency</span>
+            </h2>
+            <h3>
+                <span class="lang-vi">4.1. Tự động hóa quy trình</span>
+                <span class="lang-en">4.1. Process Automation</span>
+            </h3>
+            <p>
+                <span class="lang-vi">SmartFlow AI tự động trích xuất thông tin trong 5-10 giây mỗi tài liệu, tăng hiệu suất lên 30-60 lần so với nhập liệu thủ công (mất 5 phút mỗi tài liệu). Điều này giúp doanh nghiệp xử lý hàng trăm tài liệu mỗi ngày mà không cần thêm nhân lực, ngay cả trong môi trường local.</span>
+                <span class="lang-en">SmartFlow AI automatically extracts information in 5-10 seconds per document, improving efficiency by 30-60 times compared to manual entry (which takes 5 minutes per document). This allows enterprises to process hundreds of documents daily without additional manpower, even in an on-premises environment.</span>
+            </p>
+
+            <h3>
+                <span class="lang-vi">4.2. Cải thiện độ chính xác</span>
+                <span class="lang-en">4.2. Improved Accuracy</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Nhờ OCR thông minh và mô hình NLP (`layoutlmv3`), SmartFlow AI đạt độ chính xác 95%, giảm thiểu sai sót so với phương pháp truyền thống (thường chỉ đạt 80-85% khi nhập liệu thủ công).</span>
+                <span class="lang-en">With smart OCR and the NLP model (`layoutlmv3`), SmartFlow AI achieves 95% accuracy, minimizing errors compared to traditional methods (which typically achieve 80-85% accuracy with manual entry).</span>
+            </p>
+
+            <h3>
+                <span class="lang-vi">4.3. Xử lý dữ liệu phức tạp</span>
+                <span class="lang-en">4.3. Complex Data Processing</span>
+            </h3>
+            <p>
+                <span class="lang-vi">AI phân tích bố cục tài liệu, nhận diện các khu vực chứa thông tin quan trọng (bảng biểu, chữ ký, con dấu), và chuyển đổi thành dữ liệu có cấu trúc (JSON), giúp dữ liệu dễ dàng được sử dụng trong các hệ thống nội bộ.</span>
+                <span class="lang-en">AI analyzes document layouts, identifies key information areas (tables, signatures, stamps), and converts them into structured data (JSON), making the data easily usable in internal systems.</span>
+            </p>
+
+            <h3>
+                <span class="lang-vi">4.4. Khả năng mở rộng</span>
+                <span class="lang-en">4.4. Scalability</span>
+            </h3>
+            <p>
+                <span class="lang-vi">SmartFlow AI có thể được huấn luyện thêm để xử lý các loại tài liệu mới và tích hợp vào các hệ thống lớn hơn trong môi trường local thông qua API, đảm bảo tính linh hoạt và khả năng phát triển cùng doanh nghiệp mà không cần kết nối internet.</span>
+                <span class="lang-en">SmartFlow AI can be further trained to handle new document types and integrated into larger systems within the local environment via API, ensuring flexibility and scalability as the enterprise grows, without requiring an internet connection.</span>
+            </p>
+
+            <h3>
+                <span class="lang-vi">4.5. Bảo mật và kiểm soát dữ liệu</span>
+                <span class="lang-en">4.5. Data Security and Control</span>
+            </h3>
+            <p>
+                <span class="lang-vi">Với khả năng triển khai hoàn toàn local, SmartFlow AI đảm bảo dữ liệu nhạy cảm của doanh nghiệp được bảo vệ tuyệt đối, không có rủi ro rò rỉ dữ liệu qua các dịch vụ đám mây. Doanh nghiệp có thể yên tâm kiểm soát toàn bộ quy trình xử lý tài liệu trong hệ thống nội bộ.</span>
+                <span class="lang-en">With its fully on-premises deployment capability, SmartFlow AI ensures that sensitive enterprise data is completely secure, eliminating the risk of data leaks through cloud services. Enterprises can confidently control the entire document processing workflow within their internal system.</span>
+            </p>
+        </section>
+
+        <!-- Chi phí triển khai dịch vụ -->
+        <section>
+            <h2>
+                <span class="lang-vi">5. Chi phí triển khai dịch vụ</span>
+                <span class="lang-en">5. Service Implementation Costs</span>
+            </h2>
+            <p>
+                <span class="lang-vi">Dưới đây là bảng chi phí triển khai cho dịch vụ <strong>SmartFlow AI</strong>:</span>
+                <span class="lang-en">Below is the cost breakdown for implementing the <strong>SmartFlow AI</strong> service:</span>
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="lang-vi">HẠNG MỤC</span>
+                            <span class="lang-en">ITEM</span>
+                        </th>
+                        <th>
+                            <span class="lang-vi">MÔ TẢ CHI TIẾT</span>
+                            <span class="lang-en">DETAILED DESCRIPTION</span>
+                        </th>
+                        <th>
+                            <span class="lang-vi">THÀNH TIỀN (VNĐ)</span>
+                            <span class="lang-en">TOTAL COST (VND)</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="lang-vi">Triển khai dịch vụ</span><span class="lang-en">Service Implementation</span></td>
+                        <td><span class="lang-vi">Phát triển và tích hợp dịch vụ SmartFlow AI để trích xuất thông tin từ hóa đơn/chứng từ (triển khai local)</span><span class="lang-en">Development and integration of the SmartFlow AI service for extracting information from invoices/receipts (on-premises deployment)</span></td>
+                        <td>5.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>
+                <span class="lang-vi">Diễn giải chi tiết chi phí:</span>
+                <span class="lang-en">Detailed Cost Breakdown:</span>
+            </h3>
+            <ul>
+                <li>
+                    <span class="lang-vi"><strong>Triển khai dịch vụ (5.000.000 VNĐ)</strong>: Chi phí này bao gồm việc phát triển ứng dụng Gradio, tích hợp các công nghệ AI (OCR, Computer Vision, NLP), và triển khai dịch vụ trên máy chủ nội bộ của doanh nghiệp. Dịch vụ này có thể được tùy chỉnh để phù hợp với nhu cầu cụ thể, ví dụ: trích xuất thông tin từ hóa đơn, hợp đồng, hoặc chứng từ, tất cả được thực hiện trong môi trường local để đảm bảo bảo mật.</span>
+                    <span class="lang-en"><strong>Service Implementation (5,000,000 VND)</strong>: This cost includes developing the Gradio application, integrating AI technologies (OCR, Computer Vision, NLP), and deploying the service on the enterprise’s internal servers. The service can be customized to meet specific needs, such as extracting information from invoices, contracts, or receipts, all within a local environment to ensure security.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                <span class="lang-vi">© 2025 SmartFlow AI - AI Quy Trình Thông Minh</span>
+                <span class="lang-en">© 2025 SmartFlow AI - Intelligent Workflow Solution</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.lang-vi').forEach(el => el.style.display = lang === 'vi' ? 'block' : 'none');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+            document.documentElement.lang = lang;
+        }
+
+        // Default language: Vietnamese
+        switchLanguage('vi');
+    </script>
+</body>
+</html>
