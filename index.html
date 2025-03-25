@@ -63,57 +63,131 @@
                 <span class="lang-vi">2.2. Lõi AI</span>
                 <span class="lang-en">2.2. AI Core</span>
             </h3>
-            <p>
-                <span class="lang-vi">Trái tim của hệ thống là lõi trí tuệ nhân tạo (AI) được xây dựng để xử lý ngôn ngữ và tương tác thông minh:</span>
-                <span class="lang-en">The heart of the system is the artificial intelligence (AI) core, built to handle language processing and intelligent interactions:</span>
-            </p>
-            <ul>
-                <li>
-                    <span class="lang-vi"><strong>Engine xử lý ngôn ngữ tiếng Việt đa tầng</strong>: </span>
-                    <span class="lang-en"><strong>Multi-layer Vietnamese language processing engine</strong>: </span>
-                    <ul>
-                        <li>
-                            <span class="lang-vi"><strong>Xử lý từ vựng nghiệp vụ chuyên ngành</strong>: Hệ thống nhận diện và hiểu các thuật ngữ đặc thù của doanh nghiệp, từ đó đưa ra phản hồi phù hợp với lĩnh vực hoạt động (ví dụ: tài chính, y tế, sản xuất).</span>
-                            <span class="lang-en"><strong>Processing industry-specific terminology</strong>: The system recognizes and understands enterprise-specific terms, providing responses tailored to the industry (e.g., finance, healthcare, manufacturing).</span>
-                        </li>
-                        <li>
-                            <span class="lang-vi"><strong>Hiểu ngữ cảnh hội thoại phức tạp</strong>: Chatbot không chỉ trả lời từng câu hỏi đơn lẻ mà có thể duy trì và phân tích ngữ cảnh qua nhiều lượt trò chuyện, đảm bảo tính liên tục và logic.</span>
-                            <span class="lang-en"><strong>Understanding complex conversation contexts</strong>: The chatbot not only responds to individual questions but can maintain and analyze context across multiple conversation turns, ensuring continuity and logic.</span>
-                        </li>
-                        <li>
-                            <span class="lang-vi"><strong>Nhận diện giọng nói (tuỳ chọn)</strong>: Tính năng bổ sung cho phép nhân viên giao tiếp bằng giọng nói, hữu ích trong các tình huống cần thao tác rảnh tay hoặc hỗ trợ người dùng không quen nhập liệu.</span>
-                            <span class="lang-en"><strong>Voice recognition (optional)</strong>: An additional feature that allows employees to interact via voice, useful in hands-free scenarios or for users unfamiliar with typing.</span>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <span class="lang-vi"><strong>Hệ thống học máy liên tục cải thiện từ tương tác thực tế</strong>: Chatbot tự học hỏi từ mỗi cuộc hội thoại, cải thiện độ chính xác và khả năng phản hồi theo thời gian dựa trên dữ liệu thực tế từ doanh nghiệp.</span>
-                    <span class="lang-en"><strong>Continuous machine learning system improving from real interactions</strong>: The chatbot learns from each conversation, enhancing its accuracy and responsiveness over time based on real enterprise data.</span>
-                </li>
-            </ul>
+            <h3>Tùy chọn 1: LLaMA (13B) / Option 1: LLaMA (13B)</h3>
+    <p><strong>VN:</strong> <strong>Mô tả:</strong> LLaMA (Large Language Model Meta AI), phiên bản 13 tỷ tham số (13B), là mô hình mã nguồn mở từ Meta AI, nổi tiếng với hiệu quả và khả năng xử lý ngôn ngữ tự nhiên.</p>
+    <p><strong>EN:</strong> <strong>Description:</strong> LLaMA (Large Language Model Meta AI), version with 13 billion parameters (13B), is an open-source model from Meta AI, renowned for its efficiency and natural language processing capabilities.</p>
+    <p><strong>VN:</strong> <strong>Cách đáp ứng các nhiệm vụ:</strong></p>
+    <p><strong>EN:</strong> <strong>How it meets the tasks:</strong></p>
+    <ul>
+        <li><strong>VN:</strong> <strong>Xử lý từ vựng nghiệp vụ chuyên ngành:</strong> Hiểu ngữ nghĩa sâu nhờ kiến trúc Transformer, dễ huấn luyện với dữ liệu doanh nghiệp để nhận diện thuật ngữ đặc thù (tài chính, y tế, sản xuất).</li>
+        <li><strong>EN:</strong> <strong>Processing industry-specific vocabulary:</strong> Deep semantic understanding thanks to Transformer architecture, easily trainable with enterprise data to recognize specialized terms (finance, healthcare, manufacturing).</li>
+        <li><strong>VN:</strong> <strong>Hiểu ngữ cảnh hội thoại phức tạp:</strong> Duy trì ngữ cảnh dài qua nhiều lượt trò chuyện, hỗ trợ các tác vụ đa bước.</li>
+        <li><strong>EN:</strong> <strong>Understanding complex conversational context:</strong> Maintains long context across multiple conversation turns, supporting multi-step tasks.</li>
+        <li><strong>VN:</strong> <strong>Nhận diện input bằng giọng nói:</strong> Kết hợp với mô-đun speech-to-text (như Whisper) để xử lý input giọng nói thành văn bản, sau đó trả lời như bình thường.</li>
+        <li><strong>EN:</strong> <strong>Voice input recognition:</strong> Integrates with a speech-to-text module (e.g., Whisper) to process voice input into text, then responds as usual.</li>
+        <li><strong>VN:</strong> <strong>Học máy liên tục:</strong> Hỗ trợ finetuning định kỳ hoặc online learning để cải thiện dựa trên tương tác thực tế.</li>
+        <li><strong>EN:</strong> <strong>Continuous machine learning:</strong> Supports periodic finetuning or online learning to improve based on real interactions.</li>
+    </ul>
+    <p><strong>VN:</strong> <strong>Ưu điểm:</strong> Hiệu quả tài nguyên, tạo phản hồi tự nhiên, dễ tích hợp trên giao diện web và widget.</p>
+    <p><strong>EN:</strong> <strong>Advantages:</strong> Resource-efficient, generates natural responses, easily integrates with web interfaces and widgets.</p>
+    <p><strong>VN:</strong> <strong>Hạn chế:</strong> Cần huấn luyện ban đầu để tối ưu cho dữ liệu doanh nghiệp.</p>
+    <p><strong>EN:</strong> <strong>Limitations:</strong> Requires initial training to optimize for enterprise data.</p>
 
-            <h3>
-                <span class="lang-vi">2.3. Hệ thống tri thức</span>
-                <span class="lang-en">2.3. Knowledge System</span>
-            </h3>
-            <p>
-                <span class="lang-vi">Hệ thống tri thức là nền tảng dữ liệu thông minh, cung cấp nguồn thông tin đáng tin cậy cho chatbot:</span>
-                <span class="lang-en">The knowledge system is an intelligent data foundation, providing reliable information sources for the chatbot:</span>
-            </p>
-            <ul>
-                <li>
-                    <span class="lang-vi"><strong>Knowledge Graph chuyên sâu</strong>: Một sơ đồ tri thức được xây dựng để liên kết các thông tin trong doanh nghiệp theo mối quan hệ logic, giúp chatbot trả lời các câu hỏi phức tạp đòi hỏi sự kết nối dữ liệu.</span>
-                    <span class="lang-en"><strong>In-depth Knowledge Graph</strong>: A knowledge graph built to logically connect information within the enterprise, enabling the chatbot to answer complex questions requiring data linkage.</span>
-                </li>
-                <li>
-                    <span class="lang-vi"><strong>Cơ sở dữ liệu nghiệp vụ có cấu trúc</strong>: Lưu trữ thông tin về quy trình, chính sách và dữ liệu vận hành theo cách có tổ chức, dễ dàng truy xuất và cập nhật.</span>
-                    <span class="lang-en"><strong>Structured business database</strong>: Stores information on processes, policies, and operational data in an organized manner, making it easy to retrieve and update.</span>
-                </li>
-                <li>
-                    <span class="lang-vi"><strong>Kho tài liệu đa phương tiện</strong>: Bao gồm văn bản, hình ảnh, video hướng dẫn, tài liệu PDF, hỗ trợ chatbot cung cấp câu trả lời phong phú và trực quan hơn.</span>
-                    <span class="lang-en"><strong>Multimedia document repository</strong>: Includes text, images, instructional videos, and PDF documents, enabling the chatbot to provide richer and more visual responses.</span>
-                </li>
-            </ul>
+    <h3>Tùy chọn 2: GPT-Neo (2.7B) / Option 2: GPT-Neo (2.7B)</h3>
+    <p><strong>VN:</strong> <strong>Mô tả:</strong> GPT-Neo (2.7 tỷ tham số), phát triển bởi EleutherAI, là mô hình mã nguồn mở dựa trên kiến trúc GPT, được biết đến với khả năng sinh ngôn ngữ linh hoạt.</p>
+    <p><strong>EN:</strong> <strong>Description:</strong> GPT-Neo (2.7 billion parameters), developed by EleutherAI, is an open-source model based on the GPT architecture, known for its flexible language generation.</p>
+    <p><strong>VN:</strong> <strong>Cách đáp ứng các nhiệm vụ:</strong></p>
+    <p><strong>EN:</strong> <strong>How it meets the tasks:</strong></p>
+    <ul>
+        <li><strong>VN:</strong> <strong>Xử lý từ vựng nghiệp vụ chuyên ngành:</strong> Học từ vựng đặc thù qua huấn luyện với dữ liệu doanh nghiệp, dù không mạnh bằng các mô hình bidirectional.</li>
+        <li><strong>EN:</strong> <strong>Processing industry-specific vocabulary:</strong> Learns specialized vocabulary through training with enterprise data, though less robust than bidirectional models.</li>
+        <li><strong>VN:</strong> <strong>Hiểu ngữ cảnh hội thoại phức tạp:</strong> Sinh hội thoại tự nhiên, duy trì ngữ cảnh tốt trong các tương tác ngắn đến trung bình.</li>
+        <li><strong>EN:</strong> <strong>Understanding complex conversational context:</strong> Generates natural dialogue, maintains context well in short to medium interactions.</li>
+        <li><strong>VN:</strong> <strong>Nhận diện input bằng giọng nói:</strong> Tích hợp với speech-to-text bên ngoài để xử lý input giọng nói, sau đó tạo phản hồi phù hợp.</li>
+        <li><strong>EN:</strong> <strong>Voice input recognition:</strong> Integrates with external speech-to-text to process voice input, then generates appropriate responses.</li>
+        <li><strong>VN:</strong> <strong>Học máy liên tục:</strong> Dễ dàng finetune với dữ liệu thực tế để cải thiện hiệu suất theo thời gian.</li>
+        <li><strong>EN:</strong> <strong>Continuous machine learning:</strong> Easily finetunable with real data to improve performance over time.</li>
+    </ul>
+    <p><strong>VN:</strong> <strong>Ưu điểm:</strong> Nhẹ, triển khai nhanh, phù hợp với doanh nghiệp nhỏ hoặc vừa.</p>
+    <p><strong>EN:</strong> <strong>Advantages:</strong> Lightweight, quick to deploy, suitable for small to medium enterprises.</p>
+    <p><strong>VN:</strong> <strong>Hạn chế:</strong> Độ chính xác giảm với ngữ cảnh dài hoặc thuật ngữ phức tạp nếu không huấn luyện đủ.</p>
+    <p><strong>EN:</strong> <strong>Limitations:</strong> Accuracy decreases with long contexts or complex terms if not sufficiently trained.</p>
+
+    <h3>Tùy chọn 3: DeepSeek-V2 (16B) / Option 3: DeepSeek-V2 (16B)</h3>
+    <p><strong>VN:</strong> <strong>Mô tả:</strong> DeepSeek-V2 (16 tỷ tham số), từ DeepSeek, là mô hình mã nguồn mở nổi tiếng với hiệu suất cao trong xử lý ngôn ngữ tự nhiên và tối ưu tài nguyên.</p>
+    <p><strong>EN:</strong> <strong>Description:</strong> DeepSeek-V2 (16 billion parameters), from DeepSeek, is an open-source model renowned for high performance in natural language processing and resource optimization.</p>
+    <p><strong>VN:</strong> <strong>Cách đáp ứng các nhiệm vụ:</strong></p>
+    <p><strong>EN:</strong> <strong>How it meets the tasks:</strong></p>
+    <ul>
+        <li><strong>VN:</strong> <strong>Xử lý từ vựng nghiệp vụ chuyên ngành:</strong> Xử lý tốt thuật ngữ đặc thù nhờ kiến trúc hiệu quả, có thể huấn luyện với dữ liệu doanh nghiệp để đạt độ chính xác cao.</li>
+        <li><strong>EN:</strong> <strong>Processing industry-specific vocabulary:</strong> Handles specialized terms well thanks to efficient architecture, trainable with enterprise data for high accuracy.</li>
+        <li><strong>VN:</strong> <strong>Hiểu ngữ cảnh hội thoại phức tạp:</strong> Duy trì ngữ cảnh xuyên suốt, phù hợp với hội thoại đa bước trong môi trường doanh nghiệp.</li>
+        <li><strong>EN:</strong> <strong>Understanding complex conversational context:</strong> Maintains context throughout, suitable for multi-step conversations in enterprise settings.</li>
+        <li><strong>VN:</strong> <strong>Nhận diện input bằng giọng nói:</strong> Kết hợp với speech-to-text (như Whisper) để chuyển giọng nói thành văn bản, sau đó xử lý như input thông thường.</li>
+        <li><strong>EN:</strong> <strong>Voice input recognition:</strong> Combines with speech-to-text (e.g., Whisper) to convert voice to text, then processes it as regular input.</li>
+        <li><strong>VN:</strong> <strong>Học máy liên tục:</strong> Hỗ trợ finetuning hoặc học liên tục để thích nghi với dữ liệu thực tế của doanh nghiệp.</li>
+        <li><strong>EN:</strong> <strong>Continuous machine learning:</strong> Supports finetuning or continuous learning to adapt to real enterprise data.</li>
+    </ul>
+    <p><strong>VN:</strong> <strong>Ưu điểm:</strong> Hiệu suất cao, tối ưu tài nguyên, phù hợp với hệ thống cần mở rộng lớn.</p>
+    <p><strong>EN:</strong> <strong>Advantages:</strong> High performance, resource-optimized, suitable for large-scale systems.</p>
+    <p><strong>VN:</strong> <strong>Hạn chế:</strong> Phức tạp hơn trong việc tinh chỉnh so với các mô hình nhỏ như GPT-Neo.</p>
+    <p><strong>EN:</strong> <strong>Limitations:</strong> More complex to fine-tune compared to smaller models like GPT-Neo.</p>
+
+    <h3>Bảng ma trận so sánh tính năng / Feature Comparison Matrix</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tính năng / Feature</th>
+                <th>LLaMA (13B)</th>
+                <th>GPT-Neo (2.7B)</th>
+                <th>DeepSeek-V2 (16B)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>VN:</strong> Xử lý từ vựng chuyên ngành<br><strong>EN:</strong> Processing industry-specific vocabulary</td>
+                <td>Cao (hiểu ngữ nghĩa sâu, dễ huấn luyện)<br>High (deep understanding, easy to train)</td>
+                <td>Trung bình (cần huấn luyện nhiều hơn)<br>Medium (requires more training)</td>
+                <td>Cao (xử lý tốt, chính xác cao)<br>High (effective, high accuracy)</td>
+            </tr>
+            <tr>
+                <td><strong>VN:</strong> Hiểu ngữ cảnh hội thoại<br><strong>EN:</strong> Understanding conversational context</td>
+                <td>Cao (duy trì ngữ cảnh dài tốt)<br>High (maintains long context well)</td>
+                <td>Trung bình (tốt với ngữ cảnh ngắn)<br>Medium (good for short contexts)</td>
+                <td>Cao (phù hợp hội thoại đa bước)<br>High (suitable for multi-step dialogue)</td>
+            </tr>
+            <tr>
+                <td><strong>VN:</strong> Nhận diện input giọng nói<br><strong>EN:</strong> Voice input recognition</td>
+                <td>Tốt (tích hợp speech-to-text)<br>Good (integrates with speech-to-text)</td>
+                <td>Tốt (tích hợp speech-to-text)<br>Good (integrates with speech-to-text)</td>
+                <td>Tốt (tích hợp speech-to-text)<br>Good (integrates with speech-to-text)</td>
+            </tr>
+            <tr>
+                <td><strong>VN:</strong> Học máy liên tục<br><strong>EN:</strong> Continuous machine learning</td>
+                <td>Tốt (hỗ trợ finetuning/online)<br>Good (supports finetuning/online)</td>
+                <td>Tốt (dễ finetune)<br>Good (easy to finetune)</td>
+                <td>Tốt (hỗ trợ học liên tục)<br>Good (supports continuous learning)</td>
+            </tr>
+            <tr>
+                <td><strong>VN:</strong> Hiệu quả tài nguyên<br><strong>EN:</strong> Resource efficiency</td>
+                <td>Cao (tối ưu tốt)<br>High (well-optimized)</td>
+                <td>Rất cao (nhẹ, ít tài nguyên)<br>Very high (lightweight, low resource)</td>
+                <td>Trung bình (cần tài nguyên hơn)<br>Medium (requires more resources)</td>
+            </tr>
+            <tr>
+                <td><strong>VN:</strong> Dễ triển khai<br><strong>EN:</strong> Ease of deployment</td>
+                <td>Trung bình (cần huấn luyện)<br>Medium (requires training)</td>
+                <td>Cao (triển khai nhanh)<br>High (quick deployment)</td>
+                <td>Trung bình (phức tạp hơn)<br>Medium (more complex)</td>
+            </tr>
+            <tr>
+                <td><strong>VN:</strong> Phù hợp doanh nghiệp<br><strong>EN:</strong> Suitable for enterprises</td>
+                <td>Nhỏ đến lớn<br>Small to large</td>
+                <td>Nhỏ đến vừa<br>Small to medium</td>
+                <td>Vừa đến lớn<br>Medium to large</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Đề xuất cụ thể cho khách hàng / Specific Recommendations for Customers</h3>
+    <ul>
+        <li><strong>VN:</strong> Nếu bạn là doanh nghiệp nhỏ hoặc vừa, cần giải pháp nhanh và tiết kiệm chi phí: Chọn <strong>GPT-Neo (2.7B)</strong>. Mô hình này nhẹ, dễ triển khai, phù hợp với các hệ thống có tài nguyên hạn chế và nhu cầu hội thoại đơn giản. Nó đáp ứng tốt các nhiệm vụ cơ bản với chi phí đầu tư ban đầu thấp, lý tưởng cho giai đoạn khởi đầu.<br>
+            <strong>EN:</strong> If you are a small or medium enterprise needing a fast and cost-effective solution: Choose <strong>GPT-Neo (2.7B)</strong>. This lightweight model is easy to deploy, suitable for systems with limited resources and simple conversation needs. It meets basic tasks well with low initial investment, ideal for the starting phase.</li>
+        <li><strong>VN:</strong> Nếu bạn là doanh nghiệp vừa hoặc lớn, muốn hiệu suất tối ưu và khả năng mở rộng: Chọn <strong>LLaMA (13B)</strong>. Đây là lựa chọn được đề xuất chính nhờ khả năng cân bằng giữa hiệu quả tài nguyên và hiệu suất cao, xử lý tốt từ vựng chuyên ngành, ngữ cảnh dài, và tích hợp linh hoạt. Phù hợp với mọi quy mô doanh nghiệp và mục tiêu mở rộng không giới hạn người dùng của FTA 2025.<br>
+            <strong>EN:</strong> If you are a medium or large enterprise seeking optimal performance and scalability: Choose <strong>LLaMA (13B)</strong>. This is the primary recommended option due to its balance of resource efficiency and high performance, effectively handling specialized vocabulary, long contexts, and flexible integration. Suitable for all enterprise sizes and FTA 2025’s goal of unlimited user scalability.</li>
+        <li><strong>VN:</strong> Nếu bạn là doanh nghiệp lớn, cần hiệu suất vượt trội và sẵn sàng đầu tư: Chọn <strong>DeepSeek-V2 (16B)</strong>. Mô hình này mang lại độ chính xác cao, hỗ trợ hội thoại phức tạp và khả năng mở rộng mạnh mẽ, phù hợp với các doanh nghiệp có hạ tầng mạnh và nhu cầu xử lý dữ liệu lớn.<br>
+            <strong>EN:</strong> If you are a large enterprise needing superior performance and are willing to invest: Choose <strong>DeepSeek-V2 (16B)</strong>. This model offers high accuracy, supports complex conversations, and provides robust scalability, ideal for enterprises with strong infrastructure and large data processing needs.</li>
+    </ul>
         </section>
 
         <!-- Tính năng chính -->
