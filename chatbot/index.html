@@ -55,7 +55,7 @@
         /* Giao diện chính */
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px; /* Tăng max-width để giao diện rộng hơn trên PC */
             display: flex;
             gap: 20px;
             opacity: 0;
@@ -67,7 +67,7 @@
         }
 
         .chat-container {
-            flex: 3;
+            flex: 7; /* Tăng tỷ lệ để phần chat rộng hơn */
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -78,24 +78,25 @@
         }
 
         .info-container {
-            flex: 1;
+            flex: 3; /* Giảm tỷ lệ để phần thông tin nhỏ hơn */
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             padding: 15px;
             color: #333;
-            max-width: 300px;
+            max-width: 250px; /* Giảm chiều rộng tối đa trên PC */
+            height: fit-content; /* Chỉ cao vừa đủ nội dung */
         }
 
         .info-container h3 {
             color: #2a5298;
             margin-bottom: 10px;
-            font-size: 1.1rem;
+            font-size: 1rem; /* Giảm kích thước chữ */
         }
 
         .info-container p {
-            font-size: 0.85rem;
-            line-height: 1.5;
+            font-size: 0.8rem; /* Giảm kích thước chữ */
+            line-height: 1.4;
             margin-bottom: 8px;
         }
 
@@ -122,7 +123,7 @@
         .chat-box {
             flex: 1;
             padding: 20px;
-            height: 500px;
+            height: 600px; /* Tăng chiều cao để phần chat rộng rãi hơn */
             overflow-y: auto;
             background: #f9f9f9;
         }
@@ -131,7 +132,7 @@
             margin-bottom: 15px;
             padding: 10px 15px;
             border-radius: 10px;
-            max-width: 80%;
+            max-width: 70%; /* Giảm max-width để tin nhắn không quá dài trên màn hình lớn */
             line-height: 1.4;
             word-wrap: break-word;
             opacity: 0;
@@ -213,9 +214,28 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Bố trí cho màn hình lớn (PC) */
+        @media (min-width: 769px) {
+            .container {
+                align-items: flex-start; /* Căn phần thông tin lên trên cùng */
+            }
+            .chat-container {
+                flex: 7; /* Phần chat chiếm 70% */
+            }
+            .info-container {
+                flex: 3; /* Phần thông tin chiếm 30% */
+                max-width: 250px; /* Giữ nhỏ gọn */
+            }
+            .chat-box {
+                height: 600px; /* Tăng chiều cao trên PC */
+            }
+        }
+
+        /* Bố trí cho màn hình nhỏ (di động) */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
+                align-items: center;
             }
             .chat-container, .info-container {
                 flex: none;
@@ -223,6 +243,9 @@
             }
             .info-container {
                 max-width: none;
+            }
+            .chat-box {
+                height: 400px; /* Giảm chiều cao trên di động */
             }
         }
     </style>
@@ -237,7 +260,7 @@
     <div class="container">
         <div class="chat-container">
             <div class="chat-header">
-                <img src="https://fta2025.vercel.app/first-trust-acpa-logo.png" alt="First Trust ACPA Logo">
+                <img src="first-trust-acpa-logo.png" alt="First Trust ACPA Logo">
                 <h2>First Trust ACPA Chatbot</h2>
             </div>
             <div class="chat-box" id="chatBox">
