@@ -5,24 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Trust ACPA Chatbot</title>
     <style>
+        /* Biến CSS */
+        :root {
+            --primary-color: #2a5298;
+            --secondary-color: #1e3c72;
+            --danger-color: #ff4444;
+            --text-light: #f9f9f9;
+            --text-dark: #333;
+            --radius-medium: 15px;
+            --radius-small: 8px;
+            --shadow-normal: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-fast: all 0.2s ease;
+        }
+
+        /* Reset và base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
 
         body {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            overflow: hidden;
+            padding: 1.25rem;
         }
 
-        /* Hiệu ứng mở đầu */
+        /* Container responsive */
+        .container {
+            width: 100%;
+            max-width: 90rem; /* 1440px */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+            padding: 1.25rem;
+        }
+
+        /* Chat container */
+        .chat-container {
+            background: white;
+            border-radius: var(--radius-medium);
+            box-shadow: var(--shadow-normal);
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+        }
+
+        /* Header */
+        .chat-header {
+            background: var(--primary-color);
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-radius: var(--radius-medium) var(--radius-medium) 0 0;
+        }
+
+        .chat-header img {
+            height: 2.5rem;
+            width: auto;
+            aspect-ratio: 1;
+        }
+
+        /* Message styling */
+        .message {
+            margin: 0.75rem;
+            padding: 0.75rem 1rem;
+            max-width: 85%;
+            border-radius: var(--radius-small);
+            animation: fadeIn 0.3s forwards;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        .user-message {
+            background: var(--primary-color);
+            color: var(--text-light);
+            margin-left: auto;
+            border-bottom-right-radius: 0;
+        }
+
+        .bot-message {
+            background: #f0f0f0;
+            color: var(--text-dark);
+            margin-right: auto;
+            border-bottom-left-radius: 0;
+        }
+
+        /* Input area */
+        .input-container {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 2rem;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        input[type="text"]:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Buttons */
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button.primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        button.danger {
+            background: var(--danger-color);
+            color: white;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .container {
+                grid-template-columns: 1fr;
+                padding: 0.5rem;
+            }
+
+            .input-container {
+                grid-template-columns: 1fr auto auto;
+            }
+
+            .input-container button:last-child {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chat-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .input-container {
+                grid-template-columns: 1fr auto;
+            }
+
+            button {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Performance optimizations */
+        .chat-box {
+            will-change: transform;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+
+        /* Scrollbar styling */
+        @supports (scrollbar-width: thin) {
+            .chat-box {
+                scrollbar-width: thin;
+                scrollbar-color: var(--primary-color) #f1f1f1;
+            }
+        }
         .intro-screen {
             position: fixed;
             top: 0;
@@ -36,38 +217,31 @@
             z-index: 1000;
             animation: fadeOut 1s ease-in-out 3s forwards;
         }
-
         .intro-logo {
             width: 300px;
             opacity: 0;
             animation: fadeInLogo 1s ease-in-out 1s forwards;
         }
-
         @keyframes fadeInLogo {
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
-
         @keyframes fadeOut {
             to { opacity: 0; visibility: hidden; }
         }
-
-        /* Giao diện chính */
         .container {
             width: 100%;
-            max-width: 1400px; /* Tăng max-width để giao diện rộng hơn trên PC */
+            max-width: 1400px;
             display: flex;
             gap: 20px;
             opacity: 0;
             animation: fadeInContent 1s ease-in-out 4s forwards;
         }
-
         @keyframes fadeInContent {
             to { opacity: 1; }
         }
-
         .chat-container {
-            flex: 7; /* Tăng tỷ lệ để phần chat rộng hơn */
+            flex: 7;
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -76,30 +250,26 @@
             flex-direction: column;
             border: 2px solid #2a5298;
         }
-
         .info-container {
-            flex: 3; /* Giảm tỷ lệ để phần thông tin nhỏ hơn */
+            flex: 3;
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             padding: 15px;
             color: #333;
-            max-width: 250px; /* Giảm chiều rộng tối đa trên PC */
-            height: fit-content; /* Chỉ cao vừa đủ nội dung */
+            max-width: 250px;
+            height: fit-content;
         }
-
         .info-container h3 {
             color: #2a5298;
             margin-bottom: 10px;
-            font-size: 1rem; /* Giảm kích thước chữ */
+            font-size: 1rem;
         }
-
         .info-container p {
-            font-size: 0.8rem; /* Giảm kích thước chữ */
+            font-size: 0.8rem;
             line-height: 1.4;
             margin-bottom: 8px;
         }
-
         .chat-header {
             background: #2a5298;
             padding: 15px 20px;
@@ -107,60 +277,64 @@
             align-items: center;
             gap: 15px;
             border-bottom: 1px solid #ddd;
+            position: relative;
         }
-
         .chat-header img {
             height: 35px;
             width: auto;
         }
-
         .chat-header h2 {
             color: white;
             font-size: 1.4rem;
             font-weight: 500;
         }
-
         .chat-box {
             flex: 1;
             padding: 20px;
-            height: 800px; /* Tăng chiều cao để phần chat rộng rãi hơn */
+            height: 600px;
             overflow-y: auto;
             background: #f9f9f9;
         }
-
+        .chat-box::-webkit-scrollbar {
+            width: 8px;
+        }
+        .chat-box::-webkit-scrollbar-thumb {
+            background: #2a5298;
+            border-radius: 10px;
+        }
+        .chat-box::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
         .message {
             margin-bottom: 15px;
             padding: 10px 15px;
             border-radius: 10px;
-            max-width: 70%; /* Giảm max-width để tin nhắn không quá dài trên màn hình lớn */
+            max-width: 70%;
             line-height: 1.4;
             word-wrap: break-word;
             opacity: 0;
             animation: fadeIn 0.3s forwards;
         }
-
         .user-message {
             background: #2a5298;
             color: white;
             margin-left: auto;
             border-bottom-right-radius: 0;
         }
-
         .bot-message {
             background: #e1e1e1;
             color: #333;
             margin-right: auto;
             border-bottom-left-radius: 0;
         }
-
         .input-container {
             padding: 15px 20px;
             background: #fff;
             border-top: 1px solid #ddd;
             display: flex;
             gap: 10px;
+            align-items: center;
         }
-
         input[type="text"] {
             flex: 1;
             padding: 10px;
@@ -169,7 +343,6 @@
             outline: none;
             font-size: 1rem;
         }
-
         button {
             padding: 10px 20px;
             background: #2a5298;
@@ -180,24 +353,22 @@
             font-size: 1rem;
             transition: background 0.3s;
         }
-
         button:hover {
             background: #1e3c72;
         }
-
-        .chat-box::-webkit-scrollbar {
-            width: 8px;
+        .urgent-button {
+            background-color: #ff4444;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
         }
-
-        .chat-box::-webkit-scrollbar-thumb {
-            background: #2a5298;
-            border-radius: 10px;
+        .urgent-button:hover {
+            background-color: #cc0000;
         }
-
-        .chat-box::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
         .footer {
             position: fixed;
             bottom: 10px;
@@ -208,45 +379,185 @@
             font-size: 0.8rem;
             opacity: 0.7;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Bố trí cho màn hình lớn (PC) */
-        @media (min-width: 769px) {
-            .container {
-                align-items: flex-start; /* Căn phần thông tin lên trên cùng */
-            }
-            .chat-container {
-                flex: 6; /* Phần chat chiếm 60% */
-                min-height: 500px;
-            }
-            .info-container {
-                flex: 4; /* Phần thông tin chiếm 40% */
-                max-width: 250px; /* Giữ nhỏ gọn */
-            }
-            .chat-box {
-                height: 600px; /* Tăng chiều cao trên PC */
-            }
+        /* Thêm animation cho dấu ba chấm */
+        .typing-indicator {
+            display: inline-block;
+            width: 60px;
+            height: 20px;
+            position: relative;
+        }
+        .typing-indicator span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #333;
+            position: absolute;
+            bottom: 0;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        .typing-indicator span:nth-child(1) {
+            left: 0;
+            animation-delay: 0s;
+        }
+        .typing-indicator span:nth-child(2) {
+            left: 12px;
+            animation-delay: 0.2s;
+        }
+        .typing-indicator span:nth-child(3) {
+            left: 24px;
+            animation-delay: 0.4s;
+        }
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-6px); }
+        }
+        .disclaimer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background-color: #f9f9f9;
+        }
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        /* Bố trí cho màn hình nhỏ (di động) */
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        div:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .urgent-container {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .urgent-label {
+            font-size: 0.8rem;
+            color: white;
+            margin-right: 5px;
+        }
+        .face-auth-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .face-auth-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            width: 400px;
+        }
+        .face-auth-box img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .face-auth-box button {
+            margin-top: 20px;
+        }
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2a5298;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .face-scan-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            border: 2px solid #2a5298;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #2a5298;
+            animation: scan 2s linear infinite;
+            z-index: 1;
+        }
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
-                align-items: center;
+                padding: 10px;
             }
-            .chat-container, .info-container {
-                flex: none;
-                width: 100%;
+            .chat-container {
+                margin-bottom: 20px;
             }
             .info-container {
-                max-width: none;
+                max-width: 100%;
             }
-            .chat-box {
-                height: 400px; /* Giảm chiều cao trên di động */
+            .face-auth-box {
+                width: 90%;
+                padding: 20px;
+            }
+            video {
+                width: 100%;
+                height: 200px;
+            }
+            .face-scan-container {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
@@ -256,54 +567,155 @@
     <div class="intro-screen">
         <img src="first-trust-acpa-logo.png" alt="First Trust ACPA Logo" class="intro-logo">
     </div>
-
     <!-- Giao diện chính -->
     <div class="container">
         <div class="chat-container">
             <div class="chat-header">
                 <img src="first-trust-acpa-logo.png" alt="First Trust ACPA Logo">
                 <h2>First Trust ACPA Chatbot</h2>
+                <div class="urgent-container">
+                    <span class="urgent-label">Report Issue</span>
+                    <button class="urgent-button" onclick="reportUrgentIssue()">Urgent</button>
+                </div>
             </div>
             <div class="chat-box" id="chatBox">
-                <div class="message bot-message">Hello! I'm the First Trust ACPA assistant, here to help with company info and policies. Please enter your Employee ID to get started! 😊</div>
+                <div class="message bot-message">Hello! I'm the First Trust ACPA assistant, here to help with info and policies. Please enter your Employee ID to start (don't worry, I don't bite! 😄).</div>
+            </div>
+            <div class="disclaimer" style="text-align: center; padding: 10px; font-size: 0.8rem; color: #666; border-top: 1px solid #eee;">
+                This is an experimental version and may produce inaccurate responses.
             </div>
             <div class="input-container">
                 <input type="text" id="userInput" placeholder="Enter your Employee ID or ask a question">
                 <button onclick="sendMessage()">Send</button>
-                <button onclick="clearChat()">Clear</button>
+                <button onclick="clearChat()" style="background-color: #ff4444;">Clear</button>
             </div>
         </div>
         <div class="info-container">
             <h3>About This Project</h3>
             <p>This chatbot assists First Trust ACPA employees with internal policies and communication.</p>
-            <p>Built with Ollama and Gemma-2-2B-IT-Q4_K_M, it ensures secure, offline access to info.</p>
+            <p>Built with Ollama and TinyLLaMA, it ensures secure, offline access to info.</p>
         </div>
     </div>
-    <div class="footer">Developed by TDNM</div>
-
+    <div class="footer">
+        Developed by TDNM
+    </div>
+    <!-- Modal xác thực khuôn mặt -->
+    <div class="face-auth-modal" id="faceAuthModal">
+        <div class="face-auth-box">
+            <img src="face-scan.png" alt="Face Scan">
+            <h2>Face Authentication Required</h2>
+            <p>Please look directly into the camera to verify your identity.</p>
+            <button onclick="simulateFaceAuth()">Start Face Scan</button>
+        </div>
+    </div>
+    <!-- Thêm thư viện face-api.js -->
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js/dist/face-api.min.js"></script>
     <script>
         let conversation = [];
+        let isAuthenticated = false;
+        let userName = "";
+        let accessLevel = "";
+        const validUsers = {
+            "Hello@1234": { name: "Maiha", access: "full" },
+            "fta@1234": { name: "Tony", access: "limited" },
+            "admin@1234": { name: "Admin", access: "full" }
+        };
 
         // Tải lịch sử từ localStorage khi mở trang
-        window.onload = function() {
+        window.onload = function () {
             const saved = localStorage.getItem("chatHistory");
             if (saved) {
                 conversation = JSON.parse(saved);
+                const savedAuth = localStorage.getItem("isAuthenticated");
+                const savedUserName = localStorage.getItem("userName");
+                const savedAccessLevel = localStorage.getItem("accessLevel");
+                if (savedAuth === "true" && savedUserName && savedAccessLevel) {
+                    isAuthenticated = true;
+                    userName = savedUserName;
+                    accessLevel = savedAccessLevel;
+                }
                 const chatBox = document.getElementById("chatBox");
                 chatBox.innerHTML = "";
-                conversation.forEach((msg, index) => {
+                conversation.forEach(msg => {
                     const messageDiv = document.createElement("div");
-                    messageDiv.className = index % 2 === 0 ? "message user-message" : "message bot-message";
-                    messageDiv.textContent = msg;
+                    messageDiv.className = msg.role === "user" ? "message user-message" : "message bot-message";
+                    messageDiv.textContent = msg.content;
                     chatBox.appendChild(messageDiv);
                 });
                 chatBox.scrollTop = chatBox.scrollHeight;
             }
+            document.getElementById('userInput').disabled = true;
+            document.getElementById('userInput').placeholder = "Please complete face authentication first";
         };
 
-        // Lưu lịch sử vào localStorage
+        // Lưu lịch sử và trạng thái xác thực vào localStorage
         function saveConversation() {
             localStorage.setItem("chatHistory", JSON.stringify(conversation));
+            localStorage.setItem("isAuthenticated", isAuthenticated.toString());
+            localStorage.setItem("userName", userName);
+            localStorage.setItem("accessLevel", accessLevel);
+        }
+
+        // Xác thực người dùng
+        function authenticateUser(userInput) {
+            const userInfo = validUsers[userInput];
+            if (userInfo) {
+                isAuthenticated = true;
+                userName = userInfo.name;
+                accessLevel = userInfo.access;
+                
+                // Hiển thị thông báo cần xác thực FaceID
+                const chatBox = document.getElementById("chatBox");
+                const faceIDMessage = document.createElement("div");
+                faceIDMessage.className = "message bot-message";
+                faceIDMessage.textContent = `ID verification successful! We need to verify your face. Please prepare for FaceID authentication. Starting in 5 seconds...`;
+                chatBox.appendChild(faceIDMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Bắt đầu đếm ngược
+                startCountdown(5);
+                
+                return "";
+            }
+            return "Authentication failed. Please enter a valid Employee ID. Thanks! 😊";
+        }
+
+        // Hàm đếm ngược
+        function startCountdown(seconds) {
+            const chatBox = document.getElementById("chatBox");
+            const countdownMessage = document.createElement("div");
+            countdownMessage.className = "message bot-message";
+            chatBox.appendChild(countdownMessage);
+
+            let count = seconds;
+            const countdownInterval = setInterval(() => {
+                countdownMessage.textContent = `Starting FaceID in ${count} seconds...`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+                count--;
+
+                if (count < 0) {
+                    clearInterval(countdownInterval);
+                    countdownMessage.remove();
+                    // Hiển thị modal xác thực khuôn mặt
+                    document.getElementById('faceAuthModal').style.display = 'flex';
+                }
+            }, 1000);
+        }
+
+        // Kiểm tra quyền truy cập
+        function checkAccess(userInput) {
+            if (accessLevel === "limited" && userName === "Tony") {
+                const keywords = ["company info", "founded", "services", "head office", "certified", "culture"];
+                const lowerInput = userInput.toLowerCase();
+                const hasAccess = keywords.some(keyword => lowerInput.includes(keyword));
+                if (!hasAccess) {
+                    return {
+                        hasAccess: false,
+                        message: `Hello Tony! Sorry, you don't have access to this info. You can ask about company info, such as "What are the company services?" or "Where is the head office?". Alternatively, contact HR for more details! 😊`
+                    };
+                }
+            }
+            return { hasAccess: true };
         }
 
         async function sendMessage() {
@@ -317,61 +729,252 @@
             userMessage.textContent = userInput;
             chatBox.appendChild(userMessage);
 
+            // Thêm hiệu ứng đang nhập
+            const typingIndicator = document.createElement("div");
+            typingIndicator.className = "message bot-message typing-indicator";
+            typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+            chatBox.appendChild(typingIndicator);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
             // Thêm tin nhắn vào lịch sử hội thoại
-            conversation.push(userInput);
+            conversation.push({ role: "user", content: userInput });
             if (conversation.length > 5) {
-                conversation = conversation.slice(-5); // Giữ 5 tin nhắn gần nhất
+                conversation = conversation.slice(-5);
             }
 
-            // Gửi yêu cầu đến API Ollama
-            const prompt = conversation.join("\n");
+            let botResponse = "";
+
+            // Thêm độ trễ cho hiệu ứng đang nhập
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Xác thực nếu chưa đăng nhập
+            if (!isAuthenticated) {
+                botResponse = authenticateUser(userInput);
+            } else {
+                // Kiểm tra quyền truy cập
+                const accessCheck = checkAccess(userInput);
+                if (!accessCheck.hasAccess) {
+                    botResponse = accessCheck.message;
+                } else {
             try {
                 const response = await fetch("http://localhost:11434/api/generate", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        model: "first-trust-acpa",
-                        prompt: prompt,
-                        stream: false
+                                model: "fta-assistant",
+                                prompt: `Hello ${userName}! ${conversation
+                                    .filter(msg => !msg.content.includes("Authentication successful!") && !msg.content.includes("Authentication failed"))
+                                    .map(msg => `${msg.role === "user" ? "<|USER|>" : "<|ASSISTANT|>"} ${msg.content}`)
+                                    .join("\n")}`,
+                                stream: false,
+                                temperature: 0.7,
+                                top_p: 0.9,
+                                max_tokens: 256,
+                                stop: ["<|end_of_turn|>"]
                     })
                 });
-                const data = await response.json();
-                const botResponse = data.response;
 
-                // Hiển thị phản hồi của bot
+                        if (!response.ok) throw new Error("API request failed");
+                const data = await response.json();
+                        botResponse = data.response || "Sorry, I couldn't process your request.";
+                    } catch (error) {
+                        console.error("Error:", error);
+                        botResponse = "Error: Could not connect to Ollama. Please ensure it's running!";
+                    }
+                }
+            }
+
+            // Xóa hiệu ứng đang nhập và hiển thị tin nhắn
+            chatBox.removeChild(typingIndicator);
                 const botMessage = document.createElement("div");
                 botMessage.className = "message bot-message";
                 botMessage.textContent = botResponse;
                 chatBox.appendChild(botMessage);
 
                 // Thêm phản hồi vào lịch sử
-                conversation.push(botResponse);
-            } catch (error) {
-                const errorMessage = document.createElement("div");
-                errorMessage.className = "message bot-message";
-                errorMessage.textContent = "Error: Could not connect to Ollama. Please ensure it's running! 😅";
-                chatBox.appendChild(errorMessage);
+            conversation.push({ role: "assistant", content: botResponse });
+            if (conversation.length > 5) {
+                conversation = conversation.slice(-5);
             }
 
-            // Lưu lịch sử
+            // Lưu lịch sử và cuộn xuống cuối
             saveConversation();
-
-            // Cuộn xuống cuối
             chatBox.scrollTop = chatBox.scrollHeight;
-
-            // Xóa input
             document.getElementById("userInput").value = "";
         }
 
         function clearChat() {
+            isAuthenticated = false;
+            userName = "";
+            accessLevel = "";
             conversation = [];
             localStorage.removeItem("chatHistory");
+            localStorage.removeItem("isAuthenticated");
+            localStorage.removeItem("userName");
+            localStorage.removeItem("accessLevel");
             const chatBox = document.getElementById("chatBox");
             chatBox.innerHTML = '<div class="message bot-message">Chat cleared! Please enter your Employee ID to start again. 😊</div>';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function reportUrgentIssue() {
+            const chatBox = document.getElementById("chatBox");
+            const urgentMessage = document.createElement("div");
+            urgentMessage.className = "message bot-message";
+            urgentMessage.innerHTML = `
+                <strong>URGENT ISSUE REPORTED!</strong><br>
+                Your issue has been escalated to the admin team.<br>
+                Please provide more details about the problem:<br>
+                <textarea id="issueDetails" rows="3" style="width: 100%; margin-top: 10px;"></textarea>
+                <button onclick="submitIssue()" style="margin-top: 10px; background-color: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Submit</button>
+            `;
+            chatBox.appendChild(urgentMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function submitIssue() {
+            const issueDetails = document.getElementById("issueDetails").value.trim();
+            if (issueDetails) {
+                // Gửi thông tin sự cố đến server (cần triển khai API)
+                fetch('/api/report-issue', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        user: userName,
+                        issue: issueDetails,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+
+                const chatBox = document.getElementById("chatBox");
+                const confirmation = document.createElement("div");
+                confirmation.className = "message bot-message";
+                confirmation.textContent = "Thank you for reporting the issue. Our admin team will contact you shortly.";
+                chatBox.appendChild(confirmation);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+
+        // Giả lập xác thực khuôn mặt với webcam
+        function simulateFaceAuth() {
+            const modal = document.getElementById('faceAuthModal');
+            const authBox = modal.querySelector('.face-auth-box');
+            
+            // Hiển thị video từ webcam
+            authBox.innerHTML = `
+                <div class="face-scan-container">
+                    <video id="webcam" autoplay playsinline></video>
+                    <div class="scan-line"></div>
+                </div>
+                <h2>FaceID Scanning</h2>
+                <p>Please position your face in the frame</p>
+                <p id="motionDetectionStatus" style="color: #ff4444; margin-top: 10px;">Detecting presence...</p>
+            `;
+            
+            // Bắt đầu truy cập webcam
+            const video = document.getElementById('webcam');
+            const constraints = {
+                video: {
+                    facingMode: "user", // Sử dụng camera trước
+                    width: { ideal: 160 }, // Giảm độ phân giải để tăng hiệu suất
+                    height: { ideal: 120 }
+                }
+            };
+            
+            let motionDetected = false;
+            let detectionInterval;
+            let previousFrame = null;
+            
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(stream => {
+                    video.srcObject = stream;
+                    video.style.width = '100%';
+                    video.style.borderRadius = '10px';
+                    
+                    // Tạo canvas để phân tích khung hình
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = 160;
+                    canvas.height = 120;
+                    
+                    // Bắt đầu kiểm tra chuyển động
+                    detectionInterval = setInterval(() => {
+                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        const currentFrame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                        
+                        if (previousFrame) {
+                            const diff = calculateFrameDifference(previousFrame, currentFrame);
+                            if (diff > 0.1) { // Ngưỡng phát hiện chuyển động
+                                motionDetected = true;
+                                clearInterval(detectionInterval);
+                                document.getElementById('motionDetectionStatus').textContent = 'Presence detected! Starting scan...';
+                                
+                                // Bắt đầu quét sau khi phát hiện chuyển động
+                                setTimeout(() => {
+                                    // Dừng webcam
+                                    const stream = video.srcObject;
+                                    const tracks = stream.getTracks();
+                                    tracks.forEach(track => track.stop());
+                                    
+                                    authBox.innerHTML = `
+                                        <div class="loading-spinner"></div>
+                                        <p>Processing your face data...</p>
+                                    `;
+                                    
+                                    // Giả lập xử lý dữ liệu
+                                    setTimeout(() => {
+                                        authBox.innerHTML = `
+                                            <img src="face-scan.png" alt="Face Scan">
+                                            <h2>Authentication Successful!</h2>
+                                            <p>Welcome back, ${userName}!</p>
+                                        `;
+                                        
+                                        // Đóng modal sau 1.5 giây
+                                        setTimeout(() => {
+                                            modal.style.display = 'none';
+                                            document.getElementById('userInput').disabled = false;
+                                            document.getElementById('userInput').placeholder = "Ask your question here";
+                                            
+                                            // Hiển thị tin nhắn chào mừng
+                                            const chatBox = document.getElementById("chatBox");
+                                            const welcomeMessage = document.createElement("div");
+                                            welcomeMessage.className = "message bot-message";
+                                            welcomeMessage.textContent = `Welcome ${userName}! How can I assist you today?`;
+                                            chatBox.appendChild(welcomeMessage);
+                                            chatBox.scrollTop = chatBox.scrollHeight;
+                                        }, 1500);
+                                    }, 2000);
+                                }, 3000); // Thời gian quét 3 giây
+                            }
+                        }
+                        previousFrame = currentFrame;
+                    }, 200); // Kiểm tra chuyển động mỗi 200ms
+                })
+                .catch(err => {
+                    console.error("Error accessing webcam:", err);
+                    authBox.innerHTML = `
+                        <h2>Camera Access Required</h2>
+                        <p>Please enable camera access in your browser settings to continue.</p>
+                        <button onclick="simulateFaceAuth()">Try Again</button>
+                    `;
+                });
+        }
+
+        // Hàm tính toán sự khác biệt giữa các khung hình
+        function calculateFrameDifference(frame1, frame2) {
+            let diff = 0;
+            for (let i = 0; i < frame1.data.length; i += 4) {
+                diff += Math.abs(frame1.data[i] - frame2.data[i]) / 255;
+                diff += Math.abs(frame1.data[i+1] - frame2.data[i+1]) / 255;
+                diff += Math.abs(frame1.data[i+2] - frame2.data[i+2]) / 255;
+            }
+            return diff / (frame1.data.length / 4 * 3);
         }
 
         // Gửi tin nhắn khi nhấn Enter
-        document.getElementById("userInput").addEventListener("keypress", function(event) {
+        document.getElementById("userInput").addEventListener("keypress", function (event) {
             if (event.key === "Enter") {
                 sendMessage();
             }
