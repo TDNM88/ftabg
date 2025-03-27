@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Trust ACPA Chatbot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Hiệu ứng mở đầu */
+        .intro-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #2a5298;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 1s ease-in-out 3s forwards;
+        }
+
+        .intro-logo {
+            width: 300px;
+            opacity: 0;
+            animation: fadeInLogo 1s ease-in-out 1s forwards;
+        }
+
+        @keyframes fadeInLogo {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* Giao diện chính */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInContent 1s ease-in-out 4s forwards;
+        }
+
+        @keyframes fadeInContent {
+            to { opacity: 1; }
+        }
+
+        .chat-container {
+            flex: 3;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #2a5298;
+        }
+
+        .info-container {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            color: #333;
+            max-width: 300px;
+        }
+
+        .info-container h3 {
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-container p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .chat-header {
+            background: #2a5298;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-header img {
+            height: 35px;
+            width: auto;
+        }
+
+        .chat-header h2 {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            height: 500px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            line-height: 1.4;
+            word-wrap: break-word;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        .user-message {
+            background: #2a5298;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 0;
+        }
+
+        .bot-message {
+            background: #e1e1e1;
+            color: #333;
+            margin-right: auto;
+            border-bottom-left-radius: 0;
+        }
+
+        .input-container {
+            padding: 15px 20px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #2a5298;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+
+        .chat-box::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-box::-webkit-scrollbar-thumb {
+            background: #2a5298;
+            border-radius: 10px;
+        }
+
+        .chat-box::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #fff;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .chat-container, .info-container {
+                flex: none;
+                width: 100%;
+            }
+            .info-container {
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Màn hình mở đầu -->
+    <div class="intro-screen">
+        <img src="first-trust-acpa-logo.png" alt="First Trust ACPA Logo" class="intro-logo">
+    </div>
+
+    <!-- Giao diện chính -->
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-header">
+                <img src="logo.png" alt="First Trust ACPA Logo">
+                <h2>First Trust ACPA Chatbot</h2>
+            </div>
+            <div class="chat-box" id="chatBox">
+                <div class="message bot-message">Hello! I'm the First Trust ACPA assistant, here to help with company info and policies. Please enter your Employee ID to get started! 😊</div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Enter your Employee ID or ask a question">
+                <button onclick="sendMessage()">Send</button>
+                <button onclick="clearChat()">Clear</button>
+            </div>
+        </div>
+        <div class="info-container">
+            <h3>About This Project</h3>
+            <p>This chatbot assists First Trust ACPA employees with internal policies and communication.</p>
+            <p>Built with Ollama and Gemma-2-2B-IT-Q4_K_M, it ensures secure, offline access to info.</p>
+        </div>
+    </div>
+    <div class="footer">Developed by TDNM</div>
+
+    <script>
+        let conversation = [];
+
+        // Tải lịch sử từ localStorage khi mở trang
+        window.onload = function() {
+            const saved = localStorage.getItem("chatHistory");
+            if (saved) {
+                conversation = JSON.parse(saved);
+                const chatBox = document.getElementById("chatBox");
+                chatBox.innerHTML = "";
+                conversation.forEach((msg, index) => {
+                    const messageDiv = document.createElement("div");
+                    messageDiv.className = index % 2 === 0 ? "message user-message" : "message bot-message";
+                    messageDiv.textContent = msg;
+                    chatBox.appendChild(messageDiv);
+                });
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        };
+
+        // Lưu lịch sử vào localStorage
+        function saveConversation() {
+            localStorage.setItem("chatHistory", JSON.stringify(conversation));
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById("userInput").value.trim();
+            if (!userInput) return;
+
+            // Hiển thị tin nhắn người dùng
+            const chatBox = document.getElementById("chatBox");
+            const userMessage = document.createElement("div");
+            userMessage.className = "message user-message";
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            // Thêm tin nhắn vào lịch sử hội thoại
+            conversation.push(userInput);
+            if (conversation.length > 5) {
+                conversation = conversation.slice(-5); // Giữ 5 tin nhắn gần nhất
+            }
+
+            // Gửi yêu cầu đến API Ollama
+            const prompt = conversation.join("\n");
+            try {
+                const response = await fetch("http://localhost:11434/api/generate", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        model: "first-trust-acpa",
+                        prompt: prompt,
+                        stream: false
+                    })
+                });
+                const data = await response.json();
+                const botResponse = data.response;
+
+                // Hiển thị phản hồi của bot
+                const botMessage = document.createElement("div");
+                botMessage.className = "message bot-message";
+                botMessage.textContent = botResponse;
+                chatBox.appendChild(botMessage);
+
+                // Thêm phản hồi vào lịch sử
+                conversation.push(botResponse);
+            } catch (error) {
+                const errorMessage = document.createElement("div");
+                errorMessage.className = "message bot-message";
+                errorMessage.textContent = "Error: Could not connect to Ollama. Please ensure it's running! 😅";
+                chatBox.appendChild(errorMessage);
+            }
+
+            // Lưu lịch sử
+            saveConversation();
+
+            // Cuộn xuống cuối
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Xóa input
+            document.getElementById("userInput").value = "";
+        }
+
+        function clearChat() {
+            conversation = [];
+            localStorage.removeItem("chatHistory");
+            const chatBox = document.getElementById("chatBox");
+            chatBox.innerHTML = '<div class="message bot-message">Chat cleared! Please enter your Employee ID to start again. 😊</div>';
+        }
+
+        // Gửi tin nhắn khi nhấn Enter
+        document.getElementById("userInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
