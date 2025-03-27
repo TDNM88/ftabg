@@ -4,6 +4,10 @@
       "source": "/smartflow/(.*)",
       "destination": "/smartflow/$1"
     },
+     {
+      "source": "/chatbot/(.*)",
+      "destination": "/chatbot/$1"
+    },
     {
       "source": "/(.*)",
       "destination": "/$1"
