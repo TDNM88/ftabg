@@ -45,7 +45,7 @@
         /* Container responsive */
         .container {
             width: 100%;
-            max-width: 90rem; /* 1440px */
+            max-width: 90rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.25rem;
@@ -383,7 +383,6 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Thêm animation cho dấu ba chấm */
         .typing-indicator {
             display: inline-block;
             width: 60px;
@@ -594,6 +593,14 @@
             <h3>About This Project</h3>
             <p>This chatbot assists First Trust ACPA employees with internal policies and communication.</p>
             <p>Built with Ollama and TinyLLaMA, it ensures secure, offline access to info.</p>
+            <h3>User Guide</h3>
+            <p>Here’s how to use the chatbot interface:</p>
+            <p><strong>1. Urgent Button (Top Right):</strong> Located in the header, labeled "Urgent". Click this to report an urgent issue. A form will appear in the chat for you to describe the problem, then press "Submit" to send it to the admin team.</p>
+            <p><strong>2. Send Button:</strong> Next to the input box, labeled "Send". After typing your Employee ID or question, click this (or press Enter) to submit your message to the chatbot.</p>
+            <p><strong>3. Clear Button:</strong> Next to the "Send" button, labeled "Clear" in red. Click this to reset the chat, clear all history, and start over. You’ll need to re-enter your Employee ID and authenticate again.</p>
+            <p><strong>4. Start Face Scan Button:</strong> Appears in the face authentication popup. Click this to begin the face scan process using your camera to verify your identity.</p>
+            <p><strong>5. Skip Face Authentication Button:</strong> Also in the face authentication popup, labeled "Skip Face Authentication (Testing)" in red. Click this during testing to bypass face verification and proceed to the chat interface immediately.</p>
+            <p><strong>6. Submit Button (Urgent Issue):</strong> Appears after clicking "Urgent". Once you’ve typed issue details in the form, click this to submit your report.</p>
         </div>
     </div>
     <div class="footer">
@@ -606,6 +613,7 @@
             <h2>Face Authentication Required</h2>
             <p>Please look directly into the camera to verify your identity.</p>
             <button onclick="simulateFaceAuth()">Start Face Scan</button>
+            <button onclick="skipFaceAuth()" style="background-color: #ff4444; margin-left: 10px;">Skip Face Authentication (Testing)</button>
         </div>
     </div>
     <!-- Thêm thư viện face-api.js -->
@@ -613,6 +621,7 @@
     <script>
         let conversation = [];
         let isAuthenticated = false;
+        let isFaceAuthenticated = false;
         let userName = "";
         let accessLevel = "";
         const validUsers = {
@@ -621,18 +630,26 @@
             "admin@1234": { name: "Admin", access: "full" }
         };
 
-        // Tải lịch sử từ localStorage khi mở trang
         window.onload = function () {
             const saved = localStorage.getItem("chatHistory");
             if (saved) {
                 conversation = JSON.parse(saved);
                 const savedAuth = localStorage.getItem("isAuthenticated");
+                const savedFaceAuth = localStorage.getItem("isFaceAuthenticated");
                 const savedUserName = localStorage.getItem("userName");
                 const savedAccessLevel = localStorage.getItem("accessLevel");
                 if (savedAuth === "true" && savedUserName && savedAccessLevel) {
                     isAuthenticated = true;
                     userName = savedUserName;
                     accessLevel = savedAccessLevel;
+                }
+                if (savedFaceAuth === "true") {
+                    isFaceAuthenticated = true;
+                    document.getElementById('userInput').disabled = false;
+                    document.getElementById('userInput').placeholder = "Ask your question here";
+                } else {
+                    document.getElementById('userInput').disabled = true;
+                    document.getElementById('userInput').placeholder = "Please complete face authentication first";
                 }
                 const chatBox = document.getElementById("chatBox");
                 chatBox.innerHTML = "";
@@ -643,44 +660,65 @@
                     chatBox.appendChild(messageDiv);
                 });
                 chatBox.scrollTop = chatBox.scrollHeight;
+
+                if (isFaceAuthenticated) {
+                    const welcomeMessage = document.createElement("div");
+                    welcomeMessage.className = "message bot-message";
+                    welcomeMessage.textContent = `Welcome back, ${userName}! How can I assist you today?`;
+                    chatBox.appendChild(welcomeMessage);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            } else {
+                document.getElementById('userInput').disabled = true;
+                document.getElementById('userInput').placeholder = "Please complete face authentication first";
             }
-            document.getElementById('userInput').disabled = true;
-            document.getElementById('userInput').placeholder = "Please complete face authentication first";
         };
 
-        // Lưu lịch sử và trạng thái xác thực vào localStorage
         function saveConversation() {
             localStorage.setItem("chatHistory", JSON.stringify(conversation));
             localStorage.setItem("isAuthenticated", isAuthenticated.toString());
+            localStorage.setItem("isFaceAuthenticated", isFaceAuthenticated.toString());
             localStorage.setItem("userName", userName);
             localStorage.setItem("accessLevel", accessLevel);
         }
 
-        // Xác thực người dùng
         function authenticateUser(userInput) {
             const userInfo = validUsers[userInput];
             if (userInfo) {
                 isAuthenticated = true;
                 userName = userInfo.name;
                 accessLevel = userInfo.access;
-                
-                // Hiển thị thông báo cần xác thực FaceID
+
                 const chatBox = document.getElementById("chatBox");
-                const faceIDMessage = document.createElement("div");
-                faceIDMessage.className = "message bot-message";
-                faceIDMessage.textContent = `ID verification successful! We need to verify your face. Please prepare for FaceID authentication. Starting in 5 seconds...`;
-                chatBox.appendChild(faceIDMessage);
+                const authMessage = document.createElement("div");
+                authMessage.className = "message bot-message";
+                authMessage.textContent = `ID verification successful! Welcome, ${userName}.`;
+                chatBox.appendChild(authMessage);
                 chatBox.scrollTop = chatBox.scrollHeight;
 
-                // Bắt đầu đếm ngược
-                startCountdown(5);
-                
+                if (!isFaceAuthenticated) {
+                    const faceIDMessage = document.createElement("div");
+                    faceIDMessage.className = "message bot-message";
+                    faceIDMessage.textContent = `We need to verify your face. Please prepare for FaceID authentication. Starting in 5 seconds...`;
+                    chatBox.appendChild(faceIDMessage);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+
+                    startCountdown(5);
+                } else {
+                    const welcomeMessage = document.createElement("div");
+                    welcomeMessage.className = "message bot-message";
+                    welcomeMessage.textContent = `Welcome back, ${userName}! How can I assist you today?`;
+                    chatBox.appendChild(welcomeMessage);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+
+                    document.getElementById('userInput').disabled = false;
+                    document.getElementById('userInput').placeholder = "Ask your question here";
+                }
                 return "";
             }
             return "Authentication failed. Please enter a valid Employee ID. Thanks! 😊";
         }
 
-        // Hàm đếm ngược
         function startCountdown(seconds) {
             const chatBox = document.getElementById("chatBox");
             const countdownMessage = document.createElement("div");
@@ -696,13 +734,11 @@
                 if (count < 0) {
                     clearInterval(countdownInterval);
                     countdownMessage.remove();
-                    // Hiển thị modal xác thực khuôn mặt
                     document.getElementById('faceAuthModal').style.display = 'flex';
                 }
             }, 1000);
         }
 
-        // Kiểm tra quyền truy cập
         function checkAccess(userInput) {
             if (accessLevel === "limited" && userName === "Tony") {
                 const keywords = ["company info", "founded", "services", "head office", "certified", "culture"];
@@ -722,45 +758,40 @@
             const userInput = document.getElementById("userInput").value.trim();
             if (!userInput) return;
 
-            // Hiển thị tin nhắn người dùng
             const chatBox = document.getElementById("chatBox");
             const userMessage = document.createElement("div");
             userMessage.className = "message user-message";
             userMessage.textContent = userInput;
             chatBox.appendChild(userMessage);
 
-            // Thêm hiệu ứng đang nhập
             const typingIndicator = document.createElement("div");
             typingIndicator.className = "message bot-message typing-indicator";
             typingIndicator.innerHTML = '<span></span><span></span><span></span>';
             chatBox.appendChild(typingIndicator);
             chatBox.scrollTop = chatBox.scrollHeight;
 
-            // Thêm tin nhắn vào lịch sử hội thoại
             conversation.push({ role: "user", content: userInput });
             if (conversation.length > 5) {
                 conversation = conversation.slice(-5);
             }
 
             let botResponse = "";
-
-            // Thêm độ trễ cho hiệu ứng đang nhập
             await new Promise(resolve => setTimeout(resolve, 1000));
 
-            // Xác thực nếu chưa đăng nhập
             if (!isAuthenticated) {
                 botResponse = authenticateUser(userInput);
+            } else if (!isFaceAuthenticated) {
+                botResponse = "Please complete face authentication first.";
             } else {
-                // Kiểm tra quyền truy cập
                 const accessCheck = checkAccess(userInput);
                 if (!accessCheck.hasAccess) {
                     botResponse = accessCheck.message;
                 } else {
-            try {
-                const response = await fetch("http://localhost:11434/api/generate", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
+                    try {
+                        const response = await fetch("http://localhost:11434/api/generate", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
                                 model: "fta-assistant",
                                 prompt: `Hello ${userName}! ${conversation
                                     .filter(msg => !msg.content.includes("Authentication successful!") && !msg.content.includes("Authentication failed"))
@@ -771,11 +802,11 @@
                                 top_p: 0.9,
                                 max_tokens: 256,
                                 stop: ["<|end_of_turn|>"]
-                    })
-                });
+                            })
+                        });
 
                         if (!response.ok) throw new Error("API request failed");
-                const data = await response.json();
+                        const data = await response.json();
                         botResponse = data.response || "Sorry, I couldn't process your request.";
                     } catch (error) {
                         console.error("Error:", error);
@@ -784,20 +815,17 @@
                 }
             }
 
-            // Xóa hiệu ứng đang nhập và hiển thị tin nhắn
             chatBox.removeChild(typingIndicator);
-                const botMessage = document.createElement("div");
-                botMessage.className = "message bot-message";
-                botMessage.textContent = botResponse;
-                chatBox.appendChild(botMessage);
+            const botMessage = document.createElement("div");
+            botMessage.className = "message bot-message";
+            botMessage.textContent = botResponse;
+            chatBox.appendChild(botMessage);
 
-                // Thêm phản hồi vào lịch sử
             conversation.push({ role: "assistant", content: botResponse });
             if (conversation.length > 5) {
                 conversation = conversation.slice(-5);
             }
 
-            // Lưu lịch sử và cuộn xuống cuối
             saveConversation();
             chatBox.scrollTop = chatBox.scrollHeight;
             document.getElementById("userInput").value = "";
@@ -805,16 +833,20 @@
 
         function clearChat() {
             isAuthenticated = false;
+            isFaceAuthenticated = false;
             userName = "";
             accessLevel = "";
             conversation = [];
             localStorage.removeItem("chatHistory");
             localStorage.removeItem("isAuthenticated");
+            localStorage.removeItem("isFaceAuthenticated");
             localStorage.removeItem("userName");
             localStorage.removeItem("accessLevel");
             const chatBox = document.getElementById("chatBox");
             chatBox.innerHTML = '<div class="message bot-message">Chat cleared! Please enter your Employee ID to start again. 😊</div>';
             chatBox.scrollTop = chatBox.scrollHeight;
+            document.getElementById('userInput').disabled = true;
+            document.getElementById('userInput').placeholder = "Please complete face authentication first";
         }
 
         function reportUrgentIssue() {
@@ -835,7 +867,6 @@
         function submitIssue() {
             const issueDetails = document.getElementById("issueDetails").value.trim();
             if (issueDetails) {
-                // Gửi thông tin sự cố đến server (cần triển khai API)
                 fetch('/api/report-issue', {
                     method: 'POST',
                     headers: {
@@ -857,12 +888,10 @@
             }
         }
 
-        // Giả lập xác thực khuôn mặt với webcam
         function simulateFaceAuth() {
             const modal = document.getElementById('faceAuthModal');
             const authBox = modal.querySelector('.face-auth-box');
             
-            // Hiển thị video từ webcam
             authBox.innerHTML = `
                 <div class="face-scan-container">
                     <video id="webcam" autoplay playsinline></video>
@@ -873,12 +902,11 @@
                 <p id="motionDetectionStatus" style="color: #ff4444; margin-top: 10px;">Detecting presence...</p>
             `;
             
-            // Bắt đầu truy cập webcam
             const video = document.getElementById('webcam');
             const constraints = {
                 video: {
-                    facingMode: "user", // Sử dụng camera trước
-                    width: { ideal: 160 }, // Giảm độ phân giải để tăng hiệu suất
+                    facingMode: "user",
+                    width: { ideal: 160 },
                     height: { ideal: 120 }
                 }
             };
@@ -893,27 +921,23 @@
                     video.style.width = '100%';
                     video.style.borderRadius = '10px';
                     
-                    // Tạo canvas để phân tích khung hình
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
                     canvas.width = 160;
                     canvas.height = 120;
                     
-                    // Bắt đầu kiểm tra chuyển động
                     detectionInterval = setInterval(() => {
                         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
                         const currentFrame = ctx.getImageData(0, 0, canvas.width, canvas.height);
                         
                         if (previousFrame) {
                             const diff = calculateFrameDifference(previousFrame, currentFrame);
-                            if (diff > 0.1) { // Ngưỡng phát hiện chuyển động
+                            if (diff > 0.1) {
                                 motionDetected = true;
                                 clearInterval(detectionInterval);
                                 document.getElementById('motionDetectionStatus').textContent = 'Presence detected! Starting scan...';
                                 
-                                // Bắt đầu quét sau khi phát hiện chuyển động
                                 setTimeout(() => {
-                                    // Dừng webcam
                                     const stream = video.srcObject;
                                     const tracks = stream.getTracks();
                                     tracks.forEach(track => track.stop());
@@ -923,34 +947,35 @@
                                         <p>Processing your face data...</p>
                                     `;
                                     
-                                    // Giả lập xử lý dữ liệu
                                     setTimeout(() => {
+                                        isFaceAuthenticated = true;
+                                        saveConversation();
+                                        
                                         authBox.innerHTML = `
                                             <img src="https://raw.githubusercontent.com/TDNM88/ftabg/refs/heads/main/chatbot/face-scan.png" alt="Face Scan">
                                             <h2>Authentication Successful!</h2>
                                             <p>Welcome back, ${userName}!</p>
                                         `;
                                         
-                                        // Đóng modal sau 1.5 giây
                                         setTimeout(() => {
                                             modal.style.display = 'none';
                                             document.getElementById('userInput').disabled = false;
                                             document.getElementById('userInput').placeholder = "Ask your question here";
                                             
-                                            // Hiển thị tin nhắn chào mừng
                                             const chatBox = document.getElementById("chatBox");
                                             const welcomeMessage = document.createElement("div");
                                             welcomeMessage.className = "message bot-message";
                                             welcomeMessage.textContent = `Welcome ${userName}! How can I assist you today?`;
                                             chatBox.appendChild(welcomeMessage);
                                             chatBox.scrollTop = chatBox.scrollHeight;
+                                            document.getElementById('userInput').focus();
                                         }, 1500);
                                     }, 2000);
-                                }, 3000); // Thời gian quét 3 giây
+                                }, 3000);
                             }
                         }
                         previousFrame = currentFrame;
-                    }, 200); // Kiểm tra chuyển động mỗi 200ms
+                    }, 200);
                 })
                 .catch(err => {
                     console.error("Error accessing webcam:", err);
@@ -958,11 +983,32 @@
                         <h2>Camera Access Required</h2>
                         <p>Please enable camera access in your browser settings to continue.</p>
                         <button onclick="simulateFaceAuth()">Try Again</button>
+                        <button onclick="skipFaceAuth()" style="background-color: #ff4444; margin-left: 10px;">Skip Face Authentication (Testing)</button>
                     `;
                 });
         }
 
-        // Hàm tính toán sự khác biệt giữa các khung hình
+        function skipFaceAuth() {
+            const modal = document.getElementById('faceAuthModal');
+            isFaceAuthenticated = true;
+            saveConversation();
+
+            modal.style.display = 'none';
+
+            const chatBox = document.getElementById("chatBox");
+            chatBox.style.display = 'block';
+            const skipMessage = document.createElement("div");
+            skipMessage.className = "message bot-message";
+            skipMessage.textContent = `Face authentication skipped (testing mode). Welcome ${userName}! How can I assist you today?`;
+            chatBox.appendChild(skipMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            const userInput = document.getElementById('userInput');
+            userInput.disabled = false;
+            userInput.placeholder = "Ask your question here";
+            userInput.focus();
+        }
+
         function calculateFrameDifference(frame1, frame2) {
             let diff = 0;
             for (let i = 0; i < frame1.data.length; i += 4) {
@@ -973,7 +1019,6 @@
             return diff / (frame1.data.length / 4 * 3);
         }
 
-        // Gửi tin nhắn khi nhấn Enter
         document.getElementById("userInput").addEventListener("keypress", function (event) {
             if (event.key === "Enter") {
                 sendMessage();
