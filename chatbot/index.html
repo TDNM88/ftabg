@@ -40,6 +40,7 @@
             justify-content: center;
             align-items: center;
             padding: 1.25rem;
+            overflow: hidden; /* Loại bỏ thanh cuộn toàn trang */
         }
 
         /* Container responsive */
@@ -291,8 +292,9 @@
         .chat-box {
             flex: 1;
             padding: 20px;
-            height: 600px;
-            overflow-y: auto;
+            height: 600px; /* Chiều cao cố định để có thanh cuộn */
+            overflow-y: auto; /* Chỉ cuộn trong khung chat */
+            overflow-x: hidden; /* Ngăn cuộn ngang */
             background: #f9f9f9;
         }
         .chat-box::-webkit-scrollbar {
