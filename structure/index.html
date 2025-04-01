@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Chi Tiết</title>
+    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Các Loại Agents</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +34,7 @@
         .diagram-container {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: 500px;
             border: 1px solid #ddd;
             background-color: #f9f9f9;
             margin: 20px 0;
@@ -42,8 +42,8 @@
 
         .component {
             position: absolute;
-            width: 200px;
-            height: 100px;
+            width: 220px;
+            height: 120px;
             border: 1px solid #333;
             text-align: center;
             padding: 10px;
@@ -90,10 +90,31 @@
             margin: 10px 0;
             font-size: 13px;
         }
+
+        .agent-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .agent-item {
+            width: 300px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .agent-item h4 {
+            margin: 0 0 10px;
+            color: #2980b9;
+        }
     </style>
 </head>
 <body>
-    <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp</h1>
+    <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Các Loại Agents</h1>
 
     <!-- Tổng Quan Hệ Thống -->
     <div class="section">
@@ -103,15 +124,23 @@
                 <h3>Đầu Vào Người Dùng</h3>
                 <p>Câu hỏi/lệnh từ nhân viên</p>
             </div>
-            <div class="component central" style="left: 350px; top: 150px;">
+            <div class="component central" style="left: 400px; top: 200px;">
                 <h3>Mô Hình Điều Phối Trung Tâm</h3>
-                <p>Điều phối và tích hợp</p>
+                <p>Điều phối các agents</p>
             </div>
-            <div class="component" style="left: 650px; top: 50px;">
-                <h3>Mô Hình Nhỏ</h3>
-                <p>Tiền xử lý, nhận diện, v.v.</p>
+            <div class="component" style="left: 750px; top: 50px;">
+                <h3>Agent Tiền Xử Lý</h3>
+                <p>Làm sạch văn bản</p>
             </div>
-            <div class="component" style="left: 50px; top: 300px;">
+            <div class="component" style="left: 750px; top: 200px;">
+                <h3>Agent Ý Định</h3>
+                <p>Phân loại ý định</p>
+            </div>
+            <div class="component" style="left: 750px; top: 350px;">
+                <h3>Agent Thực Thể</h3>
+                <p>Trích xuất thông tin</p>
+            </div>
+            <div class="component" style="left: 50px; top: 400px;">
                 <h3>Đầu Ra Người Dùng</h3>
                 <p>Phản hồi cuối cùng</p>
             </div>
@@ -121,198 +150,79 @@
                         <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                     </marker>
                 </defs>
-                <line x1="150" y1="100" x2="450" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-                <line x1="450" y1="200" x2="750" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="450" y1="200" x2="150" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="150" y1="100" x2="500" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="500" y1="250" x2="850" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="500" y1="250" x2="850" y2="250" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="500" y1="250" x2="850" y2="400" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="500" y1="250" x2="150" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
             </svg>
         </div>
         <p class="description">
-            Hệ thống hoạt động với một <strong>Mô Hình Điều Phối Trung Tâm</strong> quản lý luồng dữ liệu giữa <strong>Đầu Vào Người Dùng</strong>, các <strong>Mô Hình Nhỏ</strong> chuyên biệt, và <strong>Đầu Ra Người Dùng</strong>. 
-            Mỗi mô hình nhỏ xử lý một nhiệm vụ cụ thể, được tối ưu hóa để nhẹ và hiệu quả, chỉ dùng GPU cho suy luận (inference).
+            Hệ thống chatbot sử dụng một <strong>Mô Hình Điều Phối Trung Tâm</strong> để quản lý luồng dữ liệu và điều phối các <strong>Agents</strong> chuyên biệt. 
+            Các agents này là các mô hình nhỏ, mã nguồn mở, được tối ưu hóa cho từng nhiệm vụ cụ thể, giúp xử lý nhanh và hiệu quả mà không cần đào tạo lại.
         </p>
     </div>
 
-    <!-- Đầu Vào Người Dùng -->
+    <!-- Danh Sách Các Loại Agents -->
     <div class="section">
-        <h2>2. Đầu Vào Người Dùng</h2>
-        <div class="diagram-container" style="height: 200px;">
-            <div class="component" style="left: 50px; top: 50px;">
-                <h3>Đầu Vào Người Dùng</h3>
-                <p>Câu hỏi/lệnh từ nhân viên</p>
+        <h2>2. Danh Sách Các Loại Agents</h2>
+        <div class="agent-list">
+            <div class="agent-item">
+                <h4>Agent Tiền Xử Lý Đầu Vào</h4>
+                <p><strong>Chức năng:</strong> Làm sạch và chuẩn hóa văn bản đầu vào (loại bỏ lỗi chính tả, ký tự thừa, phân tách từ).</p>
+                <p><strong>Công nghệ:</strong> spaCy, regex.</p>
+                <p><strong>Ví dụ:</strong> "Ai phụ trách dự án A???" → "Ai phụ trách dự án A".</p>
             </div>
-            <div class="component central" style="left: 350px; top: 50px;">
-                <h3>Mô Hình Điều Phối</h3>
-                <p>Nhận và phân tích</p>
+            <div class="agent-item">
+                <h4>Agent Nhận Diện Ý Định</h4>
+                <p><strong>Chức năng:</strong> Phân loại ý định của câu hỏi (hỏi thông tin, yêu cầu hành động, v.v.).</p>
+                <p><strong>Công nghệ:</strong> BERT-small, DistilBERT.</p>
+                <p><strong>Ví dụ:</strong> "Ai phụ trách dự án A" → Ý định: "yêu cầu thông tin nhân sự".</p>
             </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-            </svg>
+            <div class="agent-item">
+                <h4>Agent Trích Xuất Thực Thể</h4>
+                <p><strong>Chức năng:</strong> Xác định các thực thể quan trọng (tên, ngày, địa điểm).</p>
+                <p><strong>Công nghệ:</strong> Flair NER, spaCy NER.</p>
+                <p><strong>Ví dụ:</strong> "Ai phụ trách dự án A" → Thực thể: "dự án A".</p>
+            </div>
+            <div class="agent-item">
+                <h4>Agent Tạo Phản Hồi</h4>
+                <p><strong>Chức năng:</strong> Sinh ra câu trả lời tự nhiên dựa trên ý định và thực thể.</p>
+                <p><strong>Công nghệ:</strong> GPT-2 small, DialoGPT.</p>
+                <p><strong>Ví dụ:</strong> Ý định: "yêu cầu thông tin", Thực thể: "dự án A" → "Người phụ trách dự án A là Nguyễn Văn B".</p>
+            </div>
+            <div class="agent-item">
+                <h4>Agent Tích Hợp Dữ Liệu</h4>
+                <p><strong>Chức năng:</strong> Truy vấn và tổng hợp thông tin từ các nguồn nội bộ (CRM, ERP).</p>
+                <p><strong>Công nghệ:</strong> API connectors, lightweight DB query models.</p>
+                <p><strong>Ví dụ:</strong> "Dự án A có bao nhiêu người?" → Truy vấn CRM → "Dự án A có 5 người tham gia".</p>
+            </div>
         </div>
         <p class="description">
-            Đây là nơi nhân viên nhập câu hỏi hoặc lệnh qua giao diện (web, widget). Ví dụ: "Tìm thông tin hợp đồng số 123" hoặc "Lịch họp tuần này."
+            Các agents này hoạt động độc lập nhưng phối hợp chặt chẽ dưới sự quản lý của Mô Hình Điều Phối Trung Tâm, đảm bảo xử lý nhanh và chính xác.
         </p>
-        <div class="example">
-            <strong>Ví dụ:</strong> Nhân viên nhập: "Ai phụ trách dự án A?" → Đầu vào được gửi đến Mô Hình Điều Phối Trung Tâm.
-        </div>
     </div>
 
-    <!-- Mô Hình Điều Phối Trung Tâm -->
+    <!-- Luồng Hoạt Động -->
     <div class="section">
-        <h2>3. Mô Hình Điều Phối Trung Tâm</h2>
-        <div class="diagram-container">
-            <div class="component central" style="left: 350px; top: 150px;">
-                <h3>Mô Hình Điều Phối Trung Tâm</h3>
-                <p>Quản lý ngữ cảnh, điều phối</p>
-            </div>
-            <div class="component" style="left: 50px; top: 50px;">
-                <h3>Đầu Vào</h3>
-                <p>Từ người dùng</p>
-            </div>
-            <div class="component" style="left: 650px; top: 50px;">
-                <h3>Tiền Xử Lý</h3>
-                <p>Làm sạch văn bản</p>
-            </div>
-            <div class="component" style="left: 650px; top: 200px;">
-                <h3>Nhận Diện Ý Định</h3>
-                <p>Phân loại ý định</p>
-            </div>
-            <div class="component" style="left: 50px; top: 300px;">
-                <h3>Đầu Ra</h3>
-                <p>Phản hồi cuối cùng</p>
-            </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-                <line x1="450" y1="200" x2="750" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="450" y1="200" x2="750" y2="250" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="450" y1="200" x2="150" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-            </svg>
-        </div>
+        <h2>3. Luồng Hoạt Động Của Hệ Thống</h2>
         <p class="description">
-            Mô Hình Điều Phối Trung Tâm nhận đầu vào, phân tích ngữ cảnh, và quyết định gửi dữ liệu đến các mô hình nhỏ nào. Sau khi nhận kết quả, nó tích hợp và tạo phản hồi cuối cùng. 
-            Ví dụ: dùng DistilBERT để phân loại ý định và điều phối.
+            1. <strong>Đầu Vào:</strong> Nhân viên nhập câu hỏi → Gửi đến Mô Hình Điều Phối.<br>
+            2. <strong>Tiền Xử Lý:</strong> Agent Tiền Xử Lý làm sạch văn bản.<br>
+            3. <strong>Nhận Diện Ý Định:</strong> Agent Ý Định xác định mục đích câu hỏi.<br>
+            4. <strong>Trích Xuất Thực Thể:</strong> Agent Thực Thể tìm các thông tin quan trọng.<br>
+            5. <strong>Tích Hợp Dữ Liệu:</strong> Agent Dữ Liệu truy vấn thông tin từ hệ thống nội bộ.<br>
+            6. <strong>Tạo Phản Hồi:</strong> Agent Phản Hồi sinh câu trả lời tự nhiên.<br>
+            7. <strong>Đầu Ra:</strong> Mô Hình Điều Phối gửi phản hồi cuối cùng cho người dùng.
         </p>
         <div class="example">
-            <strong>Ví dụ:</strong> Câu hỏi "Ai phụ trách dự án A?" → Mô hình phân tích → Gửi đến Nhận Diện Ý Định và Trích Xuất Thực Thể.
-        </div>
-    </div>
-
-    <!-- Mô Hình Tiền Xử Lý Đầu Vào -->
-    <div class="section">
-        <h2>4. Mô Hình Tiền Xử Lý Đầu Vào</h2>
-        <div class="diagram-container" style="height: 200px;">
-            <div class="component central" style="left: 50px; top: 50px;">
-                <h3>Mô Hình Điều Phối</h3>
-                <p>Gửi văn bản thô</p>
-            </div>
-            <div class="component" style="left: 350px; top: 50px;">
-                <h3>Tiền Xử Lý Đầu Vào</h3>
-                <p>Làm sạch, phân tách</p>
-            </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-            </svg>
-        </div>
-        <p class="description">
-            Mô hình này làm sạch văn bản (loại bỏ ký tự thừa, chuẩn hóa) và phân tách (tokenize) để chuẩn bị dữ liệu. Ví dụ: dùng spaCy hoặc regex.
-        </p>
-        <div class="example">
-            <strong>Ví dụ:</strong> "Ai phụ trách dự án A???" → Làm sạch thành "Ai phụ trách dự án A" → Phân tách thành ["Ai", "phụ trách", "dự án", "A"].
-        </div>
-    </div>
-
-    <!-- Mô Hình Nhận Diện Ý Định -->
-    <div class="section">
-        <h2>5. Mô Hình Nhận Diện Ý Định</h2>
-        <div class="diagram-container" style="height: 200px;">
-            <div class="component central" style="left: 50px; top: 50px;">
-                <h3>Mô Hình Điều Phối</h3>
-                <p>Gửi văn bản sạch</p>
-            </div>
-            <div class="component" style="left: 350px; top: 50px;">
-                <h3>Nhận Diện Ý Định</h3>
-                <p>Phân loại ý định</p>
-            </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-            </svg>
-        </div>
-        <p class="description">
-            Mô hình này phân loại ý định của người dùng. Ví dụ: dùng BERT-small để xác định "yêu cầu thông tin" hoặc "ra lệnh."
-        </p>
-        <div class="example">
-            <strong>Ví dụ:</strong> "Ai phụ trách dự án A" → Ý định: "yêu cầu thông tin nhân sự."
-        </div>
-    </div>
-
-    <!-- Mô Hình Trích Xuất Thực Thể -->
-    <div class="section">
-        <h2>6. Mô Hình Trích Xuất Thực Thể</h2>
-        <div class="diagram-container" style="height: 200px;">
-            <div class="component central" style="left: 50px; top: 50px;">
-                <h3>Mô Hình Điều Phối</h3>
-                <p>Gửi văn bản và ý định</p>
-            </div>
-            <div class="component" style="left: 350px; top: 50px;">
-                <h3>Trích Xuất Thực Thể</h3>
-                <p>Xác định thực thể</p>
-            </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-            </svg>
-        </div>
-        <p class="description">
-            Mô hình này trích xuất các thực thể quan trọng. Ví dụ: dùng Flair NER để nhận diện "dự án A" là tên dự án.
-        </p>
-        <div class="example">
-            <strong>Ví dụ:</strong> "Ai phụ trách dự án A" → Thực thể: "dự án A" (tên dự án).
-        </div>
-    </div>
-
-    <!-- Mô Hình Tạo Phản Hồi -->
-    <div class="section">
-        <h2>7. Mô Hình Tạo Phản Hồi</h2>
-        <div class="diagram-container" style="height: 200px;">
-            <div class="component central" style="left: 50px; top: 50px;">
-                <h3>Mô Hình Điều Phối</h3>
-                <p>Gửi ý định và thực thể</p>
-            </div>
-            <div class="component" style="left: 350px; top: 50px;">
-                <h3>Tạo Phản Hồi</h3>
-                <p>Sinh câu trả lời</p>
-            </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-            </svg>
-        </div>
-        <p class="description">
-            Mô hình này tạo câu trả lời tự nhiên dựa trên ý định và thực thể. Ví dụ: dùng GPT-2 small.
-        </p>
-        <div class="example">
-            <strong>Ví dụ:</strong> Ý định: "yêu cầu thông tin," Thực thể: "dự án A" → Phản hồi: "Người phụ trách dự án A là Nguyễn Văn B."
-        </div>
-    </div>
-
-    <!-- Đầu Ra Người Dùng -->
-    <div class="section">
-        <h2>8. Đầu Ra Người Dùng</h2>
-        <div class="diagram-container" style="height: 200px;">
-            <div class="component central" style="left: 50px; top: 50px;">
-                <h3>Mô Hình Điều Phối</h3>
-                <p>Gửi phản hồi cuối cùng</p>
-            </div>
-            <div class="component" style="left: 350px; top: 50px;">
-                <h3>Đầu Ra Người Dùng</h3>
-                <p>Hiển thị cho nhân viên</p>
-            </div>
-            <svg class="arrows">
-                <line x1="150" y1="100" x2="450" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-            </svg>
-        </div>
-        <p class="description">
-            Phản hồi cuối cùng được hiển thị cho người dùng qua giao diện chatbot.
-        </p>
-        <div class="example">
-            <strong>Ví dụ:</strong> "Người phụ trách dự án A là Nguyễn Văn B" → Hiển thị trên màn hình.
+            <strong>Ví dụ đầy đủ:</strong> Nhân viên hỏi: "Ai phụ trách dự án A?"<br>
+            - Agent Tiền Xử Lý: "Ai phụ trách dự án A".<br>
+            - Agent Ý Định: "Yêu cầu thông tin nhân sự".<br>
+            - Agent Thực Thể: "dự án A".<br>
+            - Agent Dữ Liệu: Truy vấn CRM → "Nguyễn Văn B".<br>
+            - Agent Phản Hồi: "Người phụ trách dự án A là Nguyễn Văn B".<br>
+            - Đầu Ra: Hiển thị "Người phụ trách dự án A là Nguyễn Văn B".
         </div>
     </div>
 </body>
