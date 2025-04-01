@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giai Đoạn HR & Đào Tạo</title>
+    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - HR & Đào Tạo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,18 +17,18 @@
             color: #2c3e50;
         }
 
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
         .section {
             margin: 20px 0;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .section h2 {
-            color: #2980b9;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
         }
 
         .diagram-container {
@@ -42,11 +42,11 @@
 
         .component {
             position: absolute;
-            width: 280px;
-            height: 160px;
+            width: 300px;
+            height: 180px;
             border: 1px solid #333;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             box-sizing: border-box;
             background-color: #fff;
             box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
@@ -55,13 +55,13 @@
 
         .component h3 {
             margin: 0;
-            font-size: 16px;
+            font-size: 18px;
             color: #2c3e50;
         }
 
         .component p {
-            margin: 5px 0;
-            font-size: 12px;
+            margin: 10px 0;
+            font-size: 14px;
             color: #7f8c8d;
         }
 
@@ -82,29 +82,29 @@
         }
 
         .description {
-            font-size: 14px;
+            font-size: 16px;
             color: #34495e;
             line-height: 1.6;
         }
 
         .example {
             background-color: #ecf0f1;
-            padding: 10px;
+            padding: 15px;
             border-left: 4px solid #3498db;
-            margin: 10px 0;
-            font-size: 13px;
+            margin: 15px 0;
+            font-size: 14px;
         }
 
         .agent-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
         }
 
         .agent-item {
-            width: 400px;
-            padding: 15px;
+            width: 450px;
+            padding: 20px;
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -112,45 +112,34 @@
         }
 
         .agent-item h4 {
-            margin: 0 0 10px;
+            margin: 0 0 15px;
             color: #2980b9;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giai Đoạn HR & Đào Tạo</h1>
+    <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giải Pháp HR & Đào Tạo</h1>
 
-    <!-- Tổng Quan Hệ Thống -->
+    <!-- Hệ Thống Là Gì -->
     <div class="section">
-        <h2>1. Tổng Quan Hệ Thống</h2>
+        <h2>1. Hệ Thống Này Là Gì?</h2>
         <div class="diagram-container">
             <div class="component" style="left: 50px; top: 50px;">
-                <h3>Đầu Vào Người Dùng</h3>
-                <p>Câu hỏi/lệnh từ nhân viên về HR & đào tạo</p>
+                <h3>Nhân Viên Hỏi</h3>
+                <p>Câu hỏi từ nhân viên về nhân sự, đào tạo, công ty</p>
             </div>
-            <div class="component central" style="left: 500px; top: 300px;">
-                <h3>HR Training Orchestrator</h3>
-                <p>Điều phối các agents HR & đào tạo</p>
+            <div class="component central" style="left: 500px; top: 250px;">
+                <h3>Lõi Điều Hành (LLaMA)</h3>
+                <p>Trung tâm quản lý, phân công nhiệm vụ cho các trợ lý</p>
             </div>
-            <div class="component" style="left: 900px; top: 50px;">
-                <h3>Text Cleaner Agent</h3>
-                <p>Làm sạch văn bản đầu vào</p>
+            <div class="component" style="left: 950px; top: 50px;">
+                <h3>Các Trợ Lý Chuyên Biệt</h3>
+                <p>Xử lý từng công việc cụ thể</p>
             </div>
-            <div class="component" style="left: 900px; top: 200px;">
-                <h3>Intent Classifier Agent</h3>
-                <p>Phân loại ý định</p>
-            </div>
-            <div class="component" style="left: 900px; top: 350px;">
-                <h3>Entity Extractor Agent</h3>
-                <p>Trích xuất thông tin</p>
-            </div>
-            <div class="component highlight" style="left: 900px; top: 500px;">
-                <h3>HR Training Data Agent</h3>
-                <p>Truy vấn dữ liệu HR & đào tạo</p>
-            </div>
-            <div class="component" style="left: 50px; top: 550px;">
-                <h3>Đầu Ra Người Dùng</h3>
-                <p>Phản hồi về HR & đào tạo</p>
+            <div class="component" style="left: 50px; top: 500px;">
+                <h3>Phản Hồi Cho Nhân Viên</h3>
+                <p>Câu trả lời rõ ràng, nhanh chóng</p>
             </div>
             <svg class="arrows">
                 <defs>
@@ -158,117 +147,180 @@
                         <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                     </marker>
                 </defs>
-                <line x1="150" y1="100" x2="600" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-                <line x1="600" y1="350" x2="1000" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="600" y1="350" x2="1000" y2="250" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="600" y1="350" x2="1000" y2="400" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="600" y1="350" x2="1000" y2="550" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="600" y1="350" x2="150" y2="600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="200" y1="150" x2="450" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="250" x2="900" y2="150" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="450" y1="350" x2="200" y2="500" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
             </svg>
         </div>
         <p class="description">
-            Hệ thống chatbot nội bộ doanh nghiệp trong giai đoạn hiện tại tập trung vào lĩnh vực <strong>HR và Đào Tạo</strong>. 
-            Một <strong>HR Training Orchestrator</strong> (Mô Hình Điều Phối Trung Tâm) quản lý luồng dữ liệu và điều phối các <strong>Agents</strong> chuyên biệt, bao gồm Text Cleaner Agent, Intent Classifier Agent, Entity Extractor Agent, và HR Training Data Agent (trọng tâm giai đoạn này). 
-            Các agents sử dụng mô hình mã nguồn mở, nhẹ, chỉ chạy suy luận (inference) trên GPU, hỗ trợ nhân viên truy cập nhanh thông tin HR/đào tạo như lịch học, chính sách nhân sự, và phúc lợi.
+            Hệ thống này là một trợ lý ảo thông minh, được xây dựng để giúp doanh nghiệp tự động hóa các công việc liên quan đến nhân sự (HR), đào tạo, và hỗ trợ nhân viên. 
+            Nó hoạt động như một trung tâm hỗ trợ 24/7, nơi nhân viên có thể đặt câu hỏi và nhận câu trả lời ngay lập tức mà không cần chờ đợi phòng HR hay quản lý. 
+            Ở trung tâm, chúng tôi sử dụng một mô hình thông minh gọi là **LLaMA** – một “bộ não” mạnh mẽ nhưng nhỏ gọn, điều phối mọi thứ. Xung quanh nó là các **trợ lý chuyên biệt** (agents), mỗi trợ lý được giao một nhiệm vụ cụ thể như trả lời về lịch đào tạo, phúc lợi, hay hỗ trợ nhân viên mới. 
+            Tất cả được cài đặt trên máy chủ nội bộ (server local) của doanh nghiệp, đảm bảo thông tin không bao giờ rời khỏi công ty.
         </p>
     </div>
 
-    <!-- Danh Sách Các Loại Agents -->
+    <!-- Lợi Ích Kinh Tế và Tương Lai Mở Rộng -->
     <div class="section">
-        <h2>2. Danh Sách Các Loại Agents trong Giai Đoạn HR & Đào Tạo</h2>
+        <h2>2. Lợi Ích Kinh Tế và Tương Lai Mở Rộng</h2>
+        <p class="description">
+            <strong>Lợi ích kinh tế:</strong><br>
+            - <strong>Tiết kiệm chi phí nhân sự:</strong> Hệ thống thay thế hàng giờ làm việc của phòng HR trong việc trả lời câu hỏi lặp đi lặp lại, như “Tôi còn bao nhiêu ngày phép?” hay “Lịch đào tạo khi nào?”. Ví dụ: một nhân viên HR mất 5 phút để trả lời mỗi câu hỏi, với 100 câu hỏi mỗi ngày, doanh nghiệp tiết kiệm được hàng trăm giờ mỗi tháng.<br>
+            - <strong>Giảm chi phí đào tạo:</strong> Nhân viên mới không cần hỏi quản lý mọi thứ – hệ thống tự động hướng dẫn họ, từ quy trình làm việc đến thông tin công ty, giúp tiết kiệm thời gian và tiền bạc.<br>
+            - <strong>Đầu tư một lần, lợi ích dài lâu:</strong> Chỉ cần cài đặt hệ thống trên máy chủ nội bộ, doanh nghiệp không phải trả phí thuê dịch vụ ngoài hay phụ thuộc vào các công ty khác. Chi phí ban đầu thấp hơn nhiều so với việc thuê thêm nhân viên hay mua phần mềm đắt đỏ.<br><br>
+            <strong>Tương lai mở rộng:</strong><br>
+            - <strong>Thêm tính năng dễ dàng:</strong> Hệ thống này giống như một bộ khung, có thể gắn thêm các trợ lý mới để xử lý các công việc khác trong tương lai, như tài chính, marketing, hay sản xuất, mà không cần làm lại từ đầu.<br>
+            - <strong>Hỗ trợ quy mô lớn:</strong> Khi công ty phát triển, hệ thống có thể mở rộng để phục vụ hàng nghìn nhân viên mà không cần thay đổi nhiều, chỉ cần nâng cấp máy chủ nội bộ.<br>
+            - <strong>Đón đầu công nghệ:</strong> Với nền tảng AI mạnh mẽ, doanh nghiệp sẽ luôn sẵn sàng ứng dụng các công nghệ mới mà không bị tụt hậu.
+        </p>
+    </div>
+
+    <!-- Bảo Mật Tuyệt Đối -->
+    <div class="section">
+        <h2>3. Bảo Mật Tuyệt Đối Với AI</h2>
+        <p class="description">
+            Hệ thống được thiết kế để bảo mật thông tin doanh nghiệp ở mức cao nhất:<br>
+            - <strong>Chạy trên máy chủ nội bộ:</strong> Toàn bộ dữ liệu và hoạt động của hệ thống nằm trong server của công ty, không gửi lên mạng hay lưu trữ bên ngoài. Điều này có nghĩa là không ai ngoài doanh nghiệp có thể truy cập thông tin.<br>
+            - <strong>Các lớp bảo vệ bằng AI:</strong> Chúng tôi sử dụng chính AI để tạo ra các “tường lửa thông minh”. Những trợ lý bảo mật sẽ:<br>
+              + Theo dõi mọi truy cập vào hệ thống, phát hiện ngay nếu có hành vi lạ (ví dụ: ai đó cố lấy dữ liệu không được phép).<br>
+              + Mã hóa thông tin tự động, biến mọi dữ liệu nhạy cảm (như ngày phép, lương thưởng) thành mã mà chỉ hệ thống hiểu được.<br>
+              + Xóa dữ liệu tạm thời sau khi trả lời xong, không để lại dấu vết.<br>
+            - <strong>Không rò rỉ thông tin:</strong> Vì các trợ lý đều là mã nguồn mở nhưng được chúng tôi tinh chỉnh và khóa kín trong server nội bộ, không có nguy cơ dữ liệu bị gửi ra ngoài như khi dùng các dịch vụ AI công cộng (như ChatGPT).
+        </p>
+    </div>
+
+    <!-- Mô Hình LLaMA và Trợ Lý Chuyên Biệt -->
+    <div class="section">
+        <h2>4. Lõi LLaMA và Các Trợ Lý Chuyên Biệt</h2>
+        <p class="description">
+            <strong>Lõi LLaMA là gì?</strong><br>
+            LLaMA là “bộ não” chính của hệ thống, một mô hình thông minh nhỏ gọn nhưng rất mạnh, được chúng tôi chọn vì nó nhanh, tiết kiệm tài nguyên, và phù hợp để chạy trên máy chủ nội bộ. Nó đóng vai trò như một người quản lý, nhận yêu cầu từ nhân viên và phân công cho các trợ lý chuyên biệt.<br><br>
+            <strong>Các trợ lý chuyên biệt:</strong><br>
+            Xung quanh LLaMA là các trợ lý nhỏ hơn, được xây dựng từ mã nguồn mở (miễn phí và minh bạch), nhưng chúng tôi đã huấn luyện chúng rất kỹ để làm tốt từng việc cụ thể. Ví dụ: một trợ lý chỉ chuyên trả lời về lịch đào tạo, một trợ lý khác chỉ xử lý câu hỏi về phúc lợi.<br><br>
+            <strong>Vì sao chuyên biệt hóa tốt hơn mô hình khổng lồ?</strong><br>
+            - <strong>Nhanh hơn:</strong> Một mô hình khổng lồ phải xử lý mọi thứ, nên tốc độ chậm. Trợ lý chuyên biệt chỉ làm một việc, nên trả lời gần như ngay lập tức.<br>
+            - <strong>Chính xác hơn:</strong> Vì mỗi trợ lý được huấn luyện riêng cho một nhiệm vụ (như tìm lịch đào tạo), nó hiểu rõ vấn đề hơn một mô hình tổng quát cố gắng làm tất cả.<br>
+            - <strong>Tiết kiệm tài nguyên:</strong> Các trợ lý nhỏ không cần máy chủ quá mạnh, giúp giảm chi phí vận hành so với dùng mô hình lớn.<br>
+            - <strong>Dễ nâng cấp:</strong> Nếu cần cải thiện một phần (ví dụ: trả lời về tuyển dụng), chúng tôi chỉ cần tinh chỉnh một trợ lý, không phải làm lại toàn bộ hệ thống.
+        </p>
+    </div>
+
+    <!-- Các Hạng Mục Agents -->
+    <div class="section">
+        <h2>5. Các Trợ Lý (Agents) Phục Vụ HR & Đào Tạo</h2>
         <div class="agent-list">
-            <div class="agent-item">
-                <h4>Text Cleaner Agent</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Nhận câu hỏi/lệnh từ nhân viên, làm sạch văn bản bằng cách loại bỏ lỗi chính tả, ký tự thừa, chuẩn hóa định dạng, và phân tách (tokenize) để chuẩn bị dữ liệu cho các agents khác.</p>
-                <p><strong>Cách hoạt động:</strong> Sử dụng các công cụ xử lý ngôn ngữ tự nhiên để phân tích cú pháp, loại bỏ nhiễu (dấu câu dư, từ lặp), và chuyển đổi văn bản thành dạng dễ xử lý.</p>
-                <p><strong>Công nghệ:</strong> spaCy (thư viện xử lý ngôn ngữ tự nhiên mạnh mẽ), regex (biểu thức chính quy để xử lý nhanh các mẫu đơn giản).</p>
-                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Nhân Sự (HR Assistant)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Giải đáp mọi câu hỏi về nhân sự, từ ngày phép, lương thưởng, đến hồ sơ cá nhân của nhân viên.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Nhân viên nhập: "Lịch đào tạo tuần này là khi nào???" → Làm sạch thành: "Lịch đào tạo tuần này là khi nào".</li>
-                    <li>Nhân viên nhập: "tôi Muốn biết số ngày phép còn lại!!" → Chuẩn hóa thành: "Tôi muốn biết số ngày phép còn lại".</li>
+                    <li>Truy cập ngay dữ liệu nhân sự từ máy chủ nội bộ để trả lời câu hỏi như “Tôi còn bao nhiêu ngày phép?” hay “Tháng này tôi được thưởng bao nhiêu?” mà không cần qua phòng HR.</li>
+                    <li>Tự động gửi thông báo khi nhân viên sắp hết ngày phép hoặc cần cập nhật hồ sơ.</li>
+                    <li>Hỗ trợ 24/7, giảm thời gian chờ đợi so với hỏi người thật.</li>
                 </ul>
-                <p><strong>Lợi ích:</strong> Đảm bảo dữ liệu đầu vào sạch sẽ, giảm thiểu lỗi khi xử lý các câu hỏi phức tạp về HR/đào tạo.</p>
-            </div>
-            <div class="agent-item">
-                <h4>Intent Classifier Agent</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Phân loại ý định của câu hỏi/lệnh từ nhân viên để xác định mục đích chính, ví dụ: hỏi lịch đào tạo, yêu cầu thông tin phúc lợi, hoặc tra cứu dữ liệu nhân sự.</p>
-                <p><strong>Cách hoạt động:</strong> Sử dụng mô hình phân loại ngôn ngữ tự nhiên để gán nhãn ý định dựa trên văn bản đã được làm sạch. Agent này nhận diện các mẫu câu hỏi phổ biến trong HR/đào tạo.</p>
-                <p><strong>Công nghệ:</strong> DistilBERT (mô hình nhỏ gọn, nhanh), BERT-small (tối ưu cho phân loại ý định ngắn).</p>
-                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
-                <ul>
-                    <li>"Lịch đào tạo tuần này là khi nào" → Ý định: "yêu cầu lịch đào tạo".</li>
-                    <li>"Tôi được nghỉ bao nhiêu ngày phép?" → Ý định: "hỏi chính sách phúc lợi".</li>
-                    <li>"Ai dạy khóa kỹ năng mềm tháng này?" → Ý định: "tra cứu thông tin giảng viên".</li>
-                </ul>
-                <p><strong>Lợi ích:</strong> Giúp định hướng chính xác yêu cầu của nhân viên, đảm bảo câu hỏi được xử lý đúng luồng trong lĩnh vực HR/đào tạo.</p>
-            </div>
-            <div class="agent-item">
-                <h4>Entity Extractor Agent</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Trích xuất các thực thể quan trọng từ câu hỏi/lệnh, như tên khóa đào tạo, thời gian, tên nhân viên, hoặc loại phúc lợi, để hỗ trợ truy vấn dữ liệu.</p>
-                <p><strong>Cách hoạt động:</strong> Sử dụng mô hình nhận diện thực thể (NER) để phân tích văn bản và xác định các thành phần cụ thể cần chú ý.</p>
-                <p><strong>Công nghệ:</strong> Flair NER (chính xác với văn bản ngắn), spaCy NER (nhanh và nhẹ).</p>
-                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
-                <ul>
-                    <li>"Lịch đào tạo tuần này là khi nào" → Thực thể: "tuần này" (thời gian).</li>
-                    <li>"Ai dạy khóa kỹ năng mềm tháng 5?" → Thực thể: "khóa kỹ năng mềm" (tên khóa), "tháng 5" (thời gian).</li>
-                    <li>"Ngày phép của tôi còn lại bao nhiêu?" → Thực thể: "ngày phép" (loại phúc lợi), "tôi" (nhân viên hiện tại).</li>
-                </ul>
-                <p><strong>Lợi ích:</strong> Cung cấp thông tin chi tiết để Agent HR Training Data truy vấn chính xác, giảm thiểu hiểu lầm trong các câu hỏi HR/đào tạo.</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi còn bao nhiêu ngày phép năm nay?” → Trợ lý trả lời: “Bạn còn 10 ngày phép trong năm 2025, bạn muốn tôi hướng dẫn cách đăng ký nghỉ không?”</p>
             </div>
             <div class="agent-item highlight">
-                <h4>HR Training Data Agent (Trọng tâm giai đoạn này)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Truy vấn và tổng hợp dữ liệu từ hệ thống nội bộ liên quan đến HR và đào tạo, bao gồm lịch đào tạo, danh sách giảng viên, thông tin nhân viên, chính sách phúc lợi, và quy trình đăng ký khóa học.</p>
-                <p><strong>Cách hoạt động:</strong> Kết nối với cơ sở dữ liệu nội bộ (CRM, ERP, hệ thống quản lý đào tạo) qua API hoặc truy vấn SQL, tìm kiếm thông tin dựa trên ý định và thực thể từ các agents trước đó, sau đó trả về dữ liệu thô để xử lý tiếp.</p>
-                <p><strong>Công nghệ:</strong> API connectors (kết nối hệ thống nội bộ), lightweight DB query models (truy vấn nhanh), Python scripts (xử lý dữ liệu).</p>
-                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+                <h4>Trợ Lý Đào Tạo (Training Assistant)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Cung cấp thông tin về lịch đào tạo, đăng ký khóa học, và danh sách giảng viên.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Câu hỏi: "Lịch đào tạo tuần này là khi nào" → Truy vấn lịch → "Khóa đào tạo diễn ra vào thứ Tư, 9:00 sáng, phòng A1".</li>
-                    <li>Câu hỏi: "Ai dạy khóa kỹ năng mềm tháng 5?" → Truy vấn danh sách giảng viên → "Trần Thị C".</li>
-                    <li>Câu hỏi: "Tôi còn bao nhiêu ngày phép?" → Truy vấn dữ liệu nhân viên → "Bạn còn 8 ngày phép trong năm 2025".</li>
-                    <li>Câu hỏi: "Đăng ký khóa quản lý thời gian ở đâu?" → Truy vấn quy trình → "Đăng ký qua cổng đào tạo nội bộ tại link: training.company.com".</li>
+                    <li>Tự động tra cứu lịch đào tạo và trả lời ngay: “Khóa học tiếp theo diễn ra khi nào?” hay “Ai dạy khóa kỹ năng mềm?”.</li>
+                    <li>Hướng dẫn nhân viên cách đăng ký khóa học qua link nội bộ, không cần hỏi quản lý.</li>
+                    <li>Gửi nhắc nhở tự động về lịch học sắp tới qua chatbot.</li>
                 </ul>
-                <p><strong>Lợi ích:</strong> Giảm tải cho phòng HR bằng cách tự động hóa các câu hỏi phổ biến, cung cấp thông tin chính xác và nhanh chóng về HR/đào tạo.</p>
-                <p><strong>Vai trò trong giai đoạn này:</strong> Đây là agent chính, được tối ưu để xử lý các tác vụ cụ thể trong HR/đào tạo như tra cứu lịch, hỗ trợ đăng ký khóa học, và giải đáp chính sách nhân sự.</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Lịch đào tạo tháng 6 là khi nào?” → Trợ lý trả lời: “Khóa đào tạo tháng 6 diễn ra vào ngày 15/6, 9:00 sáng, tại phòng B2. Bạn muốn đăng ký không?”</p>
             </div>
-            <div class="agent-item">
-                <h4>Response Generator Agent</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Sinh ra câu trả lời tự nhiên, thân thiện dựa trên dữ liệu từ HR Training Data Agent, đảm bảo phản hồi dễ hiểu và phù hợp ngữ cảnh HR/đào tạo.</p>
-                <p><strong>Cách hoạt động:</strong> Nhận ý định, thực thể, và dữ liệu thô, sau đó sử dụng mô hình sinh ngôn ngữ để tạo câu trả lời hoàn chỉnh.</p>
-                <p><strong>Công nghệ:</strong> GPT-2 small (mô hình sinh ngôn ngữ nhẹ), DialoGPT (tối ưu hội thoại ngắn).</p>
-                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Thông Tin Doanh Nghiệp (Company Info Assistant)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Giải đáp các câu hỏi về công ty như chính sách, quy trình, hoặc thông tin chung.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Ý định: "yêu cầu lịch đào tạo", Thực thể: "tuần này", Dữ liệu: "thứ Tư, 9:00 sáng" → "Khóa đào tạo tuần này diễn ra vào thứ Tư, 9:00 sáng, tại phòng A1".</li>
-                    <li>Ý định: "hỏi chính sách phúc lợi", Thực thể: "ngày phép", Dữ liệu: "8 ngày" → "Bạn còn 8 ngày phép trong năm 2025, bạn có muốn tôi hướng dẫn cách đăng ký nghỉ không?".</li>
+                    <li>Trả lời ngay các câu hỏi như “Chính sách làm việc từ xa là gì?” hay “Quy trình nghỉ việc ra sao?” mà không cần tìm tài liệu giấy.</li>
+                    <li>Cập nhật thông tin tự động khi công ty thay đổi chính sách, đảm bảo nhân viên luôn nhận thông tin mới nhất.</li>
+                    <li>Giảm thời gian đào tạo nhân viên về quy trình nội bộ.</li>
                 </ul>
-                <p><strong>Lợi ích:</strong> Tạo trải nghiệm giao tiếp tự nhiên, tăng sự hài lòng của nhân viên khi sử dụng chatbot trong các vấn đề HR/đào tạo.</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi làm việc từ xa có được không?” → Trợ lý trả lời: “Theo chính sách hiện tại, bạn có thể làm từ xa 2 ngày/tuần sau khi được quản lý phê duyệt.”</p>
+            </div>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Hỗ Trợ Nhân Viên Mới (Newbie Support Assistant)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Hướng dẫn nhân viên mới về quy trình nhập职, công cụ nội bộ, và thông tin cần biết.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
+                <ul>
+                    <li>Tự động cung cấp hướng dẫn từng bước, ví dụ: “Làm thế nào để cài phần mềm công ty?” hay “Tôi cần gặp ai để nhận đồng phục?”.</li>
+                    <li>Trả lời mọi lúc, giúp nhân viên mới không phải chờ quản lý hoặc đồng nghiệp bận rộn.</li>
+                    <li>Giảm chi phí đào tạo ban đầu bằng cách thay thế các buổi hướng dẫn trực tiếp.</li>
+                </ul>
+                <p><strong>Ví dụ:</strong> Nhân viên mới hỏi: “Tôi cần làm gì để nhận laptop công ty?” → Trợ lý trả lời: “Bạn cần liên hệ anh Nam ở phòng IT, tầng 3, với mã nhân viên của bạn để nhận laptop.”</p>
+            </div>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Quan Hệ Lao Động (Employee Relations Assistant)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Hỗ trợ giải đáp thắc mắc về hợp đồng lao động, tranh chấp, hoặc quyền lợi nhân viên.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
+                <ul>
+                    <li>Trả lời nhanh các câu hỏi như “Hợp đồng của tôi hết hạn khi nào?” hay “Tôi được bảo hiểm gì?” mà không cần qua phòng pháp chế.</li>
+                    <li>Tự động ghi lại các câu hỏi nhạy cảm để báo cáo cho HR nếu cần xử lý thêm.</li>
+                    <li>Đảm bảo thông tin chính xác, tránh hiểu lầm giữa nhân viên và công ty.</li>
+                </ul>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Hợp đồng của tôi có thời hạn bao lâu?” → Trợ lý trả lời: “Hợp đồng của bạn có thời hạn 2 năm, hết vào ngày 31/12/2025.”</p>
+            </div>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Tuyển Dụng (Recruitment Assistant)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Hỗ trợ nhân viên trong quy trình tuyển dụng nội bộ, như ứng tuyển vị trí mới hoặc giới thiệu bạn bè.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
+                <ul>
+                    <li>Trả lời ngay các câu hỏi như “Có vị trí nào đang tuyển không?” hay “Làm sao để giới thiệu ứng viên?”.</li>
+                    <li>Tự động gửi link đăng ký hoặc hướng dẫn quy trình tuyển dụng, giảm công việc giấy tờ cho phòng HR.</li>
+                    <li>Cập nhật danh sách vị trí tuyển dụng từ dữ liệu nội bộ.</li>
+                </ul>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Công ty đang tuyển vị trí nào?” → Trợ lý trả lời: “Hiện tại có 3 vị trí đang tuyển: Nhân viên kinh doanh, IT Support, và Marketing. Bạn muốn xem chi tiết không?”</p>
             </div>
         </div>
         <p class="description">
-            Các agents này hoạt động phối hợp dưới sự điều phối của <strong>HR Training Orchestrator</strong>. Giai đoạn hiện tại tập trung vào <strong>HR Training Data Agent</strong>, hỗ trợ nhân viên trong các tác vụ HR/đào tạo như tra cứu lịch, đăng ký khóa học, và giải đáp chính sách.
+            Các trợ lý này được thiết kế để tự động hóa tối đa các công việc HR và đào tạo, giúp nhân viên tiết kiệm thời gian và doanh nghiệp giảm chi phí vận hành. Tất cả đều chạy trên máy chủ nội bộ, bảo mật tuyệt đối.
         </p>
     </div>
 
     <!-- Luồng Hoạt Động -->
     <div class="section">
-        <h2>3. Luồng Hoạt Động Của Hệ Thống (Giai Đoạn HR & Đào Tạo)</h2>
+        <h2>6. Hệ Thống Hoạt Động Như Thế Nào?</h2>
+        <div class="diagram-container">
+            <div class="component" style="left: 50px; top: 50px;">
+                <h3>Nhân Viên Hỏi</h3>
+                <p>Ví dụ: "Lịch đào tạo tháng 6 là khi nào?"</p>
+            </div>
+            <div class="component central" style="left: 500px; top: 250px;">
+                <h3>Lõi Điều Hành (LLaMA)</h3>
+                <p>Phân công nhiệm vụ</p>
+            </div>
+            <div class="component highlight" style="left: 950px; top: 50px;">
+                <h3>Trợ Lý Đào Tạo</h3>
+                <p>Tìm lịch đào tạo</p>
+            </div>
+            <div class="component" style="left: 950px; top: 400px;">
+                <h3>Trợ Lý Tạo Câu Trả Lời</h3>
+                <p>Soạn câu trả lời dễ hiểu</p>
+            </div>
+            <div class="component" style="left: 50px; top: 500px;">
+                <h3>Phản Hồi</h3>
+                <p>"Khóa đào tạo tháng 6 diễn ra ngày 15/6."</p>
+            </div>
+            <svg class="arrows">
+                <line x1="200" y1="150" x2="450" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="250" x2="900" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="900" y1="250" x2="900" y2="400" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="450" x2="200" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+            </svg>
+        </div>
         <p class="description">
-            Hệ thống xử lý câu hỏi theo các bước sau, tập trung vào HR & đào tạo:<br>
-            1. <strong>Đầu Vào Người Dùng:</strong> Nhân viên nhập câu hỏi như "Lịch đào tạo tuần này là khi nào?" hoặc "Tôi còn bao nhiêu ngày phép?" → Gửi đến HR Training Orchestrator.<br>
-            2. <strong>Text Cleaner Agent:</strong> Làm sạch câu hỏi để loại bỏ nhiễu (ví dụ: "Lịch đào tạo tuần này là khi nào???" → "Lịch đào tạo tuần này là khi nào").<br>
-            3. <strong>Intent Classifier Agent:</strong> Phân loại ý định (ví dụ: "yêu cầu lịch đào tạo" hoặc "hỏi chính sách phúc lợi").<br>
-            4. <strong>Entity Extractor Agent:</strong> Trích xuất thực thể (ví dụ: "tuần này" là thời gian, "ngày phép" là phúc lợi).<br>
-            5. <strong>HR Training Data Agent:</strong> Truy vấn dữ liệu từ hệ thống nội bộ (lịch đào tạo, dữ liệu nhân sự) để lấy thông tin chính xác (ví dụ: "thứ Tư, 9:00 sáng" hoặc "8 ngày phép").<br>
-            6. <strong>Response Generator Agent:</strong> Sinh câu trả lời tự nhiên (ví dụ: "Khóa đào tạo tuần này diễn ra vào thứ Tư, 9:00 sáng" hoặc "Bạn còn 8 ngày phép trong năm 2025").<br>
-            7. <strong>Đầu Ra Người Dùng:</strong> Phản hồi được hiển thị qua giao diện chatbot.
+            Khi nhân viên hỏi, câu hỏi được gửi đến **Lõi Điều Hành (LLaMA)**. Lõi này phân công nhiệm vụ cho trợ lý phù hợp (ví dụ: Trợ Lý Đào Tạo tìm lịch). Sau khi có thông tin, **Trợ Lý Tạo Câu Trả Lời** soạn phản hồi dễ hiểu và gửi lại cho nhân viên. Mọi bước đều tự động, nhanh chóng, và an toàn trong máy chủ nội bộ.
         </p>
         <div class="example">
-            <strong>Ví dụ chi tiết:</strong> Nhân viên hỏi: "Tôi đăng ký khóa quản lý thời gian tháng 6 ở đâu?"<br>
-            - <strong>Text Cleaner Agent:</strong> "Tôi đăng ký khóa quản lý thời gian tháng 6 ở đâu".<br>
-            - <strong>Intent Classifier Agent:</strong> Ý định: "yêu cầu thông tin đăng ký đào tạo".<br>
-            - <strong>Entity Extractor Agent:</strong> Thực thể: "khóa quản lý thời gian" (tên khóa), "tháng 6" (thời gian).<br>
-            - <strong>HR Training Data Agent:</strong> Truy vấn hệ thống → "Đăng ký qua cổng đào tạo nội bộ tại link: training.company.com".<br>
-            - <strong>Response Generator Agent:</strong> "Bạn có thể đăng ký khóa quản lý thời gian tháng 6 qua cổng đào tạo nội bộ tại link: training.company.com".<br>
-            - <strong>Đầu Ra:</strong> Hiển thị: "Bạn có thể đăng ký khóa quản lý thời gian tháng 6 qua cổng đào tạo nội bộ tại link: training.company.com".
+            <strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi còn bao nhiêu ngày phép?”<br>
+            - Lõi Điều Hành phân công cho Trợ Lý Nhân Sự.<br>
+            - Trợ Lý Nhân Sự kiểm tra dữ liệu → “10 ngày phép”.<br>
+            - Trợ Lý Tạo Câu Trả Lời soạn: “Bạn còn 10 ngày phép trong năm 2025.”<br>
+            - Nhân viên nhận phản hồi ngay lập tức.
         </div>
     </div>
 </body>
