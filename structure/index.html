@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - HR & Đào Tạo</title>
+    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giải Pháp HR & Đào Tạo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +34,7 @@
         .diagram-container {
             position: relative;
             width: 100%;
-            height: 700px;
+            height: 900px;
             border: 1px solid #ddd;
             background-color: #f9f9f9;
             margin: 20px 0;
@@ -121,25 +121,49 @@
 <body>
     <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giải Pháp HR & Đào Tạo</h1>
 
-    <!-- Hệ Thống Là Gì -->
+    <!-- Sơ Đồ Tổng Quan Với 8 Agents -->
     <div class="section">
-        <h2>1. Hệ Thống Này Là Gì?</h2>
+        <h2>1. Sơ Đồ Tổng Quan Hệ Thống</h2>
         <div class="diagram-container">
             <div class="component" style="left: 50px; top: 50px;">
                 <h3>Nhân Viên Hỏi</h3>
-                <p>Câu hỏi từ nhân viên về nhân sự, đào tạo, công ty</p>
+                <p>Câu hỏi từ nhân viên</p>
             </div>
-            <div class="component central" style="left: 500px; top: 250px;">
+            <div class="component central" style="left: 500px; top: 350px;">
                 <h3>Lõi Điều Hành (LLaMA)</h3>
-                <p>Trung tâm quản lý, phân công nhiệm vụ cho các trợ lý</p>
+                <p>Trung tâm quản lý, phân công nhiệm vụ</p>
             </div>
-            <div class="component" style="left: 950px; top: 50px;">
-                <h3>Các Trợ Lý Chuyên Biệt</h3>
-                <p>Xử lý từng công việc cụ thể</p>
+            <div class="component highlight" style="left: 900px; top: 50px;">
+                <h3>Trợ Lý Quan Hệ Lao Động</h3>
+                <p>Hỗ trợ nhân viên về quyền lợi</p>
             </div>
-            <div class="component" style="left: 50px; top: 500px;">
+            <div class="component highlight" style="left: 900px; top: 250px;">
+                <h3>Trợ Lý Nhân Sự</h3>
+                <p>Hỗ trợ phòng HR, tuyển dụng</p>
+            </div>
+            <div class="component highlight" style="left: 900px; top: 450px;">
+                <h3>Trợ Lý Đào Tạo</h3>
+                <p>Quản lý lịch, khóa học</p>
+            </div>
+            <div class="component highlight" style="left: 900px; top: 650px;">
+                <h3>Trợ Lý Thông Tin Doanh Nghiệp</h3>
+                <p>Giải đáp chính sách công ty</p>
+            </div>
+            <div class="component highlight" style="left: 50px; top: 250px;">
+                <h3>Trợ Lý Hỗ Trợ Nhân Viên Mới</h3>
+                <p>Hướng dẫn nhân viên mới</p>
+            </div>
+            <div class="component highlight" style="left: 50px; top: 450px;">
+                <h3>Trợ Lý Truyền Thông Nội Bộ</h3>
+                <p>Thông báo, tin tức công ty</p>
+            </div>
+            <div class="component highlight" style="left: 50px; top: 650px;">
+                <h3>Trợ Lý Hành Chính</h3>
+                <p>Quản lý giấy tờ, thông báo</p>
+            </div>
+            <div class="component" style="left: 500px; top: 650px;">
                 <h3>Phản Hồi Cho Nhân Viên</h3>
-                <p>Câu trả lời rõ ràng, nhanh chóng</p>
+                <p>Câu trả lời nhanh chóng</p>
             </div>
             <svg class="arrows">
                 <defs>
@@ -147,180 +171,215 @@
                         <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                     </marker>
                 </defs>
-                <line x1="200" y1="150" x2="450" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-                <line x1="650" y1="250" x2="900" y2="150" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="450" y1="350" x2="200" y2="500" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="200" y1="150" x2="450" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="350" x2="850" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="350" x2="850" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="450" x2="850" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="550" x2="850" y2="750" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="450" y1="350" x2="250" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="450" y1= "450" x2="250" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="450" y1="550" x2="250" y2="650" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="450" x2="650" y2="650" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
             </svg>
         </div>
         <p class="description">
-            Hệ thống này là một trợ lý ảo thông minh, được xây dựng để giúp doanh nghiệp tự động hóa các công việc liên quan đến nhân sự (HR), đào tạo, và hỗ trợ nhân viên. 
-            Nó hoạt động như một trung tâm hỗ trợ 24/7, nơi nhân viên có thể đặt câu hỏi và nhận câu trả lời ngay lập tức mà không cần chờ đợi phòng HR hay quản lý. 
-            Ở trung tâm, chúng tôi sử dụng một mô hình thông minh gọi là **LLaMA** – một “bộ não” mạnh mẽ nhưng nhỏ gọn, điều phối mọi thứ. Xung quanh nó là các **trợ lý chuyên biệt** (agents), mỗi trợ lý được giao một nhiệm vụ cụ thể như trả lời về lịch đào tạo, phúc lợi, hay hỗ trợ nhân viên mới. 
-            Tất cả được cài đặt trên máy chủ nội bộ (server local) của doanh nghiệp, đảm bảo thông tin không bao giờ rời khỏi công ty.
+            Đây là sơ đồ tổng quan của hệ thống với 8 trợ lý (agents) phục vụ HR, đào tạo và các công việc liên quan. Mọi câu hỏi từ nhân viên được gửi đến **Lõi Điều Hành (LLaMA)**, sau đó phân công cho trợ lý phù hợp. Kết quả được gửi lại nhanh chóng, an toàn trong máy chủ nội bộ.
+        </p>
+    </div>
+
+    <!-- Hệ Thống Là Gì -->
+    <div class="section">
+        <h2>2. Hệ Thống Này Là Gì?</h2>
+        <p class="description">
+            Hệ thống này là một trợ lý ảo thông minh, được xây dựng để tự động hóa các công việc liên quan đến nhân sự, đào tạo và hỗ trợ nhân viên trong doanh nghiệp. 
+            Nó giống như một đội ngũ trợ lý làm việc 24/7, giúp nhân viên tìm thông tin nhanh chóng và hỗ trợ phòng HR làm việc hiệu quả hơn. 
+            Ở trung tâm là **LLaMA**, một “bộ não” nhỏ gọn nhưng mạnh mẽ, điều phối 8 trợ lý chuyên biệt. Tất cả chạy trên máy chủ nội bộ của công ty, không cần kết nối ngoài, đảm bảo an toàn tuyệt đối.
         </p>
     </div>
 
     <!-- Lợi Ích Kinh Tế và Tương Lai Mở Rộng -->
     <div class="section">
-        <h2>2. Lợi Ích Kinh Tế và Tương Lai Mở Rộng</h2>
+        <h2>3. Lợi Ích Kinh Tế và Tương Lai Mở Rộng</h2>
         <p class="description">
             <strong>Lợi ích kinh tế:</strong><br>
-            - <strong>Tiết kiệm chi phí nhân sự:</strong> Hệ thống thay thế hàng giờ làm việc của phòng HR trong việc trả lời câu hỏi lặp đi lặp lại, như “Tôi còn bao nhiêu ngày phép?” hay “Lịch đào tạo khi nào?”. Ví dụ: một nhân viên HR mất 5 phút để trả lời mỗi câu hỏi, với 100 câu hỏi mỗi ngày, doanh nghiệp tiết kiệm được hàng trăm giờ mỗi tháng.<br>
-            - <strong>Giảm chi phí đào tạo:</strong> Nhân viên mới không cần hỏi quản lý mọi thứ – hệ thống tự động hướng dẫn họ, từ quy trình làm việc đến thông tin công ty, giúp tiết kiệm thời gian và tiền bạc.<br>
-            - <strong>Đầu tư một lần, lợi ích dài lâu:</strong> Chỉ cần cài đặt hệ thống trên máy chủ nội bộ, doanh nghiệp không phải trả phí thuê dịch vụ ngoài hay phụ thuộc vào các công ty khác. Chi phí ban đầu thấp hơn nhiều so với việc thuê thêm nhân viên hay mua phần mềm đắt đỏ.<br><br>
+            - <strong>Tiết kiệm thời gian và tiền bạc:</strong> Nhân viên không cần chờ phòng HR trả lời các câu hỏi đơn giản, như lịch đào tạo hay giấy tờ hành chính. Một câu hỏi mất 5 phút để trả lời thủ công, với 100 câu hỏi mỗi ngày, doanh nghiệp tiết kiệm hàng trăm giờ mỗi tháng.<br>
+            - <strong>Hỗ trợ hiệu quả hơn:</strong> Phòng HR giảm tải công việc lặp lại (như phân loại CV, gửi thông báo), tập trung vào việc quan trọng hơn như chiến lược nhân sự.<br>
+            - <strong>Chi phí thấp, lợi ích lâu dài:</strong> Chỉ cần đầu tư một lần cho máy chủ nội bộ, không phải trả phí thuê ngoài hay phụ thuộc vào dịch vụ khác.<br><br>
             <strong>Tương lai mở rộng:</strong><br>
-            - <strong>Thêm tính năng dễ dàng:</strong> Hệ thống này giống như một bộ khung, có thể gắn thêm các trợ lý mới để xử lý các công việc khác trong tương lai, như tài chính, marketing, hay sản xuất, mà không cần làm lại từ đầu.<br>
-            - <strong>Hỗ trợ quy mô lớn:</strong> Khi công ty phát triển, hệ thống có thể mở rộng để phục vụ hàng nghìn nhân viên mà không cần thay đổi nhiều, chỉ cần nâng cấp máy chủ nội bộ.<br>
-            - <strong>Đón đầu công nghệ:</strong> Với nền tảng AI mạnh mẽ, doanh nghiệp sẽ luôn sẵn sàng ứng dụng các công nghệ mới mà không bị tụt hậu.
+            - <strong>Dễ thêm chức năng:</strong> Hệ thống linh hoạt, có thể bổ sung trợ lý mới (ví dụ: hỗ trợ tài chính, sản xuất) mà không cần làm lại từ đầu.<br>
+            - <strong>Phù hợp mọi quy mô:</strong> Khi công ty lớn lên, chỉ cần nâng cấp máy chủ là hệ thống đáp ứng được hàng nghìn nhân viên.<br>
+            - <strong>Luôn hiện đại:</strong> Với nền tảng thông minh, doanh nghiệp sẵn sàng ứng dụng công nghệ mới mà không bị lạc hậu.
         </p>
     </div>
 
     <!-- Bảo Mật Tuyệt Đối -->
     <div class="section">
-        <h2>3. Bảo Mật Tuyệt Đối Với AI</h2>
+        <h2>4. Bảo Mật Tuyệt Đối Với AI</h2>
         <p class="description">
-            Hệ thống được thiết kế để bảo mật thông tin doanh nghiệp ở mức cao nhất:<br>
-            - <strong>Chạy trên máy chủ nội bộ:</strong> Toàn bộ dữ liệu và hoạt động của hệ thống nằm trong server của công ty, không gửi lên mạng hay lưu trữ bên ngoài. Điều này có nghĩa là không ai ngoài doanh nghiệp có thể truy cập thông tin.<br>
-            - <strong>Các lớp bảo vệ bằng AI:</strong> Chúng tôi sử dụng chính AI để tạo ra các “tường lửa thông minh”. Những trợ lý bảo mật sẽ:<br>
-              + Theo dõi mọi truy cập vào hệ thống, phát hiện ngay nếu có hành vi lạ (ví dụ: ai đó cố lấy dữ liệu không được phép).<br>
-              + Mã hóa thông tin tự động, biến mọi dữ liệu nhạy cảm (như ngày phép, lương thưởng) thành mã mà chỉ hệ thống hiểu được.<br>
-              + Xóa dữ liệu tạm thời sau khi trả lời xong, không để lại dấu vết.<br>
-            - <strong>Không rò rỉ thông tin:</strong> Vì các trợ lý đều là mã nguồn mở nhưng được chúng tôi tinh chỉnh và khóa kín trong server nội bộ, không có nguy cơ dữ liệu bị gửi ra ngoài như khi dùng các dịch vụ AI công cộng (như ChatGPT).
+            Hệ thống được thiết kế để giữ thông tin doanh nghiệp an toàn 100%:<br>
+            - <strong>Chỉ chạy nội bộ:</strong> Mọi dữ liệu nằm trong máy chủ của công ty, không gửi lên mạng hay lưu trữ bên ngoài.<br>
+            - <strong>Bảo vệ bằng AI:</strong> Chúng tôi dùng AI để tạo “lá chắn” thông minh:<br>
+              + Theo dõi ai vào hệ thống, chặn ngay nếu có người lạ cố xâm nhập.<br>
+              + Biến thông tin nhạy cảm (như lương, ngày phép) thành mã bí mật mà chỉ hệ thống hiểu.<br>
+              + Xóa sạch dữ liệu tạm sau khi trả lời xong.<br>
+            - <strong>Không lo rò rỉ:</strong> Các trợ lý dù dùng mã nguồn mở nhưng được khóa kín trong máy chủ nội bộ, không kết nối internet, nên thông tin không thể thoát ra ngoài.
         </p>
     </div>
 
     <!-- Mô Hình LLaMA và Trợ Lý Chuyên Biệt -->
     <div class="section">
-        <h2>4. Lõi LLaMA và Các Trợ Lý Chuyên Biệt</h2>
+        <h2>5. Lõi LLaMA và Các Trợ Lý Chuyên Biệt</h2>
         <p class="description">
             <strong>Lõi LLaMA là gì?</strong><br>
-            LLaMA là “bộ não” chính của hệ thống, một mô hình thông minh nhỏ gọn nhưng rất mạnh, được chúng tôi chọn vì nó nhanh, tiết kiệm tài nguyên, và phù hợp để chạy trên máy chủ nội bộ. Nó đóng vai trò như một người quản lý, nhận yêu cầu từ nhân viên và phân công cho các trợ lý chuyên biệt.<br><br>
+            LLaMA là trung tâm điều hành của hệ thống, giống như một người quản lý thông minh. Nó nhỏ gọn, nhanh, và tiết kiệm sức mạnh máy chủ, giúp phân công nhiệm vụ cho các trợ lý một cách hiệu quả.<br><br>
             <strong>Các trợ lý chuyên biệt:</strong><br>
-            Xung quanh LLaMA là các trợ lý nhỏ hơn, được xây dựng từ mã nguồn mở (miễn phí và minh bạch), nhưng chúng tôi đã huấn luyện chúng rất kỹ để làm tốt từng việc cụ thể. Ví dụ: một trợ lý chỉ chuyên trả lời về lịch đào tạo, một trợ lý khác chỉ xử lý câu hỏi về phúc lợi.<br><br>
-            <strong>Vì sao chuyên biệt hóa tốt hơn mô hình khổng lồ?</strong><br>
-            - <strong>Nhanh hơn:</strong> Một mô hình khổng lồ phải xử lý mọi thứ, nên tốc độ chậm. Trợ lý chuyên biệt chỉ làm một việc, nên trả lời gần như ngay lập tức.<br>
-            - <strong>Chính xác hơn:</strong> Vì mỗi trợ lý được huấn luyện riêng cho một nhiệm vụ (như tìm lịch đào tạo), nó hiểu rõ vấn đề hơn một mô hình tổng quát cố gắng làm tất cả.<br>
-            - <strong>Tiết kiệm tài nguyên:</strong> Các trợ lý nhỏ không cần máy chủ quá mạnh, giúp giảm chi phí vận hành so với dùng mô hình lớn.<br>
-            - <strong>Dễ nâng cấp:</strong> Nếu cần cải thiện một phần (ví dụ: trả lời về tuyển dụng), chúng tôi chỉ cần tinh chỉnh một trợ lý, không phải làm lại toàn bộ hệ thống.
+            Chúng tôi dùng các trợ lý nhỏ, được tinh chỉnh từ mã nguồn mở, mỗi trợ lý chỉ làm một việc cụ thể (như trả lời về đào tạo hay xử lý giấy tờ). Chúng được huấn luyện kỹ lưỡng để giỏi nhất trong lĩnh vực của mình.<br><br>
+            <strong>Vì sao chuyên biệt tốt hơn?</strong><br>
+            - <strong>Nhanh hơn:</strong> Một trợ lý chỉ làm một việc sẽ trả lời ngay, không mất thời gian như hệ thống lớn xử lý tất cả.<br>
+            - <strong>Chính xác hơn:</strong> Vì chỉ tập trung một nhiệm vụ (như tìm lịch đào tạo), trợ lý hiểu rõ vấn đề hơn hệ thống tổng quát.<br>
+            - <strong>Tiết kiệm chi phí:</strong> Không cần máy chủ mạnh như khi dùng hệ thống lớn, giảm tiền mua thiết bị.<br>
+            - <strong>Dễ cải thiện:</strong> Nếu cần nâng cấp (ví dụ: hỗ trợ tuyển dụng tốt hơn), chỉ cần chỉnh một trợ lý, không phải làm lại cả hệ thống.
         </p>
     </div>
 
     <!-- Các Hạng Mục Agents -->
     <div class="section">
-        <h2>5. Các Trợ Lý (Agents) Phục Vụ HR & Đào Tạo</h2>
+        <h2>6. 8 Trợ Lý (Agents) Trong Giai Đoạn Này</h2>
         <div class="agent-list">
             <div class="agent-item highlight">
-                <h4>Trợ Lý Nhân Sự (HR Assistant)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Giải đáp mọi câu hỏi về nhân sự, từ ngày phép, lương thưởng, đến hồ sơ cá nhân của nhân viên.</p>
+                <h4>Trợ Lý Quan Hệ Lao Động</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Giúp nhân viên giải đáp thắc mắc về quyền lợi, hợp đồng, ngày phép, và các vấn đề cá nhân.</p>
                 <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Truy cập ngay dữ liệu nhân sự từ máy chủ nội bộ để trả lời câu hỏi như “Tôi còn bao nhiêu ngày phép?” hay “Tháng này tôi được thưởng bao nhiêu?” mà không cần qua phòng HR.</li>
-                    <li>Tự động gửi thông báo khi nhân viên sắp hết ngày phép hoặc cần cập nhật hồ sơ.</li>
-                    <li>Hỗ trợ 24/7, giảm thời gian chờ đợi so với hỏi người thật.</li>
+                    <li>Trả lời ngay các câu hỏi như “Hợp đồng của tôi hết hạn khi nào?” hay “Tôi còn bao nhiêu ngày phép?” mà không cần qua phòng HR.</li>
+                    <li>Gửi thông báo tự động khi gần hết ngày phép hoặc hợp đồng sắp hết hạn.</li>
+                    <li>Hỗ trợ mọi lúc, giảm thời gian chờ đợi.</li>
                 </ul>
-                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi còn bao nhiêu ngày phép năm nay?” → Trợ lý trả lời: “Bạn còn 10 ngày phép trong năm 2025, bạn muốn tôi hướng dẫn cách đăng ký nghỉ không?”</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi còn bao nhiêu ngày phép?” → Trợ lý trả lời: “Bạn còn 10 ngày phép trong năm 2025.”</p>
             </div>
             <div class="agent-item highlight">
-                <h4>Trợ Lý Đào Tạo (Training Assistant)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Cung cấp thông tin về lịch đào tạo, đăng ký khóa học, và danh sách giảng viên.</p>
+                <h4>Trợ Lý Nhân Sự</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Hỗ trợ phòng HR trong công việc hàng ngày, như phân loại hồ sơ ứng viên, đánh giá CV, quản lý dữ liệu nhân sự, và lập báo cáo.</p>
                 <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Tự động tra cứu lịch đào tạo và trả lời ngay: “Khóa học tiếp theo diễn ra khi nào?” hay “Ai dạy khóa kỹ năng mềm?”.</li>
-                    <li>Hướng dẫn nhân viên cách đăng ký khóa học qua link nội bộ, không cần hỏi quản lý.</li>
-                    <li>Gửi nhắc nhở tự động về lịch học sắp tới qua chatbot.</li>
+                    <li>Tự động phân loại CV ứng viên dựa trên tiêu chí (kinh nghiệm, kỹ năng), đưa ra danh sách ứng viên phù hợp mà không cần đọc tay.</li>
+                    <li>Đánh giá CV nhanh, ví dụ: “Ứng viên này có 5 năm kinh nghiệm, phù hợp vị trí quản lý”.</li>
+                    <li>Cập nhật thông tin nhân sự (ngày phép, hợp đồng) và tạo báo cáo tự động cho phòng HR.</li>
                 </ul>
-                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Lịch đào tạo tháng 6 là khi nào?” → Trợ lý trả lời: “Khóa đào tạo tháng 6 diễn ra vào ngày 15/6, 9:00 sáng, tại phòng B2. Bạn muốn đăng ký không?”</p>
+                <p><strong>Ví dụ:</strong> Phòng HR hỏi: “Ai phù hợp cho vị trí IT?” → Trợ lý trả lời: “Danh sách 3 ứng viên tốt nhất: Nguyễn A (5 năm kinh nghiệm), Trần B (3 năm), Lê C (4 năm).”</p>
             </div>
             <div class="agent-item highlight">
-                <h4>Trợ Lý Thông Tin Doanh Nghiệp (Company Info Assistant)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Giải đáp các câu hỏi về công ty như chính sách, quy trình, hoặc thông tin chung.</p>
+                <h4>Trợ Lý Đào Tạo</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Cung cấp lịch đào tạo, hướng dẫn đăng ký khóa học, và thông tin về giảng viên.</p>
                 <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Trả lời ngay các câu hỏi như “Chính sách làm việc từ xa là gì?” hay “Quy trình nghỉ việc ra sao?” mà không cần tìm tài liệu giấy.</li>
-                    <li>Cập nhật thông tin tự động khi công ty thay đổi chính sách, đảm bảo nhân viên luôn nhận thông tin mới nhất.</li>
-                    <li>Giảm thời gian đào tạo nhân viên về quy trình nội bộ.</li>
+                    <li>Trả lời ngay: “Khóa học tiếp theo là khi nào?” hay “Ai dạy khóa kỹ năng mềm?”.</li>
+                    <li>Tự động gửi link đăng ký khóa học qua máy chủ nội bộ.</li>
+                    <li>Nhắc nhở nhân viên về lịch học sắp tới.</li>
                 </ul>
-                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi làm việc từ xa có được không?” → Trợ lý trả lời: “Theo chính sách hiện tại, bạn có thể làm từ xa 2 ngày/tuần sau khi được quản lý phê duyệt.”</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Lịch đào tạo tháng 6 là khi nào?” → Trợ lý trả lời: “Khóa đào tạo tháng 6 diễn ra ngày 15/6, 9:00 sáng, phòng B2.”</p>
             </div>
             <div class="agent-item highlight">
-                <h4>Trợ Lý Hỗ Trợ Nhân Viên Mới (Newbie Support Assistant)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Hướng dẫn nhân viên mới về quy trình nhập职, công cụ nội bộ, và thông tin cần biết.</p>
+                <h4>Trợ Lý Thông Tin Doanh Nghiệp</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Giải đáp về chính sách, quy trình, và thông tin chung của công ty.</p>
                 <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Tự động cung cấp hướng dẫn từng bước, ví dụ: “Làm thế nào để cài phần mềm công ty?” hay “Tôi cần gặp ai để nhận đồng phục?”.</li>
-                    <li>Trả lời mọi lúc, giúp nhân viên mới không phải chờ quản lý hoặc đồng nghiệp bận rộn.</li>
-                    <li>Giảm chi phí đào tạo ban đầu bằng cách thay thế các buổi hướng dẫn trực tiếp.</li>
+                    <li>Trả lời ngay: “Quy trình nghỉ việc là gì?” hay “Chính sách làm thêm giờ ra sao?”.</li>
+                    <li>Cập nhật tự động khi có thay đổi chính sách, đảm bảo thông tin luôn mới.</li>
+                    <li>Giảm thời gian nhân viên tìm kiếm thông tin trong tài liệu.</li>
                 </ul>
-                <p><strong>Ví dụ:</strong> Nhân viên mới hỏi: “Tôi cần làm gì để nhận laptop công ty?” → Trợ lý trả lời: “Bạn cần liên hệ anh Nam ở phòng IT, tầng 3, với mã nhân viên của bạn để nhận laptop.”</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Làm thêm giờ được trả bao nhiêu?” → Trợ lý trả lời: “Bạn được trả 150% lương giờ làm việc bình thường.”</p>
             </div>
             <div class="agent-item highlight">
-                <h4>Trợ Lý Quan Hệ Lao Động (Employee Relations Assistant)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Hỗ trợ giải đáp thắc mắc về hợp đồng lao động, tranh chấp, hoặc quyền lợi nhân viên.</p>
+                <h4>Trợ Lý Hỗ Trợ Nhân Viên Mới</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Hướng dẫn nhân viên mới về quy trình nhập職, công cụ, và thông tin cơ bản.</p>
                 <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Trả lời nhanh các câu hỏi như “Hợp đồng của tôi hết hạn khi nào?” hay “Tôi được bảo hiểm gì?” mà không cần qua phòng pháp chế.</li>
-                    <li>Tự động ghi lại các câu hỏi nhạy cảm để báo cáo cho HR nếu cần xử lý thêm.</li>
-                    <li>Đảm bảo thông tin chính xác, tránh hiểu lầm giữa nhân viên và công ty.</li>
+                    <li>Hướng dẫn từng bước: “Làm sao để cài phần mềm công ty?” hay “Nhận đồng phục ở đâu?”.</li>
+                    <li>Hỗ trợ mọi lúc, không cần chờ quản lý.</li>
+                    <li>Giảm chi phí tổ chức buổi hướng dẫn thủ công.</li>
                 </ul>
-                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Hợp đồng của tôi có thời hạn bao lâu?” → Trợ lý trả lời: “Hợp đồng của bạn có thời hạn 2 năm, hết vào ngày 31/12/2025.”</p>
+                <p><strong>Ví dụ:</strong> Nhân viên mới hỏi: “Tôi nhận laptop ở đâu?” → Trợ lý trả lời: “Bạn liên hệ anh Nam ở phòng IT, tầng 3, với mã nhân viên của bạn.”</p>
             </div>
             <div class="agent-item highlight">
-                <h4>Trợ Lý Tuyển Dụng (Recruitment Assistant)</h4>
-                <p><strong>Nhiệm vụ cụ thể:</strong> Hỗ trợ nhân viên trong quy trình tuyển dụng nội bộ, như ứng tuyển vị trí mới hoặc giới thiệu bạn bè.</p>
+                <h4>Trợ Lý Truyền Thông Nội Bộ</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Gửi tin tức, thông báo, và cập nhật sự kiện nội bộ cho nhân viên.</p>
                 <p><strong>Điểm mạnh tự động hóa:</strong></p>
                 <ul>
-                    <li>Trả lời ngay các câu hỏi như “Có vị trí nào đang tuyển không?” hay “Làm sao để giới thiệu ứng viên?”.</li>
-                    <li>Tự động gửi link đăng ký hoặc hướng dẫn quy trình tuyển dụng, giảm công việc giấy tờ cho phòng HR.</li>
-                    <li>Cập nhật danh sách vị trí tuyển dụng từ dữ liệu nội bộ.</li>
+                    <li>Tự động gửi thông báo: “Ngày mai có họp toàn công ty lúc 10:00 sáng”.</li>
+                    <li>Trả lời câu hỏi như: “Sự kiện gần nhất là gì?” hay “Có thông báo gì mới không?”.</li>
+                    <li>Đảm bảo mọi nhân viên đều nhận tin tức mà không cần email thủ công.</li>
                 </ul>
-                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Công ty đang tuyển vị trí nào?” → Trợ lý trả lời: “Hiện tại có 3 vị trí đang tuyển: Nhân viên kinh doanh, IT Support, và Marketing. Bạn muốn xem chi tiết không?”</p>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Có thông báo gì mới không?” → Trợ lý trả lời: “Ngày 20/6 có tiệc sinh nhật công ty tại sảnh A, bạn có tham gia không?”</p>
+            </div>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Hành Chính</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Quản lý, phân loại, gửi nhận giấy tờ, và thông báo cho đơn vị/cá nhân liên quan dựa trên dữ liệu nội bộ (datahub).</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
+                <ul>
+                    <li>Tự động phân loại giấy tờ (hợp đồng, đơn xin nghỉ) và gửi đến đúng người/đơn vị.</li>
+                    <li>Thông báo: “Đơn xin nghỉ của bạn đã được gửi đến anh Hùng ở phòng HR”.</li>
+                    <li>Giảm thời gian xử lý giấy tờ thủ công, tránh thất lạc.</li>
+                </ul>
+                <p><strong>Ví dụ:</strong> Nhân viên hỏi: “Đơn xin nghỉ của tôi đến đâu rồi?” → Trợ lý trả lời: “Đơn của bạn đã được gửi đến phòng HR ngày 15/6 và đang chờ duyệt.”</p>
+            </div>
+            <div class="agent-item highlight">
+                <h4>Trợ Lý Tạo Câu Trả Lời</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Soạn câu trả lời dễ hiểu, thân thiện từ thông tin của các trợ lý khác.</p>
+                <p><strong>Điểm mạnh tự động hóa:</strong></p>
+                <ul>
+                    <li>Biến thông tin thô thành câu trả lời tự nhiên: “Bạn còn 10 ngày phép” → “Bạn còn 10 ngày phép trong năm 2025, bạn muốn nghỉ khi nào?”.</li>
+                    <li>Đảm bảo nhân viên dễ hiểu, không cần giải thích thêm.</li>
+                    <li>Hỗ trợ mọi trợ lý khác để phản hồi nhanh chóng.</li>
+                </ul>
+                <p><strong>Ví dụ:</strong> Dữ liệu: “Khóa học ngày 15/6” → Trợ lý trả lời: “Khóa học tiếp theo là ngày 15/6, 9:00 sáng, tại phòng B2.”</p>
             </div>
         </div>
         <p class="description">
-            Các trợ lý này được thiết kế để tự động hóa tối đa các công việc HR và đào tạo, giúp nhân viên tiết kiệm thời gian và doanh nghiệp giảm chi phí vận hành. Tất cả đều chạy trên máy chủ nội bộ, bảo mật tuyệt đối.
+            8 trợ lý này tự động hóa các công việc HR, đào tạo, và hỗ trợ nhân viên, giúp tiết kiệm thời gian, tăng hiệu quả, và giữ thông tin an toàn trong máy chủ nội bộ.
         </p>
     </div>
 
     <!-- Luồng Hoạt Động -->
     <div class="section">
-        <h2>6. Hệ Thống Hoạt Động Như Thế Nào?</h2>
+        <h2>7. Hệ Thống Hoạt Động Như Thế Nào?</h2>
         <div class="diagram-container">
             <div class="component" style="left: 50px; top: 50px;">
                 <h3>Nhân Viên Hỏi</h3>
-                <p>Ví dụ: "Lịch đào tạo tháng 6 là khi nào?"</p>
+                <p>Ví dụ: "Tôi còn bao nhiêu ngày phép?"</p>
             </div>
             <div class="component central" style="left: 500px; top: 250px;">
                 <h3>Lõi Điều Hành (LLaMA)</h3>
                 <p>Phân công nhiệm vụ</p>
             </div>
-            <div class="component highlight" style="left: 950px; top: 50px;">
-                <h3>Trợ Lý Đào Tạo</h3>
-                <p>Tìm lịch đào tạo</p>
+            <div class="component highlight" style="left: 900px; top: 50px;">
+                <h3>Trợ Lý Quan Hệ Lao Động</h3>
+                <p>Tìm thông tin ngày phép</p>
             </div>
-            <div class="component" style="left: 950px; top: 400px;">
+            <div class="component" style="left: 900px; top: 400px;">
                 <h3>Trợ Lý Tạo Câu Trả Lời</h3>
                 <p>Soạn câu trả lời dễ hiểu</p>
             </div>
             <div class="component" style="left: 50px; top: 500px;">
                 <h3>Phản Hồi</h3>
-                <p>"Khóa đào tạo tháng 6 diễn ra ngày 15/6."</p>
+                <p>"Bạn còn 10 ngày phép trong năm 2025."</p>
             </div>
             <svg class="arrows">
                 <line x1="200" y1="150" x2="450" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-                <line x1="650" y1="250" x2="900" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="650" y1="250" x2="850" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
                 <line x1="900" y1="250" x2="900" y2="400" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
                 <line x1="650" y1="450" x2="200" y2="550" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
             </svg>
         </div>
         <p class="description">
-            Khi nhân viên hỏi, câu hỏi được gửi đến **Lõi Điều Hành (LLaMA)**. Lõi này phân công nhiệm vụ cho trợ lý phù hợp (ví dụ: Trợ Lý Đào Tạo tìm lịch). Sau khi có thông tin, **Trợ Lý Tạo Câu Trả Lời** soạn phản hồi dễ hiểu và gửi lại cho nhân viên. Mọi bước đều tự động, nhanh chóng, và an toàn trong máy chủ nội bộ.
+            Nhân viên hỏi → **Lõi Điều Hành (LLaMA)** phân công cho trợ lý phù hợp (ví dụ: Trợ Lý Quan Hệ Lao Động) → Trợ lý tìm thông tin → **Trợ Lý Tạo Câu Trả Lời** soạn phản hồi → Nhân viên nhận câu trả lời. Tất cả diễn ra nhanh chóng, an toàn trong máy chủ nội bộ.
         </p>
         <div class="example">
-            <strong>Ví dụ:</strong> Nhân viên hỏi: “Tôi còn bao nhiêu ngày phép?”<br>
-            - Lõi Điều Hành phân công cho Trợ Lý Nhân Sự.<br>
-            - Trợ Lý Nhân Sự kiểm tra dữ liệu → “10 ngày phép”.<br>
-            - Trợ Lý Tạo Câu Trả Lời soạn: “Bạn còn 10 ngày phép trong năm 2025.”<br>
-            - Nhân viên nhận phản hồi ngay lập tức.
+            <strong>Ví dụ:</strong> Nhân viên hỏi: “Ai phù hợp cho vị trí IT?”<br>
+            - Lõi Điều Hành giao cho Trợ Lý Nhân Sự.<br>
+            - Trợ Lý Nhân Sự phân loại CV → “Nguyễn A, 5 năm kinh nghiệm”.<br>
+            - Trợ Lý Tạo Câu Trả Lời soạn: “Ứng viên Nguyễn A có 5 năm kinh nghiệm, rất phù hợp cho vị trí IT.”<br>
+            - Phòng HR nhận phản hồi ngay.
         </div>
     </div>
 </body>
