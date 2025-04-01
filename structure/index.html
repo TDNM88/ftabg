@@ -116,6 +116,27 @@
             color: #2980b9;
             font-size: 18px;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -382,5 +403,100 @@
             - Phòng HR nhận phản hồi ngay.
         </div>
     </div>
+
+    <!-- Chi Phí Thiết Lập và Vận Hành Hệ Thống -->
+    <div class="section">
+        <h2>8. Chi Phí Thiết Lập và Vận Hành Hệ Thống</h2>
+        <p class="description">
+            Dưới đây là chi phí để thiết lập và vận hành hệ thống cho 100 nhân viên theo hai cách: dùng máy chủ nội bộ (Server Local) và dùng dịch vụ đám mây của Microsoft (Azure). Chúng tôi chỉ tính chi phí phần cứng, phần mềm, và vận hành, không bao gồm chi phí lập trình viên.
+        </p>
+
+        <h3>Phương Án 1: Server Local (Máy Chủ Nội Bộ)</h3>
+        <p class="description">
+            Hệ thống chạy hoàn toàn trong công ty, không cần internet, giao tiếp qua mạng nội bộ.<br>
+            - <strong>Thiết lập ban đầu:</strong><br>
+              + Máy chủ (CPU mạnh, 64GB RAM, 1TB SSD): $3,000 - $5,000.<br>
+              + Thiết bị mạng (switch, router): $500.<br>
+              <strong>Tổng:</strong> $3,500 (thấp nhất) - $5,500 (cao cấp).<br>
+            - <strong>Vận hành hàng năm:</strong><br>
+              + Bảo trì máy chủ: $500/năm.<br>
+              + Điện năng và làm mát: $300/năm.<br>
+              <strong>Tổng:</strong> $800/năm.<br>
+            - <strong>Năm đầu tiên:</strong> $4,300 - $6,300.<br>
+            - <strong>Các năm sau:</strong> $800/năm.
+        </p>
+
+        <h3>Phương Án 2: Microsoft Cloud (Azure)</h3>
+        <p class="description">
+            Hệ thống chạy trên dịch vụ đám mây của Microsoft, an toàn với mạng riêng (Private Link).<br>
+            - <strong>Thiết lập ban đầu:</strong><br>
+              + Dịch vụ chạy hệ thống (App Service): $150 (3 tháng).<br>
+              + Tài nguyên tinh chỉnh AI (Azure ML): $100.<br>
+              + Bảo mật (Azure Security Center): $45 (3 tháng).<br>
+              + Mạng riêng (Private Link): $7.20 (3 tháng).<br>
+              <strong>Tổng:</strong> $302.20.<br>
+            - <strong>Vận hành hàng năm:</strong><br>
+              + Dịch vụ chạy hệ thống: $600/năm.<br>
+              + Tài nguyên AI: $50/năm.<br>
+              + Lưu trữ (100GB): $24/năm.<br>
+              + Băng thông (100 nhân viên): $104/năm.<br>
+              + Bảo mật: $180/năm.<br>
+              + Mạng riêng: $87.60/năm.<br>
+              <strong>Tổng:</strong> $1,045.60/năm.<br>
+            - <strong>Năm đầu tiên:</strong> $1,347.80.<br>
+            - <strong>Các năm sau:</strong> $1,045.60/năm.
+        </p>
+
+        <h3>So Sánh Hai Phương Án</h3>
+        <table>
+            <tr>
+                <th>Hạng Mục</th>
+                <th>Server Local</th>
+                <th>Microsoft Cloud (Azure)</th>
+            </tr>
+            <tr>
+                <td>Thiết lập ban đầu</td>
+                <td>$3,500 - $5,500</td>
+                <td>$302.20</td>
+            </tr>
+            <tr>
+                <td>Vận hành năm đầu</td>
+                <td>$800</td>
+                <td>$1,045.60</td>
+            </tr>
+            <tr>
+                <td>Tổng năm đầu</td>
+                <td>$4,300 - $6,300</td>
+                <td>$1,347.80</td>
+            </tr>
+            <tr>
+                <td>Vận hành các năm sau</td>
+                <td>$800/năm</td>
+                <td>$1,045.60/năm</td>
+            </tr>
+            <tr>
+                <td>Bảo mật</td>
+                <td>Cao (nội bộ hoàn toàn)</td>
+                <td>Cao (Azure + Private Link)</td>
+            </tr>
+            <tr>
+                <td>Khả năng mở rộng</td>
+                <td>Khó</td>
+                <td>Dễ</td>
+            </tr>
+            <tr>
+                <td>Phụ thuộc bên thứ ba</td>
+                <td>Không</td>
+                <td>Có (Microsoft)</td>
+            </tr>
+        </table>
+
+        <p class="description">
+            - <strong>Server Local:</strong> Phù hợp nếu bạn muốn bảo mật tối đa và tiết kiệm chi phí lâu dài. Chi phí năm đầu cao hơn ($4,300 - $6,300), nhưng chỉ $800/năm sau đó.<br>
+            - <strong>Microsoft Cloud:</strong> Tốt nếu bạn cần chi phí ban đầu thấp ($1,347.80) và dễ mở rộng khi công ty phát triển, nhưng chi phí hàng năm cao hơn ($1,045.60).<br>
+            Tùy vào ngân sách và nhu cầu bảo mật, bạn có thể chọn phương án phù hợp nhất!
+        </p>
+    </div>
+
 </body>
 </html>
