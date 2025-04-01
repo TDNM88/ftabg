@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Các Loại Agents</title>
+    <title>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giai Đoạn HR & Đào Tạo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +34,7 @@
         .diagram-container {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 700px;
             border: 1px solid #ddd;
             background-color: #f9f9f9;
             margin: 20px 0;
@@ -42,8 +42,8 @@
 
         .component {
             position: absolute;
-            width: 220px;
-            height: 120px;
+            width: 280px;
+            height: 160px;
             border: 1px solid #333;
             text-align: center;
             padding: 10px;
@@ -67,6 +67,10 @@
 
         .central {
             background-color: #ecf0f1;
+        }
+
+        .highlight {
+            background-color: #ffeaa7;
         }
 
         .arrows {
@@ -99,7 +103,7 @@
         }
 
         .agent-item {
-            width: 300px;
+            width: 400px;
             padding: 15px;
             background-color: #fff;
             border: 1px solid #ddd;
@@ -114,7 +118,7 @@
     </style>
 </head>
 <body>
-    <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Các Loại Agents</h1>
+    <h1>Hệ Thống Chatbot Nội Bộ Doanh Nghiệp - Giai Đoạn HR & Đào Tạo</h1>
 
     <!-- Tổng Quan Hệ Thống -->
     <div class="section">
@@ -122,27 +126,31 @@
         <div class="diagram-container">
             <div class="component" style="left: 50px; top: 50px;">
                 <h3>Đầu Vào Người Dùng</h3>
-                <p>Câu hỏi/lệnh từ nhân viên</p>
+                <p>Câu hỏi/lệnh từ nhân viên về HR & đào tạo</p>
             </div>
-            <div class="component central" style="left: 400px; top: 200px;">
-                <h3>Mô Hình Điều Phối Trung Tâm</h3>
-                <p>Điều phối các agents</p>
+            <div class="component central" style="left: 500px; top: 300px;">
+                <h3>HR Training Orchestrator</h3>
+                <p>Điều phối các agents HR & đào tạo</p>
             </div>
-            <div class="component" style="left: 750px; top: 50px;">
-                <h3>Agent Tiền Xử Lý</h3>
-                <p>Làm sạch văn bản</p>
+            <div class="component" style="left: 900px; top: 50px;">
+                <h3>Text Cleaner Agent</h3>
+                <p>Làm sạch văn bản đầu vào</p>
             </div>
-            <div class="component" style="left: 750px; top: 200px;">
-                <h3>Agent Ý Định</h3>
+            <div class="component" style="left: 900px; top: 200px;">
+                <h3>Intent Classifier Agent</h3>
                 <p>Phân loại ý định</p>
             </div>
-            <div class="component" style="left: 750px; top: 350px;">
-                <h3>Agent Thực Thể</h3>
+            <div class="component" style="left: 900px; top: 350px;">
+                <h3>Entity Extractor Agent</h3>
                 <p>Trích xuất thông tin</p>
             </div>
-            <div class="component" style="left: 50px; top: 400px;">
+            <div class="component highlight" style="left: 900px; top: 500px;">
+                <h3>HR Training Data Agent</h3>
+                <p>Truy vấn dữ liệu HR & đào tạo</p>
+            </div>
+            <div class="component" style="left: 50px; top: 550px;">
                 <h3>Đầu Ra Người Dùng</h3>
-                <p>Phản hồi cuối cùng</p>
+                <p>Phản hồi về HR & đào tạo</p>
             </div>
             <svg class="arrows">
                 <defs>
@@ -150,79 +158,117 @@
                         <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                     </marker>
                 </defs>
-                <line x1="150" y1="100" x2="500" y2="250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
-                <line x1="500" y1="250" x2="850" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="500" y1="250" x2="850" y2="250" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="500" y1="250" x2="850" y2="400" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
-                <line x1="500" y1="250" x2="150" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="150" y1="100" x2="600" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <line x1="600" y1="350" x2="1000" y2="100" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="600" y1="350" x2="1000" y2="250" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="600" y1="350" x2="1000" y2="400" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="600" y1="350" x2="1000" y2="550" stroke="#333" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)" />
+                <line x1="600" y1="350" x2="150" y2="600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
             </svg>
         </div>
         <p class="description">
-            Hệ thống chatbot sử dụng một <strong>Mô Hình Điều Phối Trung Tâm</strong> để quản lý luồng dữ liệu và điều phối các <strong>Agents</strong> chuyên biệt. 
-            Các agents này là các mô hình nhỏ, mã nguồn mở, được tối ưu hóa cho từng nhiệm vụ cụ thể, giúp xử lý nhanh và hiệu quả mà không cần đào tạo lại.
+            Hệ thống chatbot nội bộ doanh nghiệp trong giai đoạn hiện tại tập trung vào lĩnh vực <strong>HR và Đào Tạo</strong>. 
+            Một <strong>HR Training Orchestrator</strong> (Mô Hình Điều Phối Trung Tâm) quản lý luồng dữ liệu và điều phối các <strong>Agents</strong> chuyên biệt, bao gồm Text Cleaner Agent, Intent Classifier Agent, Entity Extractor Agent, và HR Training Data Agent (trọng tâm giai đoạn này). 
+            Các agents sử dụng mô hình mã nguồn mở, nhẹ, chỉ chạy suy luận (inference) trên GPU, hỗ trợ nhân viên truy cập nhanh thông tin HR/đào tạo như lịch học, chính sách nhân sự, và phúc lợi.
         </p>
     </div>
 
     <!-- Danh Sách Các Loại Agents -->
     <div class="section">
-        <h2>2. Danh Sách Các Loại Agents</h2>
+        <h2>2. Danh Sách Các Loại Agents trong Giai Đoạn HR & Đào Tạo</h2>
         <div class="agent-list">
             <div class="agent-item">
-                <h4>Agent Tiền Xử Lý Đầu Vào</h4>
-                <p><strong>Chức năng:</strong> Làm sạch và chuẩn hóa văn bản đầu vào (loại bỏ lỗi chính tả, ký tự thừa, phân tách từ).</p>
-                <p><strong>Công nghệ:</strong> spaCy, regex.</p>
-                <p><strong>Ví dụ:</strong> "Ai phụ trách dự án A???" → "Ai phụ trách dự án A".</p>
+                <h4>Text Cleaner Agent</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Nhận câu hỏi/lệnh từ nhân viên, làm sạch văn bản bằng cách loại bỏ lỗi chính tả, ký tự thừa, chuẩn hóa định dạng, và phân tách (tokenize) để chuẩn bị dữ liệu cho các agents khác.</p>
+                <p><strong>Cách hoạt động:</strong> Sử dụng các công cụ xử lý ngôn ngữ tự nhiên để phân tích cú pháp, loại bỏ nhiễu (dấu câu dư, từ lặp), và chuyển đổi văn bản thành dạng dễ xử lý.</p>
+                <p><strong>Công nghệ:</strong> spaCy (thư viện xử lý ngôn ngữ tự nhiên mạnh mẽ), regex (biểu thức chính quy để xử lý nhanh các mẫu đơn giản).</p>
+                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+                <ul>
+                    <li>Nhân viên nhập: "Lịch đào tạo tuần này là khi nào???" → Làm sạch thành: "Lịch đào tạo tuần này là khi nào".</li>
+                    <li>Nhân viên nhập: "tôi Muốn biết số ngày phép còn lại!!" → Chuẩn hóa thành: "Tôi muốn biết số ngày phép còn lại".</li>
+                </ul>
+                <p><strong>Lợi ích:</strong> Đảm bảo dữ liệu đầu vào sạch sẽ, giảm thiểu lỗi khi xử lý các câu hỏi phức tạp về HR/đào tạo.</p>
             </div>
             <div class="agent-item">
-                <h4>Agent Nhận Diện Ý Định</h4>
-                <p><strong>Chức năng:</strong> Phân loại ý định của câu hỏi (hỏi thông tin, yêu cầu hành động, v.v.).</p>
-                <p><strong>Công nghệ:</strong> BERT-small, DistilBERT.</p>
-                <p><strong>Ví dụ:</strong> "Ai phụ trách dự án A" → Ý định: "yêu cầu thông tin nhân sự".</p>
+                <h4>Intent Classifier Agent</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Phân loại ý định của câu hỏi/lệnh từ nhân viên để xác định mục đích chính, ví dụ: hỏi lịch đào tạo, yêu cầu thông tin phúc lợi, hoặc tra cứu dữ liệu nhân sự.</p>
+                <p><strong>Cách hoạt động:</strong> Sử dụng mô hình phân loại ngôn ngữ tự nhiên để gán nhãn ý định dựa trên văn bản đã được làm sạch. Agent này nhận diện các mẫu câu hỏi phổ biến trong HR/đào tạo.</p>
+                <p><strong>Công nghệ:</strong> DistilBERT (mô hình nhỏ gọn, nhanh), BERT-small (tối ưu cho phân loại ý định ngắn).</p>
+                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+                <ul>
+                    <li>"Lịch đào tạo tuần này là khi nào" → Ý định: "yêu cầu lịch đào tạo".</li>
+                    <li>"Tôi được nghỉ bao nhiêu ngày phép?" → Ý định: "hỏi chính sách phúc lợi".</li>
+                    <li>"Ai dạy khóa kỹ năng mềm tháng này?" → Ý định: "tra cứu thông tin giảng viên".</li>
+                </ul>
+                <p><strong>Lợi ích:</strong> Giúp định hướng chính xác yêu cầu của nhân viên, đảm bảo câu hỏi được xử lý đúng luồng trong lĩnh vực HR/đào tạo.</p>
             </div>
             <div class="agent-item">
-                <h4>Agent Trích Xuất Thực Thể</h4>
-                <p><strong>Chức năng:</strong> Xác định các thực thể quan trọng (tên, ngày, địa điểm).</p>
-                <p><strong>Công nghệ:</strong> Flair NER, spaCy NER.</p>
-                <p><strong>Ví dụ:</strong> "Ai phụ trách dự án A" → Thực thể: "dự án A".</p>
+                <h4>Entity Extractor Agent</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Trích xuất các thực thể quan trọng từ câu hỏi/lệnh, như tên khóa đào tạo, thời gian, tên nhân viên, hoặc loại phúc lợi, để hỗ trợ truy vấn dữ liệu.</p>
+                <p><strong>Cách hoạt động:</strong> Sử dụng mô hình nhận diện thực thể (NER) để phân tích văn bản và xác định các thành phần cụ thể cần chú ý.</p>
+                <p><strong>Công nghệ:</strong> Flair NER (chính xác với văn bản ngắn), spaCy NER (nhanh và nhẹ).</p>
+                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+                <ul>
+                    <li>"Lịch đào tạo tuần này là khi nào" → Thực thể: "tuần này" (thời gian).</li>
+                    <li>"Ai dạy khóa kỹ năng mềm tháng 5?" → Thực thể: "khóa kỹ năng mềm" (tên khóa), "tháng 5" (thời gian).</li>
+                    <li>"Ngày phép của tôi còn lại bao nhiêu?" → Thực thể: "ngày phép" (loại phúc lợi), "tôi" (nhân viên hiện tại).</li>
+                </ul>
+                <p><strong>Lợi ích:</strong> Cung cấp thông tin chi tiết để Agent HR Training Data truy vấn chính xác, giảm thiểu hiểu lầm trong các câu hỏi HR/đào tạo.</p>
+            </div>
+            <div class="agent-item highlight">
+                <h4>HR Training Data Agent (Trọng tâm giai đoạn này)</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Truy vấn và tổng hợp dữ liệu từ hệ thống nội bộ liên quan đến HR và đào tạo, bao gồm lịch đào tạo, danh sách giảng viên, thông tin nhân viên, chính sách phúc lợi, và quy trình đăng ký khóa học.</p>
+                <p><strong>Cách hoạt động:</strong> Kết nối với cơ sở dữ liệu nội bộ (CRM, ERP, hệ thống quản lý đào tạo) qua API hoặc truy vấn SQL, tìm kiếm thông tin dựa trên ý định và thực thể từ các agents trước đó, sau đó trả về dữ liệu thô để xử lý tiếp.</p>
+                <p><strong>Công nghệ:</strong> API connectors (kết nối hệ thống nội bộ), lightweight DB query models (truy vấn nhanh), Python scripts (xử lý dữ liệu).</p>
+                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+                <ul>
+                    <li>Câu hỏi: "Lịch đào tạo tuần này là khi nào" → Truy vấn lịch → "Khóa đào tạo diễn ra vào thứ Tư, 9:00 sáng, phòng A1".</li>
+                    <li>Câu hỏi: "Ai dạy khóa kỹ năng mềm tháng 5?" → Truy vấn danh sách giảng viên → "Trần Thị C".</li>
+                    <li>Câu hỏi: "Tôi còn bao nhiêu ngày phép?" → Truy vấn dữ liệu nhân viên → "Bạn còn 8 ngày phép trong năm 2025".</li>
+                    <li>Câu hỏi: "Đăng ký khóa quản lý thời gian ở đâu?" → Truy vấn quy trình → "Đăng ký qua cổng đào tạo nội bộ tại link: training.company.com".</li>
+                </ul>
+                <p><strong>Lợi ích:</strong> Giảm tải cho phòng HR bằng cách tự động hóa các câu hỏi phổ biến, cung cấp thông tin chính xác và nhanh chóng về HR/đào tạo.</p>
+                <p><strong>Vai trò trong giai đoạn này:</strong> Đây là agent chính, được tối ưu để xử lý các tác vụ cụ thể trong HR/đào tạo như tra cứu lịch, hỗ trợ đăng ký khóa học, và giải đáp chính sách nhân sự.</p>
             </div>
             <div class="agent-item">
-                <h4>Agent Tạo Phản Hồi</h4>
-                <p><strong>Chức năng:</strong> Sinh ra câu trả lời tự nhiên dựa trên ý định và thực thể.</p>
-                <p><strong>Công nghệ:</strong> GPT-2 small, DialoGPT.</p>
-                <p><strong>Ví dụ:</strong> Ý định: "yêu cầu thông tin", Thực thể: "dự án A" → "Người phụ trách dự án A là Nguyễn Văn B".</p>
-            </div>
-            <div class="agent-item">
-                <h4>Agent Tích Hợp Dữ Liệu</h4>
-                <p><strong>Chức năng:</strong> Truy vấn và tổng hợp thông tin từ các nguồn nội bộ (CRM, ERP).</p>
-                <p><strong>Công nghệ:</strong> API connectors, lightweight DB query models.</p>
-                <p><strong>Ví dụ:</strong> "Dự án A có bao nhiêu người?" → Truy vấn CRM → "Dự án A có 5 người tham gia".</p>
+                <h4>Response Generator Agent</h4>
+                <p><strong>Nhiệm vụ cụ thể:</strong> Sinh ra câu trả lời tự nhiên, thân thiện dựa trên dữ liệu từ HR Training Data Agent, đảm bảo phản hồi dễ hiểu và phù hợp ngữ cảnh HR/đào tạo.</p>
+                <p><strong>Cách hoạt động:</strong> Nhận ý định, thực thể, và dữ liệu thô, sau đó sử dụng mô hình sinh ngôn ngữ để tạo câu trả lời hoàn chỉnh.</p>
+                <p><strong>Công nghệ:</strong> GPT-2 small (mô hình sinh ngôn ngữ nhẹ), DialoGPT (tối ưu hội thoại ngắn).</p>
+                <p><strong>Ví dụ trong HR & Đào Tạo:</strong></p>
+                <ul>
+                    <li>Ý định: "yêu cầu lịch đào tạo", Thực thể: "tuần này", Dữ liệu: "thứ Tư, 9:00 sáng" → "Khóa đào tạo tuần này diễn ra vào thứ Tư, 9:00 sáng, tại phòng A1".</li>
+                    <li>Ý định: "hỏi chính sách phúc lợi", Thực thể: "ngày phép", Dữ liệu: "8 ngày" → "Bạn còn 8 ngày phép trong năm 2025, bạn có muốn tôi hướng dẫn cách đăng ký nghỉ không?".</li>
+                </ul>
+                <p><strong>Lợi ích:</strong> Tạo trải nghiệm giao tiếp tự nhiên, tăng sự hài lòng của nhân viên khi sử dụng chatbot trong các vấn đề HR/đào tạo.</p>
             </div>
         </div>
         <p class="description">
-            Các agents này hoạt động độc lập nhưng phối hợp chặt chẽ dưới sự quản lý của Mô Hình Điều Phối Trung Tâm, đảm bảo xử lý nhanh và chính xác.
+            Các agents này hoạt động phối hợp dưới sự điều phối của <strong>HR Training Orchestrator</strong>. Giai đoạn hiện tại tập trung vào <strong>HR Training Data Agent</strong>, hỗ trợ nhân viên trong các tác vụ HR/đào tạo như tra cứu lịch, đăng ký khóa học, và giải đáp chính sách.
         </p>
     </div>
 
     <!-- Luồng Hoạt Động -->
     <div class="section">
-        <h2>3. Luồng Hoạt Động Của Hệ Thống</h2>
+        <h2>3. Luồng Hoạt Động Của Hệ Thống (Giai Đoạn HR & Đào Tạo)</h2>
         <p class="description">
-            1. <strong>Đầu Vào:</strong> Nhân viên nhập câu hỏi → Gửi đến Mô Hình Điều Phối.<br>
-            2. <strong>Tiền Xử Lý:</strong> Agent Tiền Xử Lý làm sạch văn bản.<br>
-            3. <strong>Nhận Diện Ý Định:</strong> Agent Ý Định xác định mục đích câu hỏi.<br>
-            4. <strong>Trích Xuất Thực Thể:</strong> Agent Thực Thể tìm các thông tin quan trọng.<br>
-            5. <strong>Tích Hợp Dữ Liệu:</strong> Agent Dữ Liệu truy vấn thông tin từ hệ thống nội bộ.<br>
-            6. <strong>Tạo Phản Hồi:</strong> Agent Phản Hồi sinh câu trả lời tự nhiên.<br>
-            7. <strong>Đầu Ra:</strong> Mô Hình Điều Phối gửi phản hồi cuối cùng cho người dùng.
+            Hệ thống xử lý câu hỏi theo các bước sau, tập trung vào HR & đào tạo:<br>
+            1. <strong>Đầu Vào Người Dùng:</strong> Nhân viên nhập câu hỏi như "Lịch đào tạo tuần này là khi nào?" hoặc "Tôi còn bao nhiêu ngày phép?" → Gửi đến HR Training Orchestrator.<br>
+            2. <strong>Text Cleaner Agent:</strong> Làm sạch câu hỏi để loại bỏ nhiễu (ví dụ: "Lịch đào tạo tuần này là khi nào???" → "Lịch đào tạo tuần này là khi nào").<br>
+            3. <strong>Intent Classifier Agent:</strong> Phân loại ý định (ví dụ: "yêu cầu lịch đào tạo" hoặc "hỏi chính sách phúc lợi").<br>
+            4. <strong>Entity Extractor Agent:</strong> Trích xuất thực thể (ví dụ: "tuần này" là thời gian, "ngày phép" là phúc lợi).<br>
+            5. <strong>HR Training Data Agent:</strong> Truy vấn dữ liệu từ hệ thống nội bộ (lịch đào tạo, dữ liệu nhân sự) để lấy thông tin chính xác (ví dụ: "thứ Tư, 9:00 sáng" hoặc "8 ngày phép").<br>
+            6. <strong>Response Generator Agent:</strong> Sinh câu trả lời tự nhiên (ví dụ: "Khóa đào tạo tuần này diễn ra vào thứ Tư, 9:00 sáng" hoặc "Bạn còn 8 ngày phép trong năm 2025").<br>
+            7. <strong>Đầu Ra Người Dùng:</strong> Phản hồi được hiển thị qua giao diện chatbot.
         </p>
         <div class="example">
-            <strong>Ví dụ đầy đủ:</strong> Nhân viên hỏi: "Ai phụ trách dự án A?"<br>
-            - Agent Tiền Xử Lý: "Ai phụ trách dự án A".<br>
-            - Agent Ý Định: "Yêu cầu thông tin nhân sự".<br>
-            - Agent Thực Thể: "dự án A".<br>
-            - Agent Dữ Liệu: Truy vấn CRM → "Nguyễn Văn B".<br>
-            - Agent Phản Hồi: "Người phụ trách dự án A là Nguyễn Văn B".<br>
-            - Đầu Ra: Hiển thị "Người phụ trách dự án A là Nguyễn Văn B".
+            <strong>Ví dụ chi tiết:</strong> Nhân viên hỏi: "Tôi đăng ký khóa quản lý thời gian tháng 6 ở đâu?"<br>
+            - <strong>Text Cleaner Agent:</strong> "Tôi đăng ký khóa quản lý thời gian tháng 6 ở đâu".<br>
+            - <strong>Intent Classifier Agent:</strong> Ý định: "yêu cầu thông tin đăng ký đào tạo".<br>
+            - <strong>Entity Extractor Agent:</strong> Thực thể: "khóa quản lý thời gian" (tên khóa), "tháng 6" (thời gian).<br>
+            - <strong>HR Training Data Agent:</strong> Truy vấn hệ thống → "Đăng ký qua cổng đào tạo nội bộ tại link: training.company.com".<br>
+            - <strong>Response Generator Agent:</strong> "Bạn có thể đăng ký khóa quản lý thời gian tháng 6 qua cổng đào tạo nội bộ tại link: training.company.com".<br>
+            - <strong>Đầu Ra:</strong> Hiển thị: "Bạn có thể đăng ký khóa quản lý thời gian tháng 6 qua cổng đào tạo nội bộ tại link: training.company.com".
         </div>
     </div>
 </body>
