@@ -8,6 +8,10 @@
       "source": "/chatbot/(.*)",
       "destination": "/chatbot/$1"
     },
+     {
+      "source": "/structure/(.*)",
+      "destination": "/structure/$1"
+    },
     {
       "source": "/(.*)",
       "destination": "/$1"
